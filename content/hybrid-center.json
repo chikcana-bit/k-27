@@ -1,0 +1,715 @@
+{
+  "$comment": "Гибрид Центр (Омск). Факты: бриф заказчика от 2026-11-13 + карточка 2ГИС (firm/70000001061570107), открыта 2026-11-13. В прайсе 2ГИС 39 позиций; 38 услуг перенесены, позиция «Клубная наклейка — бесплатно» не услуга и опущена.",
+  "slug": "hybrid-center",
+  "locale": "ru",
+  "checkedAt": "2026-11-13",
+  "verificationStatus": "unconfirmed",
+  "design": "atelier",
+  "skin": "ion",
+  "theme": {
+    "accent": "#35D6B0",
+    "accentHi": "#7CF0D2",
+    "accentDeep": "#1F7F6A"
+  },
+  "seo": {
+    "title": "Гибрид Центр — ремонт гибридов и электромобилей в Омске",
+    "description": "Гибрид Центр — диагностика, обслуживание и ремонт гибридных автомобилей и электромобилей в Омске, пр. Мира, 177/4. Ежедневно 09:00–21:00, тел. +7 (3812) 90-06-00.",
+    "index": false
+  },
+  "business": {
+    "name": "Гибрид Центр",
+    "city": "Омск",
+    "category": "Ремонт гибридов и электромобилей",
+    "timeZone": "Asia/Omsk"
+  },
+  "hero": {
+    "eyebrow": "Гибриды и электромобили · Омск",
+    "title": "Ремонт гибридов и электрокаров.",
+    "subtitle": "Специализированный центр диагностики, обслуживания и ремонта гибридных автомобилей и электромобилей в Омске.",
+    "image": "hangar"
+  },
+  "intro": {
+    "statement": "У гибрида два источника энергии — и свои правила обслуживания.",
+    "statementStatus": "concept",
+    "body": "Гибрид Центр — центр по ремонту гибридов и электромобилей на проспекте Мира в Омске. В прайсе центра — диагностика гибридной системы, ремонт высоковольтных батарей и инверторов, электрооборудование, плановое ТО, а также работы по электромобилям Tesla, Lixiang и Zeekr.",
+    "image": "workshop",
+    "facts": [
+      {
+        "label": "Адрес",
+        "value": "пр. Мира, 177/4",
+        "status": "confirmed"
+      },
+      {
+        "label": "Режим работы",
+        "value": "Ежедневно, 09:00–21:00",
+        "status": "confirmed"
+      },
+      {
+        "label": "Рейтинг в 2ГИС",
+        "value": "4,9 · 159 оценок",
+        "status": "confirmed"
+      },
+      {
+        "label": "Позиций в прайсе",
+        "value": "38",
+        "status": "confirmed"
+      }
+    ]
+  },
+  "contacts": {
+    "address": {
+      "display": "пр. Мира, 177/4, Омск",
+      "mapQuery": "Омск, проспект Мира, 177/4, Гибрид Центр",
+      "status": "confirmed",
+      "source": "2gis"
+    },
+    "phones": [
+      {
+        "display": "+7 (3812) 90-06-00",
+        "e164": "+73812900600",
+        "status": "confirmed",
+        "source": "2gis"
+      },
+      {
+        "display": "+7 (905) 941-74-28",
+        "e164": "+79059417428",
+        "status": "confirmed",
+        "source": "brief"
+      }
+    ],
+    "hours": {
+      "value": "Ежедневно, 09:00–21:00",
+      "status": "confirmed"
+    },
+    "website": {
+      "url": null,
+      "status": "unknown"
+    },
+    "social": [
+      {
+        "label": "ВКонтакте",
+        "url": "https://vk.ru/gybridcenter_omsk",
+        "status": "unconfirmed"
+      },
+      {
+        "label": "Telegram",
+        "url": "https://t.me/gybridcenter_omsk",
+        "status": "unconfirmed"
+      }
+    ]
+  },
+  "servicesNote": "Направления собраны по прайсу центра в 2ГИС. Цены «от» — стартовые; итоговая стоимость зависит от модели и неисправности.",
+  "services": [
+    {
+      "id": "diag",
+      "title": "Диагностика гибридной системы",
+      "image": "hangar",
+      "short": "Диагностика гибридной системы, электрооборудования, топливной и тормозной систем, поиск утечек тока.",
+      "details": "Стартовая цена из прайса центра в 2ГИС. Объём диагностики и итоговую стоимость уточняйте по телефону.",
+      "status": "listed",
+      "priceIds": [
+        "d-hybrid",
+        "d-fuel",
+        "d-electric",
+        "d-brake",
+        "d-leak"
+      ]
+    },
+    {
+      "id": "battery",
+      "title": "Высоковольтные батареи",
+      "image": "dash",
+      "short": "Ремонт высоковольтных батарей гибридов и электромобилей.",
+      "details": "В прайсе указаны ремонт высоковольтных батарей гибридов и ремонт высоковольтных батарей электромобилей. Цены стартовые; стоимость зависит от модели и состояния батареи.",
+      "status": "listed",
+      "priceIds": [
+        "hv-hybrid",
+        "hv-ev"
+      ]
+    },
+    {
+      "id": "inverter",
+      "title": "Инверторы, коробки и двигатель",
+      "image": "workshop",
+      "short": "Ремонт инверторов, замена помпы инвертора, коробки передач гибридов, система зажигания.",
+      "details": "Позиции из прайса: ремонт инвертора, перегрев и замена помпы инвертора, ремонт коробок передач гибридов, системы зажигания и двигателя.",
+      "status": "listed",
+      "priceIds": [
+        "inverter",
+        "inverter-pump",
+        "gearbox",
+        "ignition",
+        "engine"
+      ]
+    },
+    {
+      "id": "ev",
+      "title": "Электромобили: Tesla, Lixiang, Zeekr",
+      "image": "sedan-dark",
+      "short": "Обслуживание электромобилей, русификация, привязка ключей и блоков, калибровки.",
+      "details": "В прайсе — обслуживание электромобилей, ремонт и обслуживание Tesla, а также отдельные работы для Lixiang и Zeekr: русификация, привязка ключа и блока, калибровки.",
+      "status": "listed",
+      "priceIds": [
+        "tesla",
+        "ev-service",
+        "zeekr-ru",
+        "li-ru",
+        "li-sim",
+        "li-key",
+        "li-block",
+        "li-rack",
+        "li-air",
+        "li-tpms",
+        "li-catl"
+      ]
+    },
+    {
+      "id": "electric",
+      "title": "Электрооборудование",
+      "image": "console",
+      "short": "CAN-шина, SRS, ESP/VSC, иммобилайзер, бесключевой доступ, русификация мониторов.",
+      "details": "Позиции из прайса: ремонт CAN-шины гибридов, системы SRS, ESP/VSC/ESC, программирование ключей иммобилайзера, установка бесключевого доступа, русификация мониторов.",
+      "status": "listed",
+      "priceIds": [
+        "can",
+        "srs",
+        "esp",
+        "immo",
+        "keyless",
+        "monitors"
+      ]
+    },
+    {
+      "id": "to",
+      "title": "Плановое ТО гибридов",
+      "image": "sedan-grey",
+      "short": "Плановое обслуживание и типичные неисправности Prius, в том числе «американцев».",
+      "details": "В прайсе: плановое ТО гибридов, устранение типичных проблем «Приусов» из Америки, установка топливного бака Prius «Американец».",
+      "status": "listed",
+      "priceIds": [
+        "to-hybrid",
+        "prius-us",
+        "prius-tank"
+      ]
+    },
+    {
+      "id": "chassis",
+      "title": "Рулевое, тормоза и климат",
+      "image": "coupe",
+      "short": "Электрические рулевые рейки, ABS гибридов, кондиционер и климат-контроль.",
+      "details": "В прайсе: калибровка рулевого управления, ремонт электрических рулевых реек и рулевого механизма, ремонт ABS гибридов, кондиционера и климат-контроля.",
+      "status": "listed",
+      "priceIds": [
+        "steer-cal",
+        "steer-rack",
+        "steer-mech",
+        "abs",
+        "ac",
+        "climate"
+      ]
+    }
+  ],
+  "prices": [
+    {
+      "category": "Диагностика",
+      "items": [
+        {
+          "id": "d-hybrid",
+          "title": "Диагностика гибридной системы",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "d-fuel",
+          "title": "Диагностика топливной системы",
+          "amount": 500,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "d-electric",
+          "title": "Диагностика электрооборудования",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "d-brake",
+          "title": "Диагностика тормозной системы",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "d-leak",
+          "title": "Поиск утечек тока гибридов",
+          "amount": 1500,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        }
+      ]
+    },
+    {
+      "category": "Гибридная система и двигатель",
+      "items": [
+        {
+          "id": "hv-hybrid",
+          "title": "Ремонт высоковольтных батарей гибридов",
+          "amount": 3000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "hv-ev",
+          "title": "Ремонт высоковольтных батарей электромобилей",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "inverter",
+          "title": "Ремонт инвертора гибридов",
+          "amount": 3000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "inverter-pump",
+          "title": "Перегрев и замена помпы инвертора на гибридах",
+          "amount": 2000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "gearbox",
+          "title": "Ремонт коробок передач гибридов",
+          "amount": 2000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "ignition",
+          "title": "Ремонт системы зажигания гибридов",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "engine",
+          "title": "Ремонт двигателя автомобиля",
+          "amount": 3000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        }
+      ]
+    },
+    {
+      "category": "Электрооборудование",
+      "items": [
+        {
+          "id": "can",
+          "title": "Ремонт CAN-шины гибридов",
+          "amount": 3000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "srs",
+          "title": "Ремонт системы SRS",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "esp",
+          "title": "Ремонт ESP, VSC, ESC",
+          "amount": 2000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "immo",
+          "title": "Программирование ключей иммобилайзера",
+          "amount": 2000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "keyless",
+          "title": "Установка бесключевого доступа под ключ",
+          "amount": 45000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "monitors",
+          "title": "Русификация мониторов",
+          "amount": 4000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        }
+      ]
+    },
+    {
+      "category": "Электромобили: Tesla, Lixiang, Zeekr",
+      "items": [
+        {
+          "id": "tesla",
+          "title": "Tesla: ремонт и обслуживание",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "ev-service",
+          "title": "Обслуживание электромобилей",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "zeekr-ru",
+          "title": "Русификация Zeekr X",
+          "amount": 140000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "li-ru",
+          "title": "Русификация Lixiang L7, L8 и L9",
+          "amount": 60000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "li-sim",
+          "title": "Установка sim-карты на Lixiang",
+          "amount": 60000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "li-key",
+          "title": "Привязка ключа Lixiang",
+          "amount": 80000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "li-block",
+          "title": "Привязка блока Lixiang",
+          "amount": 60000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "li-rack",
+          "title": "Калибровка рулевой рейки Lixiang",
+          "amount": 40000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "li-air",
+          "title": "Калибровка пневмоподвески Lixiang",
+          "amount": 60000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "li-tpms",
+          "title": "Датчики TPMS Lixiang",
+          "amount": 30000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        },
+        {
+          "id": "li-catl",
+          "title": "CATL Crash Event + Reconfig: устранение на Lixiang",
+          "amount": 200000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13"
+        }
+      ]
+    },
+    {
+      "category": "Техническое обслуживание",
+      "items": [
+        {
+          "id": "to-hybrid",
+          "title": "Плановое ТО гибридов",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "prius-us",
+          "title": "Устранение типичных проблем и неисправностей «Приусов» из Америки",
+          "amount": 6500,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "prius-tank",
+          "title": "Установка топливного бака Prius «Американец»",
+          "amount": 32000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        }
+      ]
+    },
+    {
+      "category": "Рулевое управление и тормоза",
+      "items": [
+        {
+          "id": "steer-cal",
+          "title": "Калибровка рулевого управления гибридов",
+          "amount": 5000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "steer-rack",
+          "title": "Ремонт электрических рулевых реек",
+          "amount": 11000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "steer-mech",
+          "title": "Ремонт рулевого механизма",
+          "amount": 1500,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "abs",
+          "title": "Ремонт ABS гибридов",
+          "amount": 2000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        }
+      ]
+    },
+    {
+      "category": "Кондиционеры и отопление",
+      "items": [
+        {
+          "id": "ac",
+          "title": "Ремонт кондиционера",
+          "amount": 2000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        },
+        {
+          "id": "climate",
+          "title": "Ремонт климат-контроля",
+          "amount": 1000,
+          "unit": null,
+          "source": "2gis-prices",
+          "checkedAt": "2026-11-13",
+          "from": true
+        }
+      ]
+    }
+  ],
+  "pricesNote": "Цены из карточки центра в 2ГИС (прайс обновлён 6 июня 2025 г.) и могли измениться — актуальную стоимость уточняйте по телефону.",
+  "principles": {
+    "status": "concept",
+    "items": [
+      {
+        "title": "Специализация",
+        "text": "Гибриды и электромобили — отдельная область со своим оборудованием и методиками."
+      },
+      {
+        "title": "Диагностика до ремонта",
+        "text": "Сначала данные с автомобиля, потом решение."
+      },
+      {
+        "title": "Работа с высоким напряжением",
+        "text": "Высоковольтные системы требуют строгого порядка действий."
+      },
+      {
+        "title": "Прозрачная смета",
+        "text": "Стартовые цены опубликованы; итог обсуждается до начала работ."
+      }
+    ]
+  },
+  "portfolio": [],
+  "promotions": [],
+  "reviews": [],
+  "sources": {
+    "2gis": {
+      "label": "2ГИС — карточка «Гибрид Центр»",
+      "url": "https://2gis.ru/omsk/firm/70000001061570107",
+      "note": "Открыта 13.11.2026: адрес, телефон +7 (3812) 90-06-00, ежедневно 09:00–21:00, рейтинг 4.9 (159 оценок)."
+    },
+    "2gis-prices": {
+      "label": "2ГИС — цены «Гибрид Центр»",
+      "url": "https://2gis.ru/omsk/firm/70000001061570107/tab/prices",
+      "note": "39 позиций, обновлено 06.06.2025."
+    },
+    "brief": {
+      "label": "Данные заказчика",
+      "url": "https://2gis.ru/omsk/firm/70000001061570107",
+      "note": "Второй телефон +7 (905) 941-74-28 — из брифа заказчика от 13.11.2026."
+    }
+  },
+  "demo": {
+    "removalContact": "через раздел Issues репозитория github.com/chikcana-bit/hybrid-center-omsk"
+  },
+  "images": {
+    "hangar": {
+      "alt": "Тёмное купе с включёнными фонарями в ангаре со световыми панелями",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1626668893632-6f3a4466d22f",
+        "license": "Unsplash License"
+      }
+    },
+    "workshop": {
+      "alt": "Мастерская с лампой дневного света и автомобилем",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1486006920555-c77dcf18193c",
+        "license": "Unsplash License"
+      }
+    },
+    "dash": {
+      "alt": "Руль и передняя панель салона",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1610647752706-3bb12232b3ab",
+        "license": "Unsplash License"
+      }
+    },
+    "console": {
+      "alt": "Сиденье и центральная консоль салона",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1610647752706-3bb12232b3ab",
+        "license": "Unsplash License"
+      }
+    },
+    "sedan-grey": {
+      "alt": "Серый седан на тёмной площадке",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb",
+        "license": "Unsplash License"
+      }
+    },
+    "profile": {
+      "alt": "Профиль тёмного автомобиля в контровом свете",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1485291571150-772bcfc10da5",
+        "license": "Unsplash License"
+      }
+    },
+    "sedan-dark": {
+      "alt": "Тёмный седан в луче света на чёрном фоне",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1485291571150-772bcfc10da5",
+        "license": "Unsplash License"
+      }
+    },
+    "coupe": {
+      "alt": "Белое купе в тёмном тоннеле",
+      "credit": {
+        "label": "Unsplash",
+        "url": "https://images.unsplash.com/photo-1612544448445-b8232cff3b6c",
+        "license": "Unsplash License"
+      }
+    }
+  },
+  "ui": {
+    "demoExplainer": "Независимый демонстрационный концепт, сделанный без участия {name}. Это не официальный ресурс сервиса, и он не означает, что {name} — наш клиент или партнёр. Через этот сайт нельзя записаться: кнопки «Записаться» и «Позвонить» открывают обычный телефонный звонок в сервис.",
+    "bookAria": "Позвонить в сервис, чтобы записаться",
+    "call": "Позвонить в сервис",
+    "concept": "Текст концепта, требует согласования с сервисом",
+    "aboutTitle": "О сервисе",
+    "factsTitle": "Коротко о сервисе",
+    "serviceListed": "Есть в прайсе",
+    "serviceUnverified": "Наличие не подтверждено",
+    "pricesRail": "Цены указаны только там, где они опубликованы в карточке сервиса в 2ГИС.",
+    "pricesUnknown": "Стоимость уточняйте у сервиса",
+    "priceMeta": "Справочная цена из «{source}», по данным на {date}. Не является публичной офертой.",
+    "pricesFooter": "Точный расчёт — по телефону, после описания задачи. Стоимость остальных работ уточняйте у сервиса.",
+    "workStatement": "Здесь будут только реальные работы сервиса.",
+    "workBody": "Мы не используем чужие фотографии в портфолио. Раздел откроется, когда сервис передаст и согласует собственные снимки.",
+    "workMobileFrame": "Фотографии работ появятся после согласования с сервисом",
+    "phoneOnly": "Запись только по телефону.",
+    "hoursUnknown": "Уточняйте у сервиса",
+    "sourcesBody": "Контактные данные и цены сверены с карточкой организации в 2ГИС ({date}). Цены — справочные, не являются публичной офертой.",
+    "photosCredit": "Фотографии иллюстративные, не работы сервиса:"
+  }
+}
