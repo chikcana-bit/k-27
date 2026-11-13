@@ -7,5 +7,6 @@ Data from public directories (Spravker, 2026-11-12), not confirmed by the busine
 
 - `k27.html` — K27, design «Карточка»
 - `an-designstudio.html` — An DesignStudio, design «Ателье»
+- `pdr-autotechnology.html` — PDR Autotechnology, «Ателье» template (data from the brief of 2026-11-12, not re-checked live)
 
 Each page is a single self-contained file (no external requests, no forms, no cookies, no analytics). Search indexing is disabled.
