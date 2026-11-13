@@ -1,0 +1,36 @@
+/* Skin «Вольт» (Автоватт). Layout and section order come from styles.css; only tokens, type, buttons and decoration change. */
+html[data-skin="volt"] {
+  --bg: #0c0d0f; --surface: #131518; --card: #1b1e23;
+  --text: #f4f3ef; --text-2: #a9aaa6; --text-3: #83857f;
+  --line: rgba(244, 243, 239, .11); --line-strong: rgba(244, 243, 239, .26);
+  --f-display: "Exo 2 Variable", "Exo 2", system-ui, sans-serif;
+  --fs-h1: clamp(2.25rem, 1.2rem + 4.2vw, 5.25rem);
+}
+[data-skin="volt"] h1, [data-skin="volt"] h2 { font-weight: 600; text-transform: uppercase; letter-spacing: 0; }
+[data-skin="volt"] h3, [data-skin="volt"] .statement, [data-skin="volt"] .wordmark, [data-skin="volt"] .big-phone,
+[data-skin="volt"] .mobile-menu ol a, [data-skin="volt"] .p-num { font-weight: 500; }
+[data-skin="volt"] .wordmark { font-size: 1.125rem; text-transform: uppercase; letter-spacing: .06em; }
+[data-skin="volt"] .wordmark::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 10px; background: var(--accent); clip-path: polygon(55% 0, 0 60%, 45% 60%, 35% 100%, 100% 38%, 55% 38%); transform: scale(1.5); }
+[data-skin="volt"] .price-val.has-price { font-weight: 600; }
+@media (max-width: 639px) { [data-skin="volt"] h1 { font-size: clamp(2rem, 10vw, 2.5rem); } }
+@media (max-width: 359px) { [data-skin="volt"] h1 { font-size: 1.85rem; } }
+
+/* Buttons: square with one cut corner, like a terminal lug. */
+[data-skin="volt"] .btn { border-radius: 0; font-weight: 700; }
+[data-skin="volt"] .btn-primary { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%); }
+[data-skin="volt"] .btn-ghost { border-color: var(--accent-deep); }
+[data-skin="volt"] .icon-btn, [data-skin="volt"] .demo-chip { border-radius: 0; }
+
+/* Decoration: faint wiring grid behind the hero, amber tick on every section head. */
+[data-skin="volt"] .hero { position: relative; isolation: isolate; }
+[data-skin="volt"] .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px; -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%); mask-image: linear-gradient(180deg, #000, transparent 85%); opacity: .7; }
+[data-skin="volt"] .section-head, [data-skin="volt"] .contacts-grid { position: relative; }
+[data-skin="volt"] .section-head::before, [data-skin="volt"] .contacts-grid::before { content: ""; position: absolute; top: -2px; left: 0; width: 48px; height: 3px; background: var(--accent); }
+[data-skin="volt"] .contacts-grid::before { left: var(--gutter); }
+[data-skin="volt"] .hero-frame { outline: 1px solid var(--line-strong); outline-offset: -1px; }
+[data-skin="volt"] .hero-frame img, [data-skin="volt"] .svc-img img, [data-skin="volt"] .about-band img { filter: saturate(.55) contrast(1.05) sepia(.12); }
+[data-skin="volt"] .price-row.is-open { box-shadow: inset 3px 0 0 var(--accent); }
+[data-skin="volt"] .motion .h1-word, html.motion[data-skin="volt"] .h1-word {
+  background-image: linear-gradient(100deg, var(--text) 0 40%, #fff1c2 47%, var(--accent) 50%, #fff1c2 53%, var(--text) 60% 100%); }

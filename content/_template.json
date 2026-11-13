@@ -1,0 +1,58 @@
+{
+  "$comment": "TEMPLATE — copied by `npm run new-site`. Fill ONLY with verified/sourced facts. Unknown → null / [] / status 'missing'. Never invent prices, services, reviews, photos, hours.",
+  "slug": "__SLUG__",
+  "locale": "ru",
+  "checkedAt": "__TODAY__",
+  "verificationStatus": "unconfirmed",
+  "theme": { "accent": "#CDB282", "accentHi": "#D9C39A", "accentDeep": "#8F7A54" },
+  "business": { "name": "__NAME__", "city": "Хабаровск", "category": "Детейлинг-студия" },
+  "hero": {
+    "eyebrow": "Детейлинг-студия · Хабаровск",
+    "title": "__HEADLINE — 3–4 слова, каждое станет строкой__",
+    "subtitle": "__Нейтральное описание без непроверенных обещаний__",
+    "image": "hero"
+  },
+  "intro": {
+    "statement": "__Короткое заявление; если это текст концепта — оставьте statementStatus: concept__",
+    "statementStatus": "concept",
+    "body": "__1–2 предложения__",
+    "image": "studio",
+    "facts": [
+      { "label": "Адрес", "value": "__", "status": "unconfirmed" }
+    ]
+  },
+  "contacts": {
+    "address": { "display": "__ул. …, Хабаровск__", "mapQuery": "Хабаровск, __", "status": "unconfirmed", "source": "__sourceKey__" },
+    "phones": [ { "display": "+7 ___ ___-__-__", "e164": "+70000000000", "status": "unconfirmed", "source": "__sourceKey__" } ],
+    "hours": { "value": null, "status": "missing" },
+    "website": { "url": null, "status": "unknown" },
+    "social": []
+  },
+  "servicesNote": "__Что подтверждено источниками, что нет__",
+  "services": [
+    {
+      "id": "__id__", "title": "__Название__", "image": "__imageKey__",
+      "short": "__Одна строка без непроверенных обещаний__",
+      "details": "__Что известно из источника / «Уточняйте у студии»__",
+      "status": "listed", "priceIds": []
+    }
+  ],
+  "prices": [
+    { "category": "__Категория__", "items": [
+      { "id": "__id__-q", "title": "__Услуга__", "amount": null, "unit": null, "source": null, "checkedAt": null }
+    ]}
+  ],
+  "pricesNote": "",
+  "principles": { "status": "concept", "items": [] },
+  "portfolio": [],
+  "promotions": [],
+  "reviews": [],
+  "images": {
+    "hero": { "alt": "__", "credit": { "label": "Unsplash", "url": "https://images.unsplash.com/photo-__", "license": "Unsplash License" } },
+    "studio": { "alt": "__", "credit": { "label": "Unsplash", "url": "https://images.unsplash.com/photo-__", "license": "Unsplash License" } }
+  },
+  "sources": {
+    "__sourceKey__": { "label": "__Справочник — страница__", "url": "https://example.org/", "note": "__Дата и что проверено__" }
+  },
+  "demo": { "removalContact": null }
+}
