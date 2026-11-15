@@ -1,0 +1,131 @@
+---
+/**
+ * Lead / request form with accessible validation and explicit states.
+ * Without PUBLIC_FORM_ENDPOINT it is a clearly labelled frontend demo.
+ */
+import type { SiteModel } from '../lib/types';
+import { getFormSettings, withBase } from '../lib/env';
+import Icon from './Icon.astro';
+interface Props {
+  site: SiteModel;
+  /** Options for the "service" select; defaults to the verified service list. */
+  options?: string[];
+  submitLabel?: string;
+}
+const { site, options = site.services, submitLabel = 'Отправить заявку' } = Astro.props;
+const settings = getFormSettings();
+const demo = !settings.endpoint;
+---
+
+<form
+  class="lead-form"
+  novalidate
+  data-lead-form
+  data-endpoint={settings.endpoint ?? ''}
+  data-business={site.name}
+  data-email={site.email ?? ''}
+  data-listing={site.links.profile}
+  aria-label="Заявка в сервис"
+>
+  {
+    demo && (
+      <div class="demo-banner" role="note">
+        <Icon name="info" />
+        <p>
+          <strong>Форма работает в демо-режиме</strong>
+          Заявки пока никуда не отправляются. После заполнения вы получите готовый текст обращения,
+          который можно передать сервису напрямую.
+        </p>
+      </div>
+    )
+  }
+  <div class="field--row">
+    <div class="field">
+      <label class="field__label" for="lead-name">
+        Ваше имя <span class="field__req" aria-hidden="true">*</span>
+      </label>
+      <input
+        class="field__control"
+        id="lead-name"
+        name="name"
+        type="text"
+        autocomplete="name"
+        required
+        aria-describedby="lead-name-error"
+      />
+      <p class="field__error" id="lead-name-error" data-error-for="name" role="alert" hidden></p>
+    </div>
+    <div class="field">
+      <label class="field__label" for="lead-contact">
+        Телефон, e-mail или @ник <span class="field__req" aria-hidden="true">*</span>
+      </label>
+      <input
+        class="field__control"
+        id="lead-contact"
+        name="contact"
+        type="text"
+        inputmode="text"
+        autocomplete="tel"
+        placeholder="+7 900 000-00-00"
+        required
+        aria-describedby="lead-contact-error"
+      />
+      <p class="field__error" id="lead-contact-error" data-error-for="contact" role="alert" hidden></p>
+    </div>
+  </div>
+  {
+    options.length > 0 && (
+      <div class="field">
+        <label class="field__label" for="lead-service">
+          Услуга
+        </label>
+        <select class="field__control" id="lead-service" name="service">
+          <option value="">Не выбрано</option>
+          {options.map((option) => (
+            <option value={option}>{option}</option>
+          ))}
+        </select>
+      </div>
+    )
+  }
+  <div class="field">
+    <label class="field__label" for="lead-message">Комментарий</label>
+    <textarea
+      class="field__control"
+      id="lead-message"
+      name="message"
+      rows="4"
+      maxlength="1000"
+      aria-describedby="lead-message-hint lead-message-error"></textarea>
+    <p class="field__hint" id="lead-message-hint">
+      Марка и модель автомобиля, что нужно сделать, удобное время.
+    </p>
+    <p class="field__error" id="lead-message-error" data-error-for="message" role="alert" hidden></p>
+  </div>
+  <div class="sr-only" aria-hidden="true">
+    <label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+  <div class="field">
+    <label class="consent">
+      <input type="checkbox" name="consent" required aria-describedby="lead-consent-error" />
+      <span>
+        Согласен(на) на обработку персональных данных на условиях
+        <a href={withBase('/privacy/')}>политики конфиденциальности</a>.
+        <span class="field__req" aria-hidden="true">*</span>
+      </span>
+    </label>
+    <p class="field__error" id="lead-consent-error" data-error-for="consent" role="alert" hidden></p>
+  </div>
+  <div class="cluster">
+    <button class="btn btn--primary" type="submit">
+      <span data-submit-label>{demo ? 'Сформировать заявку' : submitLabel}</span>
+      <Icon name="arrow" />
+    </button>
+    <span class="field__hint"><span class="field__req">*</span> — обязательные поля</span>
+  </div>
+  <div class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1" hidden></div>
+</form>
+
+<script>
+  import '../motion/form.ts';
+</script>

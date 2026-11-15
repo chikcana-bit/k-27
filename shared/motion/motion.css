@@ -1,0 +1,140 @@
+/*
+ * Shared motion language.
+ *
+ * Attribute API (driven by motion.ts):
+ *   data-reveal="up|fade|left|right|scale|mask|clip"  one-shot entrance on scroll
+ *   data-stagger                                      children with data-reveal get --i
+ *   data-split                                        heading split into words, staggered
+ *   data-parallax="0.12"                              slow vertical drift while scrolling
+ *   data-spotlight                                    --mx / --my pointer position
+ *
+ * Hidden states apply only when JS is running (`html.js`) and the user has not
+ * asked for reduced motion, so content is always readable without either.
+ */
+@layer motion {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root) {
+    animation: vt-out var(--dur-2) var(--ease-in) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-in var(--dur-3) var(--ease-out) both;
+  }
+
+  @keyframes vt-out {
+    to {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes vt-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html.js [data-reveal] {
+      opacity: 0;
+      transition:
+        opacity var(--dur-3) var(--ease-out),
+        transform var(--dur-3) var(--ease-out),
+        clip-path var(--dur-4) var(--ease-out);
+      transition-delay: calc(var(--i, 0) * var(--stagger) + var(--reveal-delay, 0ms));
+      will-change: opacity, transform;
+    }
+
+    html.js [data-reveal='up'],
+    html.js [data-reveal=''] {
+      transform: translateY(var(--reveal-shift));
+    }
+
+    html.js [data-reveal='left'] {
+      transform: translateX(calc(var(--reveal-shift) * -1.4));
+    }
+
+    html.js [data-reveal='right'] {
+      transform: translateX(calc(var(--reveal-shift) * 1.4));
+    }
+
+    html.js [data-reveal='scale'] {
+      transform: scale(0.94);
+    }
+
+    html.js [data-reveal='mask'] {
+      opacity: 1;
+      clip-path: inset(0 100% 0 0);
+    }
+
+    html.js [data-reveal='clip'] {
+      opacity: 1;
+      clip-path: inset(100% 0 0 0);
+    }
+
+    html.js [data-reveal].is-in {
+      opacity: 1;
+      transform: none;
+      clip-path: inset(0);
+    }
+
+    html.js [data-reveal].is-done {
+      will-change: auto;
+    }
+
+    /* split headings: each word rises out of its own mask */
+    html.js [data-split] .split-word {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: top;
+      padding-bottom: 0.12em;
+      margin-bottom: -0.12em;
+    }
+
+    html.js [data-split] .split-word > span {
+      display: inline-block;
+      transform: translateY(110%);
+      transition: transform var(--dur-4) var(--ease-out);
+      transition-delay: calc(var(--w, 0) * 55ms + var(--reveal-delay, 0ms));
+    }
+
+    html.js [data-split].is-in .split-word > span {
+      transform: none;
+    }
+
+    [data-parallax] {
+      transform: translate3d(0, var(--parallax-y, 0px), 0);
+      will-change: transform;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+
+    .scroll-progress {
+      display: none;
+    }
+  }
+}

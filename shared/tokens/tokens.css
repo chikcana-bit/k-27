@@ -1,0 +1,105 @@
+/*
+ * Shared design tokens for the six automotive service websites.
+ *
+ * Three layers:
+ *   1. primitives  - raw scales (type, space, radius, motion)
+ *   2. semantic    - colour roles and typographic roles (overridden per site)
+ *   3. component   - knobs that components read (overridden per site)
+ *
+ * Every site overrides only semantic and component tokens in its own
+ * `src/styles/theme.css` (unlayered, so it always wins over these layers).
+ */
+@layer tokens, base, components, motion;
+
+@layer tokens {
+  :root {
+    /* --- primitives: fluid type scale (min 16px body) --- */
+    --step--1: clamp(0.84rem, 0.81rem + 0.12vw, 0.9rem);
+    --step-0: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+    --step-1: clamp(1.2rem, 1.12rem + 0.38vw, 1.45rem);
+    --step-2: clamp(1.45rem, 1.3rem + 0.75vw, 1.95rem);
+    --step-3: clamp(1.8rem, 1.5rem + 1.5vw, 2.8rem);
+    --step-4: clamp(2.2rem, 1.6rem + 3vw, 4.2rem);
+    --step-5: clamp(2.6rem, 1.4rem + 6vw, 6.5rem);
+
+    /* --- primitives: spacing (4px base) --- */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --section-y: clamp(4rem, 2.5rem + 7vw, 8.5rem);
+
+    /* --- primitives: layout --- */
+    --container: 76rem;
+    --container-narrow: 46rem;
+    --gutter: clamp(1.125rem, 0.5rem + 3.2vw, 2.75rem);
+    --header-h: 4.5rem;
+
+    /* --- primitives: radius --- */
+    --radius-xs: 4px;
+    --radius-s: 8px;
+    --radius-m: 14px;
+    --radius-l: 24px;
+    --radius-pill: 999px;
+
+    /* --- primitives: motion --- */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-in: cubic-bezier(0.5, 0, 0.75, 0);
+    --dur-1: 160ms; /* micro feedback */
+    --dur-2: 320ms; /* state change */
+    --dur-3: 700ms; /* reveal */
+    --dur-4: 1100ms; /* hero choreography */
+    --stagger: 70ms;
+    --reveal-shift: 28px;
+
+    /* --- semantic: fonts --- */
+    --font-body: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-display: var(--font-body);
+    --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --display-weight: 700;
+    --display-tracking: -0.02em;
+    --display-leading: 1.04;
+    --display-case: none;
+    --eyebrow-font: var(--font-body);
+    --eyebrow-tracking: 0.16em;
+
+    /* --- semantic: colour roles (default = dark graphite) --- */
+    --c-bg: #0e1013;
+    --c-bg-alt: #14171c;
+    --c-surface: #191d23;
+    --c-surface-2: #222730;
+    --c-text: #f2f4f7;
+    --c-muted: #a3acb9;
+    --c-line: rgb(255 255 255 / 0.12);
+    --c-line-strong: rgb(255 255 255 / 0.28);
+    --c-accent: #d9a441;
+    --c-accent-strong: #ecc068;
+    --c-on-accent: #14110a;
+    --c-accent-soft: rgb(217 164 65 / 0.14);
+    --c-danger: #ff8a80;
+    --c-success: #7ddc9c;
+    --c-focus: var(--c-accent-strong);
+    --c-header-bg: rgb(14 16 19 / 0.78);
+    color-scheme: dark;
+
+    /* --- component knobs --- */
+    --btn-radius: var(--radius-pill);
+    --btn-weight: 650;
+    --btn-case: none;
+    --btn-tracking: 0;
+    --card-radius: var(--radius-m);
+    --card-bg: var(--c-surface);
+    --card-border: 1px solid var(--c-line);
+    --card-pad: clamp(1.25rem, 1rem + 1vw, 2rem);
+    --field-radius: var(--radius-s);
+    --field-bg: var(--c-surface);
+    --rule: 1px solid var(--c-line);
+    --shadow-pop: 0 18px 50px -20px rgb(0 0 0 / 0.55);
+  }
+}

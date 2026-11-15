@@ -1,0 +1,26 @@
+---
+/** Section heading: optional eyebrow / index, split-word animated title, optional lead. */
+interface Props {
+  title: string;
+  eyebrow?: string;
+  index?: string;
+  lead?: string;
+  center?: boolean;
+  id?: string;
+}
+const { title, eyebrow, index, lead, center = false, id } = Astro.props;
+---
+
+<header class:list={['section-head', { 'section-head--center': center }]}>
+  {
+    (eyebrow || index) && (
+      <p class="eyebrow" data-reveal="fade">
+        {index && <span class="section-head__index">{index}</span>}
+        {eyebrow}
+      </p>
+    )
+  }
+  <h2 id={id} data-split>{title}</h2>
+  {lead && <p class="lead" data-reveal="up">{lead}</p>}
+  <slot />
+</header>

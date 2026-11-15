@@ -1,0 +1,31 @@
+---
+/** Inline SVG icon set (stroke icons, decorative by default). */
+interface Props {
+  name: 'arrow' | 'external' | 'pin' | 'clock' | 'mail' | 'chat' | 'star' | 'info' | 'check';
+  class?: string;
+}
+const { name, class: className = '' } = Astro.props;
+const paths: Record<Props['name'], string> = {
+  arrow: 'M5 12h14M13 6l6 6-6 6',
+  external: 'M7 17 17 7M9 7h8v8',
+  pin: 'M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Zm0-8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z',
+  clock: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-14v5l3 2',
+  mail: 'M3 6h18v12H3zM3 7l9 6 9-6',
+  chat: 'M4 5h16v11H9l-5 4z',
+  star: 'm12 3 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9 6.6 19.8l1.1-6.1L3.2 9.4l6.1-.8z',
+  info: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-10v6m0-9v.5',
+  check: 'm5 12.5 4.5 4.5L19 7.5',
+};
+---
+
+<svg
+  class:list={['icon', `icon--${name}`, className]}
+  viewBox="0 0 24 24"
+  fill={name === 'star' ? 'currentColor' : 'none'}
+  stroke="currentColor"
+  stroke-width={name === 'star' ? 0 : 1.8}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"><path d={paths[name]}></path></svg
+>

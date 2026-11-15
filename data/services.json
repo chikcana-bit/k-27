@@ -1,0 +1,408 @@
+{
+  "project": "Six Automotive Service Websites",
+  "city": "Komsomolsk-on-Amur",
+  "country": "Russia",
+  "source": "Verified 2GIS business listings and price pages; checked on 15 November 2026",
+  "important": "Prices may change and are not a public offer. Phone numbers are partially masked by 2GIS. Do not invent missing details. Owner-uploaded photo URLs are source references only and do not grant permission to republish.",
+  "services": [
+    {
+      "id": "service_01",
+      "name": "DetailTeamServis",
+      "category": "Car detailing",
+      "address": "5V Basic Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+      "rating": "5.0/5 (52 ratings; value shown on the 2GIS listing when checked)",
+      "phone": "Partially displayed: +7‒994‒134…; 2GIS masks the full number in its text view",
+      "messengers": [
+        "WhatsApp",
+        "Telegram",
+        "Max"
+      ],
+      "email": null,
+      "hours": "The listing showed the business as closed and opening tomorrow at 10:00; the full weekly schedule was not retrieved",
+      "services": [
+        "Automotive window tinting"
+      ],
+      "prices": [
+        {
+          "service": "Windshield / rear window tinting",
+          "price": "from RUB 3,000"
+        },
+        {
+          "service": "Quarter window tinting",
+          "price": "from RUB 500"
+        },
+        {
+          "service": "Side window tinting",
+          "price": "from RUB 2,500"
+        }
+      ],
+      "price_count": 3,
+      "photo_count": 49,
+      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001103288091",
+      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001103288091/tab/prices",
+      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001103288091",
+      "verified_notes": "2GIS listing verified: business name, address, category, rating, messenger contacts, masked phone number, 3 price items, and 49 photos."
+    },
+    {
+      "id": "service_02",
+      "name": "360",
+      "category": "Detailing studio",
+      "address": "22/1 Kotovsky Street, Railway Station District, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681013, Russia",
+      "rating": "5.0/5 (42 ratings; value shown on the 2GIS listing when checked)",
+      "phone": "Partially displayed: +7‒914‒185…; 2GIS masks the full number in its text view",
+      "messengers": [
+        "Telegram",
+        "Max"
+      ],
+      "email": "wraplab27@gmail.com",
+      "hours": "The listing showed the business as closed and opening tomorrow at 10:00; the full weekly schedule was not retrieved",
+      "services": [
+        "Paint protection film (PPF) installation",
+        "Vinyl wrapping and color change",
+        "Automotive glass film installation",
+        "Car care and polishing",
+        "Soundproofing"
+      ],
+      "prices": [
+        {
+          "service": "PPF installation on the front end and high-impact areas",
+          "price": "from RUB 70,000"
+        },
+        {
+          "service": "Full-body gloss PPF installation",
+          "price": "from RUB 220,000"
+        },
+        {
+          "service": "Headlight film installation",
+          "price": "from RUB 7,000"
+        },
+        {
+          "service": "Full-body matte PPF installation",
+          "price": "from RUB 240,000"
+        },
+        {
+          "service": "Partial body panel wrapping",
+          "price": "from RUB 1,500"
+        },
+        {
+          "service": "Vinyl wrap / custom design project",
+          "price": "from RUB 120,000"
+        },
+        {
+          "service": "Black PPF roof wrap",
+          "price": "RUB 20,000–30,000"
+        },
+        {
+          "service": "Chrome delete",
+          "price": "from RUB 10,000"
+        },
+        {
+          "service": "Colored PPF installation",
+          "price": "from RUB 280,000"
+        },
+        {
+          "service": "Windshield protection film",
+          "price": "RUB 23,000–27,000"
+        },
+        {
+          "service": "Hydrophobic glass coating (rain repellent)",
+          "price": "RUB 2,000–6,000"
+        },
+        {
+          "service": "Heavy paint correction",
+          "price": "from RUB 20,000"
+        },
+        {
+          "service": "Single-stage paint polishing",
+          "price": "from RUB 15,000"
+        },
+        {
+          "service": "Two-component ceramic coating",
+          "price": "from RUB 18,000"
+        },
+        {
+          "service": "Full vehicle soundproofing",
+          "price": "from RUB 95,000"
+        }
+      ],
+      "price_count": 15,
+      "photo_count": 33,
+      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001102508139",
+      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001102508139/tab/prices",
+      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001102508139",
+      "verified_notes": "The 2GIS price list was marked as updated on 16 September 2026; it is not a public offer. The listing includes Telegram, Max, and an email address."
+    },
+    {
+      "id": "service_03",
+      "name": "Luxury Styling & Detailing",
+      "category": "Interior customization and car detailing workshop",
+      "address": "29A Komsomolskaya Street, Quarter 4, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+      "rating": "4.9/5 (145–146 ratings; count varies on the listing)",
+      "phone": "Partially displayed: +7‒924‒110…; 2GIS masks the full number in its text view",
+      "messengers": [
+        "Telegram",
+        "WhatsApp",
+        "Max"
+      ],
+      "email": "luxurystylinginbox@gmail.com",
+      "hours": "The listing showed the business as closed and opening at 10:00; the full weekly schedule was not retrieved",
+      "services": [
+        "Interior and trim reupholstery",
+        "Steering wheel and seat reupholstery",
+        "Seat side-bolster foam repair",
+        "Headliner, armrest, and door-card reupholstery",
+        "Exterior paint polishing",
+        "Ceramic coating application",
+        "Window tinting",
+        "Interior deep cleaning",
+        "Soundproofing",
+        "Dashboard reupholstery",
+        "Chrome delete",
+        "Body and headlight protection with PPF"
+      ],
+      "prices": [
+        {
+          "service": "Steering wheel reupholstery",
+          "price": "from RUB 8,000"
+        },
+        {
+          "service": "Front seat and rear bench reupholstery",
+          "price": "from RUB 95,000"
+        },
+        {
+          "service": "Seat side-bolster foam repair",
+          "price": "from RUB 7,000"
+        },
+        {
+          "service": "Seat upholstery panel re-stitching",
+          "price": "from RUB 8,000"
+        },
+        {
+          "service": "Headliner reupholstery",
+          "price": "from RUB 40,000"
+        },
+        {
+          "service": "Armrest reupholstery",
+          "price": "from RUB 3,000"
+        },
+        {
+          "service": "Door-card reupholstery",
+          "price": "from RUB 4,000"
+        },
+        {
+          "service": "Exterior paint polishing",
+          "price": "from RUB 22,000"
+        },
+        {
+          "service": "Ceramic coating application",
+          "price": "from RUB 15,000"
+        },
+        {
+          "service": "Window tinting",
+          "price": "from RUB 500"
+        },
+        {
+          "service": "Interior deep cleaning",
+          "price": "from 12 000 ₽"
+        },
+        {
+          "service": "Interior soundproofing",
+          "price": "from RUB 8,500"
+        },
+        {
+          "service": "Dashboard reupholstery",
+          "price": "from RUB 30,000"
+        },
+        {
+          "service": "Chrome delete",
+          "price": "from RUB 1,500"
+        },
+        {
+          "service": "Front-end PPF installation",
+          "price": "from RUB 90,000"
+        },
+        {
+          "service": "Full-body gloss PPF installation",
+          "price": "from RUB 200,000"
+        },
+        {
+          "service": "Full-body matte PPF installation",
+          "price": "from RUB 240,000"
+        },
+        {
+          "service": "Headlight PPF installation",
+          "price": "from RUB 6,000"
+        },
+        {
+          "service": "Windshield protection film installation",
+          "price": "from RUB 25,000"
+        }
+      ],
+      "price_count": 19,
+      "photo_count": 187,
+      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001023298311",
+      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001023298311/tab/prices",
+      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001023298311",
+      "verified_notes": "The 2GIS price list was updated on 13 May 2026; the information is not a public offer. The page lists estimated completion times for some services."
+    },
+    {
+      "id": "service_04",
+      "name": "Avtomaks Mobile Center",
+      "category": "Auto repair shop",
+      "address": "32/1 Vokzalnaya Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+      "rating": "5.0/5 (239 ratings; value shown on the 2GIS listing when checked)",
+      "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
+      "messengers": [
+        "WhatsApp"
+      ],
+      "email": null,
+      "hours": "The listing showed the business as closed and opening tomorrow at 09:00; the full weekly schedule was not retrieved",
+      "services": [
+        "Category: vehicle service and repair shop; a detailed service list was not available in the accessible listing text"
+      ],
+      "prices": [],
+      "price_count": null,
+      "photo_count": 12,
+      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228",
+      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228/tab/menu",
+      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229852186380228",
+      "verified_notes": "The listing shows a “Prices” section, but the opened page leads to a menu with no extractable prices. Do not add prices without confirmation."
+    },
+    {
+      "id": "service_05",
+      "name": "ProSTO",
+      "category": "Auto repair workshop",
+      "address": "90 Puteiskaya Street, Molodyozhny Settlement, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+      "rating": "4.8/5 (221 ratings; value shown on the 2GIS listing when checked)",
+      "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
+      "messengers": [
+        "WhatsApp"
+      ],
+      "email": null,
+      "hours": "Daily, 10:00–19:00 (according to the 2GIS listing)",
+      "services": [
+        "Engine and drivetrain repair and replacement",
+        "Automatic/manual/CVT transmission removal and installation",
+        "Engine removal and installation",
+        "Suspension and undercarriage repairs",
+        "Driveshaft services",
+        "Hydropneumatic suspension and KDSS repair / bleeding"
+      ],
+      "prices": [
+        {
+          "service": "Automatic/manual/CVT transmission removal and installation",
+          "price": "from RUB 15,000"
+        },
+        {
+          "service": "Engine removal and installation",
+          "price": "from RUB 20,000"
+        },
+        {
+          "service": "Engine subframe removal and installation",
+          "price": "from RUB 6,000"
+        },
+        {
+          "service": "Rear axle beam removal and installation",
+          "price": "from RUB 10,000"
+        },
+        {
+          "service": "Driveshaft universal joint replacement",
+          "price": "from RUB 3,000"
+        },
+        {
+          "service": "Driveshaft replacement",
+          "price": "from RUB 3,000"
+        },
+        {
+          "service": "Pressing in a control arm bushing / ball joint (per unit)",
+          "price": "from RUB 2,500"
+        },
+        {
+          "service": "CV boot / CV joint replacement",
+          "price": "from RUB 2,000"
+        },
+        {
+          "service": "Drive axle replacement",
+          "price": "from RUB 2,000"
+        },
+        {
+          "service": "Shock absorber replacement",
+          "price": "from RUB 2,500"
+        },
+        {
+          "service": "Stabilizer link replacement",
+          "price": "from RUB 800"
+        },
+        {
+          "service": "Wheel hub bearing replacement",
+          "price": "from RUB 2,500"
+        },
+        {
+          "service": "Ball joint replacement",
+          "price": "from RUB 2,500"
+        },
+        {
+          "service": "Drum brake shoe replacement",
+          "price": "from RUB 1,600"
+        },
+        {
+          "service": "Disc brake pad replacement",
+          "price": "from RUB 1,000"
+        },
+        {
+          "service": "Timing chain replacement",
+          "price": "from RUB 18,000"
+        }
+      ],
+      "price_count": 31,
+      "photo_count": 36,
+      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571",
+      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571/tab/prices",
+      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229853186795571",
+      "verified_notes": "The 2GIS price list was updated on 14 November 2026. The listing explicitly states that prices are starting prices and do not constitute a public offer. The full list contains 31 items; this file includes a selection of the main visible items."
+    },
+    {
+      "id": "service_06",
+      "name": "ZigZag",
+      "category": "Auto service center",
+      "address": "8/3G Alleya Truda Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+      "rating": "4.9/5 (194 ratings; value shown on the 2GIS price page when checked)",
+      "phone": "Partially displayed: +7‒962‒286…; 2GIS masks the full number in its text view",
+      "messengers": [
+        "Telegram"
+      ],
+      "email": "zigzag27kms@gmail.com",
+      "hours": "The listing showed the business as closed and opening tomorrow at 09:00; the full weekly schedule was not retrieved",
+      "services": [
+        "Suspension diagnostics",
+        "Comprehensive diagnostics of suspension, engine, and technical fluids",
+        "Computer diagnostics of electronic systems",
+        "Installation of Pandora and StarLine security systems (according to the listing description)"
+      ],
+      "prices": [
+        {
+          "service": "Suspension diagnostics",
+          "price": "RUB 800–1,500"
+        },
+        {
+          "service": "Comprehensive diagnostics (suspension / engine / fluids)",
+          "price": "RUB 1,800–2,800"
+        },
+        {
+          "service": "Computer diagnostics (quick scan)",
+          "price": "RUB 1,700"
+        },
+        {
+          "service": "Computer diagnostics (full scan)",
+          "price": "RUB 2,500"
+        }
+      ],
+      "price_count": 4,
+      "photo_count": 63,
+      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001036317662",
+      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001036317662/tab/prices",
+      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001036317662",
+      "verified_notes": "The 2GIS price list was updated on 9 March 2026; the information is not a public offer."
+    }
+  ]
+}

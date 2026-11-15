@@ -1,0 +1,55 @@
+---
+import type { SiteModel } from '../lib/types';
+import { formatDateRu } from '../lib/model';
+import { withBase } from '../lib/env';
+import type { NavItem } from './SiteHeader.astro';
+interface Props {
+  site: SiteModel;
+  nav: NavItem[];
+  home?: boolean;
+}
+const { site, nav, home = true } = Astro.props;
+const resolve = (href: string) => (href.startsWith('#') && !home ? withBase('/') + href : href);
+const a = site.content.addressRu;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="stack">
+        <p class="site-footer__name">{site.name}</p>
+        <p>{site.content.categoryRu}</p>
+        <p>{a.street}, {a.city}</p>
+      </div>
+      <nav aria-label="Навигация в подвале">
+        <p class="site-footer__title">Разделы</p>
+        <ul class="site-footer__links">
+          {
+            nav.map((item) => (
+              <li>
+                <a href={resolve(item.href)}>{item.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div>
+        <p class="site-footer__title">Информация</p>
+        <ul class="site-footer__links">
+          <li>
+            <a href={site.links.profile} target="_blank" rel="noopener noreferrer">
+              Карточка в 2ГИС<span class="sr-only"> (откроется в новой вкладке)</span>
+            </a>
+          </li>
+          <li><a href={withBase('/privacy/')}>Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>
+        Сведения о компании и цены приведены по данным 2ГИС на {formatDateRu(site.checkedOn)} и не
+        являются публичной офертой.
+      </p>
+    </div>
+  </div>
+</footer>

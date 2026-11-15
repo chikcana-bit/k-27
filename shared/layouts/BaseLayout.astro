@@ -1,0 +1,80 @@
+---
+/**
+ * Document shell shared by every page of every site: metadata, skip link,
+ * shared tokens/base/components/motion CSS and the motion runtime.
+ * Site themes are imported by the page and stay unlayered so they win.
+ */
+import '@fontsource-variable/manrope/index.css';
+import '../tokens/tokens.css';
+import '../tokens/base.css';
+import '../tokens/components.css';
+import '../motion/motion.css';
+import type { SiteModel } from '../lib/types';
+
+interface Props {
+  site: SiteModel;
+  /** Page title without the business name. */
+  title: string;
+  description?: string;
+  /** Theme-colour for browser chrome (site background). */
+  themeColor?: string;
+  noindex?: boolean;
+}
+const { site, title, description = site.content.descriptionRu, themeColor, noindex = false } = Astro.props;
+const fullTitle = `${site.name} — ${title}`;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+const a = site.content.addressRu;
+// Structured data limited to verified facts (no phone, hours or rating markup).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AutomotiveBusiness',
+  name: site.name,
+  description: site.content.descriptionRu,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: a.street,
+    addressLocality: a.city,
+    addressRegion: a.region,
+    postalCode: a.postalCode,
+    addressCountry: 'RU',
+  },
+  ...(site.email ? { email: site.email } : {}),
+  ...(canonical ? { url: canonical } : {}),
+  sameAs: [site.links.profile],
+};
+---
+
+<!doctype html>
+<html lang="ru" data-site={site.id}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {(noindex || !Astro.site) && <meta name="robots" content="noindex" />}
+    {themeColor && <meta name="theme-color" content={themeColor} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="format-detection" content="telephone=no" />
+    <slot name="head" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <slot name="header" />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+    <script>
+      import '../motion/motion.ts';
+    </script>
+  </body>
+</html>

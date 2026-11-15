@@ -1,0 +1,61 @@
+---
+/**
+ * Gallery of approved first-party photos.
+ * Photos must exist in services/<id>/photos/ AND be listed in
+ * profile.json -> approved_photos. Renders nothing otherwise - never use
+ * stock, AI-generated, hot-linked or third-party images here.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { ApprovedPhoto } from '../lib/types';
+
+interface Props {
+  photos: ApprovedPhoto[];
+  /** Result of import.meta.glob(..., { eager: true }) over the photos folder. */
+  files: Record<string, { default: ImageMetadata }>;
+}
+const { photos, files } = Astro.props;
+const resolved = photos.flatMap((photo) => {
+  const key = Object.keys(files).find((path) => path.endsWith(`/photos/${photo.file}`));
+  const image = key ? files[key]?.default : undefined;
+  return image ? [{ photo, image }] : [];
+});
+---
+
+{
+  resolved.length > 0 && (
+    <>
+      <ul class="gallery" data-stagger>
+        {resolved.map(({ photo, image }) => (
+          <li data-reveal="scale">
+            <button
+              class="gallery__item"
+              type="button"
+              data-gallery-item
+              data-full={image.src}
+              data-alt={photo.alt_ru}
+              aria-label={`Открыть фото: ${photo.alt_ru}`}
+            >
+              <Image
+                src={image}
+                alt={photo.alt_ru}
+                widths={[320, 640, 960]}
+                sizes="(min-width: 60em) 25vw, (min-width: 40em) 50vw, 100vw"
+                loading="lazy"
+              />
+            </button>
+          </li>
+        ))}
+      </ul>
+      <dialog class="lightbox" data-lightbox aria-label="Просмотр фотографии">
+        <img src="" alt="" />
+        <div class="lightbox__bar">
+          <p data-lightbox-caption />
+          <button class="btn btn--small" type="button" data-lightbox-close>
+            Закрыть
+          </button>
+        </div>
+      </dialog>
+    </>
+  )
+}

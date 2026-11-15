@@ -1,0 +1,454 @@
+/*
+ * service_01 - DetailTeamServis - art direction "Shade".
+ * Graphite surfaces, an ice-cyan accent and translucent layered panes that
+ * echo tinted glass. Overrides shared semantic/component tokens only.
+ */
+@import '@fontsource-variable/unbounded/index.css';
+
+:root {
+  --font-display: 'Unbounded Variable', var(--font-body);
+  --display-weight: 600;
+  --display-tracking: -0.035em;
+  --display-leading: 1.08;
+  --step-5: clamp(1.9rem, 1rem + 4.4vw, 4.6rem);
+  --step-4: clamp(1.6rem, 1.1rem + 2.4vw, 3rem);
+  --step-3: clamp(1.45rem, 1.2rem + 1.2vw, 2.2rem);
+
+  --c-bg: #0a0c0f;
+  --c-bg-alt: #0f1317;
+  --c-surface: #141a1f;
+  --c-surface-2: #1c242b;
+  --c-text: #eef3f6;
+  --c-muted: #9fb0bb;
+  --c-accent: #86dcee;
+  --c-accent-strong: #a9e9f6;
+  --c-on-accent: #04161b;
+  --c-accent-soft: rgb(134 220 238 / 0.12);
+  --c-header-bg: rgb(10 12 15 / 0.72);
+
+  --btn-radius: 6px;
+  --card-radius: 18px;
+  --field-radius: 6px;
+}
+
+.page-top {
+  padding-top: calc(var(--header-h) + var(--space-8));
+}
+
+.page-title {
+  font-size: var(--step-4);
+}
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  padding-block: calc(var(--header-h) + 3rem) clamp(3.5rem, 8vh, 6rem);
+  overflow: clip;
+  isolation: isolate;
+}
+
+.hero__scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(90rem 40rem at 78% 8%, rgb(134 220 238 / 0.1), transparent 60%),
+    linear-gradient(180deg, #0d1115 0%, var(--c-bg) 80%);
+}
+
+.hero__sun {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  width: clamp(14rem, 34vw, 30rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #fff8e6 0%, #ffd58a 22%, #ff9a4d 46%, transparent 70%);
+  filter: blur(6px);
+  opacity: 0.95;
+  animation: sun-in var(--dur-4) var(--ease-out) both;
+}
+
+.hero__pane {
+  position: absolute;
+  animation: pane-in 1400ms var(--ease-out) both;
+}
+
+.hero__pane i {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgb(20 28 34 / 0.38), rgb(6 9 12 / 0.74));
+  backdrop-filter: blur(3px) saturate(0.8);
+  -webkit-backdrop-filter: blur(3px) saturate(0.8);
+  box-shadow:
+    inset 0 0 0 1px rgb(169 233 246 / 0.22),
+    inset 0 1px 0 rgb(255 255 255 / 0.25);
+}
+
+/* window silhouettes: quarter light, side glass, windshield */
+.hero__pane--back {
+  top: 6%;
+  right: 26%;
+  width: clamp(12rem, 30vw, 28rem);
+  height: clamp(10rem, 26vw, 24rem);
+  animation-delay: 150ms;
+}
+.hero__pane--back i {
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  border-radius: 14px;
+}
+
+.hero__pane--mid {
+  top: 16%;
+  right: 8%;
+  width: clamp(13rem, 32vw, 30rem);
+  height: clamp(10rem, 24vw, 22rem);
+  animation-delay: 300ms;
+}
+.hero__pane--mid i {
+  clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
+}
+
+.hero__pane--front {
+  top: 30%;
+  right: -4%;
+  width: clamp(12rem, 28vw, 26rem);
+  height: clamp(9rem, 20vw, 19rem);
+  animation-delay: 450ms;
+}
+.hero__pane--front i {
+  clip-path: polygon(0 0, 100% 34%, 100% 100%, 0 100%);
+  background: linear-gradient(160deg, rgb(14 20 25 / 0.5), rgb(4 6 8 / 0.86));
+}
+
+/* one highlight sweep across the glass after the entrance */
+.hero__pane i::after {
+  content: '';
+  position: absolute;
+  inset: -20% -60%;
+  background: linear-gradient(105deg, transparent 42%, rgb(255 255 255 / 0.2) 50%, transparent 58%);
+  transform: translateX(-60%);
+  animation: sweep 2200ms var(--ease-in-out) 1100ms both;
+}
+
+.hero__horizon {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(180deg, transparent, var(--c-bg) 78%);
+}
+
+@keyframes sun-in {
+  from {
+    opacity: 0;
+    scale: 0.7;
+  }
+}
+
+@keyframes pane-in {
+  from {
+    opacity: 0;
+    translate: 6rem 2rem;
+  }
+}
+
+@keyframes sweep {
+  to {
+    transform: translateX(60%);
+  }
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-5);
+  justify-items: start;
+}
+
+.hero__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.hero__title {
+  max-width: 13ch;
+  text-shadow: 0 2px 30px rgb(0 0 0 / 0.5);
+}
+
+.hero__lead {
+  max-width: 30em;
+  color: #c9d5dc;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-7);
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: var(--rule);
+  width: 100%;
+}
+
+.hero__address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--c-muted);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.hero__scroll {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(3.5rem, 8vh, 6rem);
+  display: none;
+  width: 2.75rem;
+  height: 4.5rem;
+  border: 1px solid var(--c-line-strong);
+  border-radius: 2rem;
+}
+
+.hero__scroll span {
+  position: absolute;
+  left: 50%;
+  top: 0.8rem;
+  width: 4px;
+  height: 10px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: var(--c-accent);
+  animation: scroll-hint 2.4s var(--ease-in-out) 3;
+}
+
+@keyframes scroll-hint {
+  50% {
+    transform: translateY(1.8rem);
+    opacity: 0.2;
+  }
+}
+
+@media (min-width: 60em) {
+  .hero__scroll {
+    display: block;
+  }
+  .hero__meta {
+    width: auto;
+    min-width: 34rem;
+  }
+}
+
+@media (max-width: 47.99em) {
+  .hero__sun {
+    top: 9%;
+    right: -8%;
+    width: 17rem;
+  }
+  .hero__pane--back {
+    right: 30%;
+    top: 7%;
+  }
+  .hero__pane--mid {
+    right: -6%;
+    top: 14%;
+  }
+  .hero__pane--front {
+    right: -18%;
+    top: 26%;
+  }
+}
+
+/* ---------- prices as shade cards ---------- */
+.shade-prices .price-list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+.shade-prices .price-row {
+  position: relative;
+  min-height: 19rem;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  overflow: hidden;
+  background: linear-gradient(180deg, #1a2228, #0f1418);
+  transition:
+    transform var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+
+/* each card carries a pane that is one step darker than the previous */
+.shade-prices .price-row::before {
+  content: '';
+  position: absolute;
+  inset: 1.25rem 1.25rem 46% 1.25rem;
+  border-radius: 10px;
+  background:
+    linear-gradient(115deg, transparent 40%, rgb(255 255 255 / 0.14) 50%, transparent 60%) -120% 0 / 220% 100%
+      no-repeat,
+    linear-gradient(
+      180deg,
+      rgb(134 220 238 / var(--tint, 0.5)),
+      rgb(134 220 238 / calc(var(--tint, 0.5) * 0.25))
+    );
+  box-shadow: inset 0 0 0 1px rgb(169 233 246 / 0.25);
+  transition: background-position 900ms var(--ease-out);
+}
+
+.shade-prices .price-row:nth-child(1)::before {
+  --tint: 0.46;
+  clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+}
+.shade-prices .price-row:nth-child(2)::before {
+  --tint: 0.26;
+  clip-path: polygon(0 0, 100% 46%, 100% 100%, 0 100%);
+}
+.shade-prices .price-row:nth-child(3)::before {
+  --tint: 0.12;
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+}
+
+.shade-prices .price-row:hover {
+  transform: translateY(-6px);
+  border-color: var(--c-accent);
+  background: linear-gradient(180deg, #1a2228, #0f1418);
+}
+
+.shade-prices .price-row:hover::before {
+  background-position:
+    220% 0,
+    0 0;
+}
+
+.shade-prices .price-row__label {
+  flex: none;
+  font-weight: 600;
+  font-size: var(--step-1);
+  line-height: 1.25;
+}
+
+.shade-prices .price-row__value {
+  font-size: var(--step-3);
+}
+
+/* ---------- about ---------- */
+.about {
+  overflow: clip;
+}
+
+.about__ghost {
+  position: absolute;
+  right: -2vw;
+  top: 8%;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(6rem, 22vw, 20rem);
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(134 220 238 / 0.13);
+  pointer-events: none;
+  user-select: none;
+}
+
+.about__text {
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--c-muted);
+  max-width: 32em;
+}
+
+.facts {
+  position: relative;
+  border-top: var(--rule);
+}
+
+.facts__row {
+  display: grid;
+  gap: 0.25rem;
+  padding: var(--space-5) 0;
+  border-bottom: var(--rule);
+}
+
+.facts dt {
+  font-size: var(--step--1);
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-accent-strong);
+}
+
+.facts dd {
+  font-size: var(--step-1);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ---------- location card ---------- */
+.location {
+  position: relative;
+  display: grid;
+  align-content: end;
+  gap: var(--space-3);
+  min-height: clamp(20rem, 42vw, 30rem);
+  padding: var(--card-pad);
+  border-radius: var(--card-radius);
+  border: var(--card-border);
+  background:
+    radial-gradient(24rem 16rem at 80% 10%, rgb(255 170 90 / 0.28), transparent 65%),
+    linear-gradient(180deg, #141a1f, #0c1013);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.location__panes {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.location__panes i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 46%;
+  background: linear-gradient(180deg, rgb(8 12 15 / 0.32), rgb(8 12 15 / 0.7));
+  box-shadow: inset 1px 0 0 rgb(169 233 246 / 0.18);
+  transform: skewX(-14deg);
+  transform-origin: bottom;
+}
+
+.location__panes i:nth-child(1) {
+  left: 22%;
+}
+.location__panes i:nth-child(2) {
+  left: 46%;
+}
+.location__panes i:nth-child(3) {
+  left: 70%;
+}
+
+.location__street {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-3);
+  letter-spacing: var(--display-tracking);
+  line-height: 1.1;
+}
+
+.location .text-link {
+  justify-self: start;
+  min-height: 2.75rem;
+}
+
+/* ---------- request ---------- */
+@media (min-width: 60em) {
+  .request__intro {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+}

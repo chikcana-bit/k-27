@@ -1,0 +1,49 @@
+---
+/** Verified service list in three layouts. Renders nothing when the list is empty. */
+interface Props {
+  items: string[];
+  variant?: 'cards' | 'rows' | 'tags';
+}
+const { items, variant = 'cards' } = Astro.props;
+const num = (index: number) => String(index + 1).padStart(2, '0');
+---
+
+{
+  items.length > 0 && variant === 'cards' && (
+    <ul class="services services--cards" data-stagger>
+      {items.map((item, index) => (
+        <li class="service-card" data-reveal="up" data-spotlight>
+          <span class="service-card__num" aria-hidden="true">
+            {num(index)}
+          </span>
+          <h3 class="service-card__title">{item}</h3>
+        </li>
+      ))}
+    </ul>
+  )
+}
+{
+  items.length > 0 && variant === 'rows' && (
+    <ul class="services services--rows" data-stagger>
+      {items.map((item, index) => (
+        <li class="service-row" data-reveal="up">
+          <span class="service-row__num" aria-hidden="true">
+            {num(index)}
+          </span>
+          <h3 class="service-row__title">{item}</h3>
+        </li>
+      ))}
+    </ul>
+  )
+}
+{
+  items.length > 0 && variant === 'tags' && (
+    <ul class="services services--tags" data-stagger>
+      {items.map((item) => (
+        <li class="service-tag" data-reveal="scale">
+          {item}
+        </li>
+      ))}
+    </ul>
+  )
+}

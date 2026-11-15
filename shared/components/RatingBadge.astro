@@ -1,0 +1,25 @@
+---
+/** Rating exactly as recorded from the 2GIS listing, with the check date. */
+import type { SiteModel } from '../lib/types';
+import { formatDateRu, ratingCountLabel } from '../lib/model';
+import Icon from './Icon.astro';
+interface Props {
+  site: SiteModel;
+}
+const { site } = Astro.props;
+const { rating } = site;
+---
+
+{
+  rating && (
+    <a class="rating" href={site.links.profile} target="_blank" rel="noopener noreferrer">
+      <Icon name="star" class="rating__star" />
+      <span class="rating__value">{rating.value}</span>
+      <span class="rating__meta">
+        <strong>Рейтинг в 2ГИС · {ratingCountLabel(rating)}</strong>
+        <span>по состоянию на {formatDateRu(site.checkedOn)}</span>
+        <span class="sr-only">(откроется в новой вкладке)</span>
+      </span>
+    </a>
+  )
+}

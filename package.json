@@ -1,0 +1,31 @@
+{
+  "name": "autoservice-six",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Six automotive service websites (Komsomolsk-on-Amur) built on one shared design system.",
+  "workspaces": ["shared", "sites/*"],
+  "scripts": {
+    "dev": "node scripts/run.mjs dev",
+    "build": "node scripts/run.mjs build",
+    "build:pages": "node scripts/build-pages.mjs",
+    "check": "node scripts/run.mjs check",
+    "lint": "eslint . && prettier --check \"shared/**/*.{ts,css}\" \"scripts/**/*.mjs\" \"tests/**/*.mjs\" \"sites/*/src/**/*.{ts,css}\"",
+    "format": "prettier --write \"shared/**/*.{ts,css}\" \"scripts/**/*.mjs\" \"tests/**/*.mjs\" \"sites/*/src/**/*.{ts,css}\"",
+    "validate:data": "node scripts/validate-data.mjs",
+    "validate:dist": "node scripts/validate-dist.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
+    "test:e2e": "node tests/e2e/smoke.mjs",
+    "qa": "npm run validate:data && npm run lint && npm run check && npm run test && npm run build && npm run validate:dist && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@eslint/js": "^9.0.0",
+    "astro": "^7.4.12",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "engines": { "node": ">=20" }
+}

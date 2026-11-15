@@ -1,0 +1,71 @@
+---
+/**
+ * Price list built from the verified local price excerpt.
+ * Amounts come from profile.json via parsePrice(); always shows the
+ * "not a public offer" note and a link to the live source price list.
+ */
+import type { PriceRow, SiteModel } from '../lib/types';
+import { formatDateRu } from '../lib/model';
+import Icon from './Icon.astro';
+
+interface Props {
+  site: SiteModel;
+  variant?: 'plain' | 'leaders' | 'cards';
+  /** Render only these rows (defaults to every row / configured groups). */
+  rows?: PriceRow[];
+  showNote?: boolean;
+}
+const { site, variant = 'plain', rows, showNote = true } = Astro.props;
+const groups = rows
+  ? [{ titleRu: '', rows }]
+  : site.priceGroups.length > 0
+    ? site.priceGroups
+    : [{ titleRu: '', rows: site.prices }];
+const { priceUpdated, priceListTotal } = site.content;
+const startingOnly = site.prices.every((row) => row.kind === 'from');
+---
+
+<div class:list={['prices', `prices--${variant}`]}>
+  {
+    groups.map((group) => (
+      <div class="price-group">
+        {group.titleRu && (
+          <h3 class="price-group__title" data-reveal="up">
+            {group.titleRu}
+          </h3>
+        )}
+        <ul class="price-list" data-stagger>
+          {group.rows.map((row) => (
+            <li class="price-row" data-reveal="up">
+              <span class="price-row__label">{row.labelRu}</span>
+              <span class="price-row__leader" aria-hidden="true" />
+              <span class="price-row__value">{row.display}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
+{
+  showNote && (
+    <div class="price-note" data-reveal="up">
+      <p>
+        {startingOnly ? 'Указаны начальные цены. ' : ''}
+        Цены приведены по данным карточки компании в 2ГИС
+        {priceUpdated ? ` (прайс обновлён ${formatDateRu(priceUpdated)})` : ''}, могут измениться и
+        не являются публичной офертой. Точную стоимость уточняйте перед визитом.
+        {priceListTotal && priceListTotal > site.prices.length
+          ? ` Здесь показана часть позиций: в полном прайсе их ${priceListTotal}.`
+          : ''}
+      </p>
+      <p>
+        <a class="text-link" href={site.links.prices} target="_blank" rel="noopener noreferrer">
+          Актуальный прайс в 2ГИС
+          <Icon name="external" />
+          <span class="sr-only">(откроется в новой вкладке)</span>
+        </a>
+      </p>
+    </div>
+  )
+}

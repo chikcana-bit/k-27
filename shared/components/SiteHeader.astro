@@ -1,0 +1,82 @@
+---
+/**
+ * Fixed header with desktop nav, scroll-spy and an animated full-screen mobile menu.
+ * Slot "mark" lets a site supply its own graphic brand mark (optional).
+ */
+import type { SiteModel } from '../lib/types';
+import { withBase } from '../lib/env';
+import Icon from './Icon.astro';
+
+export interface NavItem {
+  href: string;
+  label: string;
+}
+interface Props {
+  site: SiteModel;
+  nav: NavItem[];
+  cta?: NavItem;
+  /** Set on sub-pages so anchors point back to the home page. */
+  home?: boolean;
+}
+const { site, nav, cta = { href: '#request', label: 'Оставить заявку' }, home = true } = Astro.props;
+const resolve = (href: string) => (href.startsWith('#') && !home ? withBase('/') + href : href);
+---
+
+<div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href={withBase('/')} aria-label={`${site.name} — на главную`}>
+      <slot name="mark" />
+      <span>{site.name}</span>
+    </a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        {
+          nav.map((item) => (
+            <li>
+              <a class="site-nav__link" href={resolve(item.href)} data-nav-link>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <a class="btn btn--primary btn--small site-header__cta" href={resolve(cta.href)}>
+      {cta.label}
+      <Icon name="arrow" />
+    </a>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-toggle
+    >
+      <span data-menu-label>Меню</span>
+      <span class="menu-toggle__bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+  <nav aria-label="Мобильная навигация">
+    <ul class="mobile-menu__list">
+      {
+        nav.map((item, index) => (
+          <li>
+            <a class="mobile-menu__link" href={resolve(item.href)} style={`--i:${index}`}>
+              <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="mobile-menu__foot">
+    <a class="btn btn--primary" href={resolve(cta.href)}>
+      {cta.label}
+      <Icon name="arrow" />
+    </a>
+  </div>
+</div>

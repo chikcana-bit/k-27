@@ -1,0 +1,89 @@
+{
+  "id": "service_02",
+  "name": "360",
+  "category": "Detailing studio",
+  "address": "22/1 Kotovsky Street, Railway Station District, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681013, Russia",
+  "rating": "5.0/5 (42 ratings; value shown on the 2GIS listing when checked)",
+  "phone": "Partially displayed: +7‒914‒185…; 2GIS masks the full number in its text view",
+  "messengers": [
+    "Telegram",
+    "Max"
+  ],
+  "email": "wraplab27@gmail.com",
+  "hours": "The listing showed the business as closed and opening tomorrow at 10:00; the full weekly schedule was not retrieved",
+  "services": [
+    "Paint protection film (PPF) installation",
+    "Vinyl wrapping and color change",
+    "Automotive glass film installation",
+    "Car care and polishing",
+    "Soundproofing"
+  ],
+  "prices": [
+    {
+      "service": "PPF installation on the front end and high-impact areas",
+      "price": "from RUB 70,000"
+    },
+    {
+      "service": "Full-body gloss PPF installation",
+      "price": "from RUB 220,000"
+    },
+    {
+      "service": "Headlight film installation",
+      "price": "from RUB 7,000"
+    },
+    {
+      "service": "Full-body matte PPF installation",
+      "price": "from RUB 240,000"
+    },
+    {
+      "service": "Partial body panel wrapping",
+      "price": "from RUB 1,500"
+    },
+    {
+      "service": "Vinyl wrap / custom design project",
+      "price": "from RUB 120,000"
+    },
+    {
+      "service": "Black PPF roof wrap",
+      "price": "RUB 20,000–30,000"
+    },
+    {
+      "service": "Chrome delete",
+      "price": "from RUB 10,000"
+    },
+    {
+      "service": "Colored PPF installation",
+      "price": "from RUB 280,000"
+    },
+    {
+      "service": "Windshield protection film",
+      "price": "RUB 23,000–27,000"
+    },
+    {
+      "service": "Hydrophobic glass coating (rain repellent)",
+      "price": "RUB 2,000–6,000"
+    },
+    {
+      "service": "Heavy paint correction",
+      "price": "from RUB 20,000"
+    },
+    {
+      "service": "Single-stage paint polishing",
+      "price": "from RUB 15,000"
+    },
+    {
+      "service": "Two-component ceramic coating",
+      "price": "from RUB 18,000"
+    },
+    {
+      "service": "Full vehicle soundproofing",
+      "price": "from RUB 95,000"
+    }
+  ],
+  "price_count": 15,
+  "photo_count": 33,
+  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001102508139",
+  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001102508139/tab/prices",
+  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001102508139",
+  "verified_notes": "The 2GIS price list was marked as updated on 16 September 2026; it is not a public offer. The listing includes Telegram, Max, and an email address."
+}

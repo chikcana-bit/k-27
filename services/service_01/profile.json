@@ -1,0 +1,38 @@
+{
+  "id": "service_01",
+  "name": "DetailTeamServis",
+  "category": "Car detailing",
+  "address": "5V Basic Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+  "rating": "5.0/5 (52 ratings; value shown on the 2GIS listing when checked)",
+  "phone": "Partially displayed: +7‒994‒134…; 2GIS masks the full number in its text view",
+  "messengers": [
+    "WhatsApp",
+    "Telegram",
+    "Max"
+  ],
+  "email": null,
+  "hours": "The listing showed the business as closed and opening tomorrow at 10:00; the full weekly schedule was not retrieved",
+  "services": [
+    "Automotive window tinting"
+  ],
+  "prices": [
+    {
+      "service": "Windshield / rear window tinting",
+      "price": "from RUB 3,000"
+    },
+    {
+      "service": "Quarter window tinting",
+      "price": "from RUB 500"
+    },
+    {
+      "service": "Side window tinting",
+      "price": "from RUB 2,500"
+    }
+  ],
+  "price_count": 3,
+  "photo_count": 49,
+  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001103288091",
+  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001103288091/tab/prices",
+  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001103288091",
+  "verified_notes": "2GIS listing verified: business name, address, category, rating, messenger contacts, masked phone number, 3 price items, and 49 photos."
+}

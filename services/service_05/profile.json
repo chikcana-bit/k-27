@@ -1,0 +1,93 @@
+{
+  "id": "service_05",
+  "name": "ProSTO",
+  "category": "Auto repair workshop",
+  "address": "90 Puteiskaya Street, Molodyozhny Settlement, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+  "rating": "4.8/5 (221 ratings; value shown on the 2GIS listing when checked)",
+  "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
+  "messengers": [
+    "WhatsApp"
+  ],
+  "email": null,
+  "hours": "Daily, 10:00–19:00 (according to the 2GIS listing)",
+  "services": [
+    "Engine and drivetrain repair and replacement",
+    "Automatic/manual/CVT transmission removal and installation",
+    "Engine removal and installation",
+    "Suspension and undercarriage repairs",
+    "Driveshaft services",
+    "Hydropneumatic suspension and KDSS repair / bleeding"
+  ],
+  "prices": [
+    {
+      "service": "Automatic/manual/CVT transmission removal and installation",
+      "price": "from RUB 15,000"
+    },
+    {
+      "service": "Engine removal and installation",
+      "price": "from RUB 20,000"
+    },
+    {
+      "service": "Engine subframe removal and installation",
+      "price": "from RUB 6,000"
+    },
+    {
+      "service": "Rear axle beam removal and installation",
+      "price": "from RUB 10,000"
+    },
+    {
+      "service": "Driveshaft universal joint replacement",
+      "price": "from RUB 3,000"
+    },
+    {
+      "service": "Driveshaft replacement",
+      "price": "from RUB 3,000"
+    },
+    {
+      "service": "Pressing in a control arm bushing / ball joint (per unit)",
+      "price": "from RUB 2,500"
+    },
+    {
+      "service": "CV boot / CV joint replacement",
+      "price": "from RUB 2,000"
+    },
+    {
+      "service": "Drive axle replacement",
+      "price": "from RUB 2,000"
+    },
+    {
+      "service": "Shock absorber replacement",
+      "price": "from RUB 2,500"
+    },
+    {
+      "service": "Stabilizer link replacement",
+      "price": "from RUB 800"
+    },
+    {
+      "service": "Wheel hub bearing replacement",
+      "price": "from RUB 2,500"
+    },
+    {
+      "service": "Ball joint replacement",
+      "price": "from RUB 2,500"
+    },
+    {
+      "service": "Drum brake shoe replacement",
+      "price": "from RUB 1,600"
+    },
+    {
+      "service": "Disc brake pad replacement",
+      "price": "from RUB 1,000"
+    },
+    {
+      "service": "Timing chain replacement",
+      "price": "from RUB 18,000"
+    }
+  ],
+  "price_count": 31,
+  "photo_count": 36,
+  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571",
+  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571/tab/prices",
+  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229853186795571",
+  "verified_notes": "The 2GIS price list was updated on 14 November 2026. The listing explicitly states that prices are starting prices and do not constitute a public offer. The full list contains 31 items; this file includes a selection of the main visible items."
+}

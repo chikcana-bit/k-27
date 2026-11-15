@@ -1,0 +1,24 @@
+---
+/** Shown instead of prices when the local data holds no verified price list. */
+import Icon from './Icon.astro';
+interface Props {
+  title?: string;
+  text?: string;
+}
+const {
+  title = 'Стоимость — по запросу',
+  text = 'Опишите задачу в заявке — стоимость и сроки сообщит сам сервис. Мы не публикуем цены, которые не подтверждены.',
+} = Astro.props;
+---
+
+<div class="quote-panel" data-reveal="up">
+  <h3 class="quote-panel__title">{title}</h3>
+  <p class="muted">{text}</p>
+  <div class="cluster">
+    <a class="btn btn--primary" href="#request">
+      Запросить расчёт
+      <Icon name="arrow" />
+    </a>
+    <slot />
+  </div>
+</div>

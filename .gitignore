@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+dist-pages/
+*.log
+.DS_Store
+test-results/

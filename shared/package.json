@@ -1,0 +1,16 @@
+{
+  "name": "@autoservice/shared",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./components/*": "./components/*",
+    "./layouts/*": "./layouts/*",
+    "./tokens/*": "./tokens/*",
+    "./motion/*": "./motion/*",
+    "./lib/*": "./lib/*"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0"
+  }
+}

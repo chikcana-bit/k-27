@@ -1,0 +1,23 @@
+{
+  "id": "service_04",
+  "name": "Avtomaks Mobile Center",
+  "category": "Auto repair shop",
+  "address": "32/1 Vokzalnaya Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
+  "rating": "5.0/5 (239 ratings; value shown on the 2GIS listing when checked)",
+  "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
+  "messengers": [
+    "WhatsApp"
+  ],
+  "email": null,
+  "hours": "The listing showed the business as closed and opening tomorrow at 09:00; the full weekly schedule was not retrieved",
+  "services": [
+    "Category: vehicle service and repair shop; a detailed service list was not available in the accessible listing text"
+  ],
+  "prices": [],
+  "price_count": null,
+  "photo_count": 12,
+  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228",
+  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228/tab/menu",
+  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229852186380228",
+  "verified_notes": "The listing shows a “Prices” section, but the opened page leads to a menu with no extractable prices. Do not add prices without confirmation."
+}

@@ -1,0 +1,25 @@
+---
+/** Closing call-to-action band. */
+import Icon from './Icon.astro';
+interface Props {
+  title: string;
+  text?: string;
+  href?: string;
+  label?: string;
+}
+const { title, text, href = '#request', label = 'Оставить заявку' } = Astro.props;
+---
+
+<section class="cta-band section section--tight" aria-label="Призыв к действию">
+  <slot name="decor" />
+  <div class="container cta-band__inner">
+    <div class="stack">
+      <h2 data-split>{title}</h2>
+      {text && <p data-reveal="up">{text}</p>}
+    </div>
+    <a class="btn" href={href} data-reveal="up">
+      {label}
+      <Icon name="arrow" />
+    </a>
+  </div>
+</section>

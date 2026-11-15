@@ -1,0 +1,92 @@
+---
+/**
+ * Contact details limited to what is verified in the local data:
+ * address, e-mail (if any), messenger names (no handles are known, so they are
+ * not links), opening hours only when the full schedule is known, and a link
+ * to the 2GIS listing where the phone number can be revealed.
+ */
+import type { SiteModel } from '../lib/types';
+import Icon from './Icon.astro';
+interface Props {
+  site: SiteModel;
+}
+const { site } = Astro.props;
+const a = site.content.addressRu;
+---
+
+<div class="contact">
+  <dl class="contact-list" data-stagger>
+    <div class="contact-item" data-reveal="up">
+      <span class="contact-item__icon"><Icon name="pin" /></span>
+      <div>
+        <dt class="contact-item__label">Адрес</dt>
+        <dd class="contact-item__value">{a.street}</dd>
+        <dd class="contact-item__hint">
+          {a.district}, {a.city}, {a.region}, {a.postalCode}
+        </dd>
+      </div>
+    </div>
+    <div class="contact-item" data-reveal="up">
+      <span class="contact-item__icon"><Icon name="clock" /></span>
+      <div>
+        <dt class="contact-item__label">Режим работы</dt>
+        {
+          site.hoursRu ? (
+            <>
+              <dd class="contact-item__value">{site.hoursRu}</dd>
+              <dd class="contact-item__hint">По данным карточки в 2ГИС. Перед визитом уточните.</dd>
+            </>
+          ) : (
+            <>
+              <dd class="contact-item__value">Уточняйте у сервиса</dd>
+              <dd class="contact-item__hint">Актуальный график — в карточке компании в 2ГИС.</dd>
+            </>
+          )
+        }
+      </div>
+    </div>
+    <div class="contact-item" data-reveal="up">
+      <span class="contact-item__icon"><Icon name="chat" /></span>
+      <div>
+        <dt class="contact-item__label">Телефон и мессенджеры</dt>
+        <dd class="contact-item__value">В карточке компании в 2ГИС</dd>
+        {
+          site.messengers.length > 0 && (
+            <dd>
+              <ul class="chips" aria-label="Мессенджеры, указанные в карточке">
+                {site.messengers.map((name) => (
+                  <li class="chip">{name}</li>
+                ))}
+              </ul>
+            </dd>
+          )
+        }
+      </div>
+    </div>
+    {
+      site.email && (
+        <div class="contact-item" data-reveal="up">
+          <span class="contact-item__icon">
+            <Icon name="mail" />
+          </span>
+          <div>
+            <dt class="contact-item__label">Эл. почта</dt>
+            <dd class="contact-item__value">
+              <a class="text-link" href={`mailto:${site.email}`}>
+                {site.email}
+              </a>
+            </dd>
+          </div>
+        </div>
+      )
+    }
+  </dl>
+  <div class="cluster contact-actions" data-reveal="up">
+    <a class="btn btn--primary" href={site.links.profile} target="_blank" rel="noopener noreferrer">
+      Открыть контакты в 2ГИС
+      <Icon name="external" />
+      <span class="sr-only">(откроется в новой вкладке)</span>
+    </a>
+    <slot />
+  </div>
+</div>
