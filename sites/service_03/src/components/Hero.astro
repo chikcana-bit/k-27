@@ -1,0 +1,165 @@
+---
+/**
+ * service_03 hero - "Atelier".
+ * Oversized serif heading set beside an abstract SVG composition (no
+ * photography): pattern pieces and material swatches with stitched edges,
+ * layered at different parallax depths. Each seam sews itself on load and a
+ * loose thread is drawn across the pieces.
+ */
+import Icon from '@autoservice/shared/components/Icon.astro';
+import { pluralRu } from '@autoservice/shared/lib/model';
+import { site } from '../site';
+import Stitch from './Stitch.astro';
+
+const a = site.content.addressRu;
+const serviceCount = site.services.length;
+const priceCount = site.prices.length;
+
+const panel =
+  'M40 10H260Q290 10 286 44L270 320Q267 350 236 350H64Q33 350 30 320L14 44Q10 10 40 10Z';
+const strip = 'M34 14H236Q252 14 248 30L226 172Q223 188 206 188H24Q8 188 12 172L18 30Q20 14 34 14Z';
+const swatch =
+  'M10 22 22 10 34 22 46 10 58 22 70 10 82 22 94 10 106 22 118 10 130 22 142 10 154 22 166 10 178 22 190 10V242Q190 250 182 250H18Q10 250 10 242Z';
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow hero__eyebrow" data-reveal="fade">
+        {site.content.categoryRu}
+      </p>
+      <h1 id="hero-title" class="hero__title">
+        <span class="hero__line" data-reveal="clip">Перетяжка</span>
+        <span class="hero__line hero__line--in" data-reveal="clip" style="--reveal-delay: 120ms">салона</span>
+        <em class="hero__line" data-reveal="clip" style="--reveal-delay: 240ms">и&nbsp;детейлинг</em>
+      </h1>
+      <p class="lead hero__lead" data-reveal="up" style="--reveal-delay: 420ms">
+        {site.name} — ателье в Комсомольске-на-Амуре. Перетяжка руля, сидений, потолка и дверных карт,
+        полировка, керамическое покрытие, тонировка и антигравийная плёнка.
+      </p>
+      <div class="cluster hero__actions" data-reveal="up" style="--reveal-delay: 540ms">
+        <a class="btn btn--primary" href="#request">
+          Оставить заявку
+          <Icon name="arrow" />
+        </a>
+        <a class="btn" href="#prices">Смотреть цены</a>
+      </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <span class="hero__amp" data-parallax="-0.05">&amp;</span>
+      <div class="hero__ruler"></div>
+
+      <div class="piece piece--panel" data-parallax="0.05">
+        <svg viewBox="0 0 300 360" focusable="false">
+          <defs>
+            <linearGradient id="lg-panel" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#b56c33"></stop>
+              <stop offset="1" stop-color="#874719"></stop>
+            </linearGradient>
+            <pattern id="quilt" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <path d="M0 0H34M0 0V34" stroke="#5e2f0e" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="4 3"></path>
+            </pattern>
+          </defs>
+          <path d={panel} fill="url(#lg-panel)"></path>
+          <path d="M66 58H234L222 302H78Z" fill="url(#quilt)"></path>
+          <Stitch id="sew-panel-in" d="M66 58H234L222 302H78Z" color="#f3dcbb" delay={1300} />
+          <Stitch
+            id="sew-panel"
+            d={panel}
+            transform="translate(150 180) scale(.91 .925) translate(-150 -180)"
+            color="#f3dcbb"
+            delay={700}
+          />
+        </svg>
+      </div>
+
+      <div class="piece piece--strip" data-parallax="0.12">
+        <svg viewBox="0 0 260 202" focusable="false">
+          <defs>
+            <linearGradient id="lg-strip" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#46301f"></stop>
+              <stop offset="1" stop-color="#27180e"></stop>
+            </linearGradient>
+          </defs>
+          <path d={strip} fill="url(#lg-strip)"></path>
+          <Stitch
+            id="sew-strip"
+            d={strip}
+            transform="translate(130 101) scale(.9 .87) translate(-130 -101)"
+            color="#d9a36b"
+            delay={1000}
+          />
+          <Stitch id="sew-strip-a" d="M30 96H232" color="#d9a36b" delay={1700} />
+          <Stitch id="sew-strip-b" d="M29 106H230" color="#d9a36b" delay={1850} />
+        </svg>
+      </div>
+
+      <div class="piece piece--swatch" data-parallax="0.2">
+        <svg viewBox="0 0 200 260" focusable="false">
+          <defs>
+            <linearGradient id="lg-swatch" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e6d3b1"></stop>
+              <stop offset="1" stop-color="#cfb68b"></stop>
+            </linearGradient>
+          </defs>
+          <path d={swatch} fill="url(#lg-swatch)"></path>
+          <circle cx="100" cy="52" r="9" fill="#f6f0e4" stroke="#8a4b1f" stroke-width="2.5"></circle>
+          <Stitch id="sew-swatch" d="M26 82H174V234H26Z" color="#5a3a22" delay={1250} />
+          <path d="M44 204H120M44 216H96" stroke="#5a3a22" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </div>
+
+      <div class="piece piece--ring" data-parallax="0.28">
+        <svg viewBox="0 0 220 220" focusable="false">
+          <circle cx="110" cy="110" r="84" fill="none" stroke="#2f1e12" stroke-width="32"></circle>
+          <circle cx="110" cy="110" r="84" fill="none" stroke="#4a3221" stroke-width="20"></circle>
+          <Stitch
+            id="sew-ring"
+            d="M110 26A84 84 0 1 1 109.9 26"
+            color="#e9c79d"
+            width={9}
+            dash="2 8.5"
+            delay={1500}
+          />
+        </svg>
+      </div>
+
+      <svg class="hero__thread" viewBox="0 0 600 640" preserveAspectRatio="none" focusable="false">
+        <path
+          class="sew sew--thread"
+          d="M20 70C140 10 220 150 330 120S520 40 560 170 430 330 470 430 560 520 540 600"
+          pathLength="1"
+          fill="none"
+          stroke="#8a4b1f"
+          stroke-width="1.4"
+          vector-effect="non-scaling-stroke"></path>
+      </svg>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="seam" data-reveal="mask" style="--reveal-delay: 500ms"></div>
+    <ul class="hero__meta" data-stagger>
+      <li data-reveal="up">
+        <span class="hero__meta-key">Адрес</span>
+        <span class="hero__meta-val">
+          <Icon name="pin" />
+          {a.street}
+        </span>
+      </li>
+      <li data-reveal="up">
+        <span class="hero__meta-key">Услуги</span>
+        <span class="hero__meta-val">
+          {`${serviceCount} ${pluralRu(serviceCount, ['направление', 'направления', 'направлений'])} в карточке 2ГИС`}
+        </span>
+      </li>
+      <li data-reveal="up">
+        <span class="hero__meta-key">Прайс</span>
+        <span class="hero__meta-val">
+          {`${priceCount} ${pluralRu(priceCount, ['позиция', 'позиции', 'позиций'])} с начальными ценами`}
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>

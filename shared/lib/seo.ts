@@ -2,13 +2,16 @@ import type { APIRoute } from 'astro';
 
 /**
  * Without SITE_URL the build is a preview: it must not be indexed and has no
- * sitemap (sitemaps require absolute URLs).
+ * sitemap (sitemaps require absolute URLs). PUBLIC_PREVIEW=1 keeps a build
+ * with a SITE_URL (e.g. a GitHub Pages demo) out of search engines too.
  */
 export const robots: APIRoute = ({ site }) => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-  const body = site
-    ? `User-agent: *\nAllow: /\n\nSitemap: ${new URL(`${base}/sitemap.xml`, site).href}\n`
-    : 'User-agent: *\nDisallow: /\n';
+  const preview = import.meta.env.PUBLIC_PREVIEW === '1';
+  const body =
+    site && !preview
+      ? `User-agent: *\nAllow: /\n\nSitemap: ${new URL(`${base}/sitemap.xml`, site).href}\n`
+      : 'User-agent: *\nDisallow: /\n';
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };
 

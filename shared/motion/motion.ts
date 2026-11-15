@@ -37,19 +37,30 @@ function initReveal(): void {
     targets.forEach((target) => target.classList.add('is-in', 'is-done'));
     return;
   }
+  // Fully clipped elements (mask/clip reveals) never report an intersection,
+  // so those are triggered by observing their parent instead.
+  const watched = new Map<Element, HTMLElement[]>();
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
-        const target = entry.target as HTMLElement;
-        target.classList.add('is-in');
-        observer.unobserve(target);
-        window.setTimeout(() => target.classList.add('is-done'), 2200);
+        observer.unobserve(entry.target);
+        for (const target of watched.get(entry.target) ?? []) {
+          target.classList.add('is-in');
+          window.setTimeout(() => target.classList.add('is-done'), 2200);
+        }
       }
     },
     { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
   );
-  targets.forEach((target) => observer.observe(target));
+  targets.forEach((target) => {
+    const clipped = target.dataset.reveal === 'mask' || target.dataset.reveal === 'clip';
+    const anchor = (clipped && target.parentElement) || target;
+    const group = watched.get(anchor) ?? [];
+    group.push(target);
+    watched.set(anchor, group);
+    observer.observe(anchor);
+  });
 }
 
 function initScrollEffects(): void {

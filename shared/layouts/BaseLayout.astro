@@ -52,7 +52,7 @@ const jsonLd = {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
-    {(noindex || !Astro.site) && <meta name="robots" content="noindex" />}
+    {(noindex || !Astro.site || import.meta.env.PUBLIC_PREVIEW === '1') && <meta name="robots" content="noindex" />}
     {themeColor && <meta name="theme-color" content={themeColor} />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />

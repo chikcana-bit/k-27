@@ -1,0 +1,82 @@
+---
+/**
+ * service_04 hero - "Signal".
+ * A typographic poster (no photography): the business name stacked in huge
+ * condensed capitals with a masked line-by-line reveal, a hazard-striped band
+ * sliding in behind the rating block and a drifting row of road-marking dashes.
+ */
+import Icon from '@autoservice/shared/components/Icon.astro';
+import { formatDateRu, ratingCountLabel } from '@autoservice/shared/lib/model';
+import { site } from '../site';
+
+const a = site.content.addressRu;
+const nameLines = site.name.split(' ');
+const { rating } = site;
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <p class="hero__top" data-reveal="fade">
+      <span>{site.content.categoryRu}</span>
+      <span>{a.city}</span>
+      <span>{a.street}</span>
+    </p>
+
+    <div class="hero__title-wrap">
+      <h1 id="hero-title" class="hero__title">
+        {
+          nameLines.map((word, index) => (
+            <>
+              <span class="hero__line" style={`--l:${index}`}>
+                <span>{word}</span>
+              </span>{' '}
+            </>
+          ))
+        }
+        <span class="hero__sub" style={`--l:${nameLines.length}`}>
+          <span>— автосервис в&nbsp;Комсомольске-на-Амуре</span>
+        </span>
+      </h1>
+    </div>
+
+    <div class="hero__signal-cell">
+      <div class="hero__band-wrap" aria-hidden="true" data-parallax="-0.05">
+        <div class="hero__band"></div>
+      </div>
+      {
+        rating && (
+          <a class="signal" href={site.links.profile} target="_blank" rel="noopener noreferrer">
+            <span class="signal__label">
+              Рейтинг в 2ГИС
+              <Icon name="external" />
+            </span>
+            <span class="signal__value">
+              {rating.value}
+              <Icon name="star" />
+            </span>
+            <span class="signal__count">{ratingCountLabel(rating)}</span>
+            <span class="signal__date">по состоянию на {formatDateRu(site.checkedOn)}</span>
+            <span class="sr-only">(откроется в новой вкладке)</span>
+          </a>
+        )
+      }
+    </div>
+
+    <div class="hero__foot">
+      <p class="hero__lead" data-reveal="up" style="--reveal-delay: 700ms">
+        Обслуживание и ремонт автомобилей. {a.district}, {a.street}.
+      </p>
+      <div class="cluster hero__actions" data-reveal="up" style="--reveal-delay: 820ms">
+        <a class="btn btn--primary" href="#request">
+          Оставить заявку
+          <Icon name="arrow" />
+        </a>
+        <a class="btn" href="#contacts">Как найти</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__road" aria-hidden="true">
+    <div data-parallax="0.05"><i class="hero__dashes"></i></div>
+  </div>
+</section>

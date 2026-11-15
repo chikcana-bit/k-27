@@ -1,0 +1,79 @@
+---
+/**
+ * service_02 hero - "Orbit".
+ * The numerals "360" sit inside a degree dial built from concentric SVG
+ * rings (no photography). Rings settle with a finite rotation at different
+ * parallax depths and one accent arc sweeps a full turn on load.
+ */
+import Icon from '@autoservice/shared/components/Icon.astro';
+import RatingBadge from '@autoservice/shared/components/RatingBadge.astro';
+import { site } from '../site';
+
+const a = site.content.addressRu;
+const marks = [0, 90, 180, 270];
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__glow" aria-hidden="true" data-parallax="-0.05"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow" data-reveal="fade">
+        <span class="hero__pill">{site.content.categoryRu}</span>
+        {a.city}
+      </p>
+      <h1 id="hero-title" class="hero__title" data-split>Плёнка, винил, полировка — вокруг всего кузова</h1>
+      <p class="lead hero__lead" data-reveal="up" style="--reveal-delay: 350ms">
+        Студия {site.name} на Котовского: антигравийная плёнка, оклейка винилом и смена цвета, плёнки на
+        стёкла, полировка и шумоизоляция.
+      </p>
+      <div class="cluster" data-reveal="up" style="--reveal-delay: 480ms">
+        <a class="btn btn--primary" href="#request">
+          Оставить заявку
+          <Icon name="arrow" />
+        </a>
+        <a class="btn" href="#prices">Смотреть цены</a>
+      </div>
+      <div class="hero__meta" data-reveal="up" style="--reveal-delay: 620ms">
+        <RatingBadge site={site} />
+        <p class="hero__address">
+          <Icon name="pin" />
+          {site.addressLine}
+        </p>
+      </div>
+    </div>
+
+    <div class="dial" aria-hidden="true">
+      <svg class="dial__ring dial__ring--outer" viewBox="0 0 600 600" focusable="false" data-parallax="0.04">
+        <g class="dial__spin dial__spin--slow">
+          <circle cx="300" cy="300" r="286" class="dial__hair"></circle>
+          <circle cx="300" cy="300" r="270" class="dial__ticks"></circle>
+          <circle cx="300" cy="300" r="262" class="dial__ticks dial__ticks--major"></circle>
+        </g>
+      </svg>
+      <svg class="dial__ring dial__ring--mid" viewBox="0 0 600 600" focusable="false" data-parallax="0.09">
+        <circle cx="300" cy="300" r="226" class="dial__hair"></circle>
+        <circle cx="300" cy="300" r="226" class="dial__sweep" pathLength="1" transform="rotate(-90 300 300)"></circle>
+        <g class="dial__spin">
+          <circle cx="300" cy="74" r="9" class="dial__dot"></circle>
+        </g>
+        {
+          marks.map((deg) => (
+            <text
+              class="dial__deg"
+              x={300 + Math.sin((deg * Math.PI) / 180) * 198}
+              y={306 - Math.cos((deg * Math.PI) / 180) * 198}
+              text-anchor="middle"
+            >
+              {deg}°
+            </text>
+          ))
+        }
+      </svg>
+      <svg class="dial__ring dial__ring--inner" viewBox="0 0 600 600" focusable="false" data-parallax="0.15">
+        <circle cx="300" cy="300" r="160" class="dial__disc"></circle>
+        <circle cx="300" cy="300" r="160" class="dial__dash"></circle>
+      </svg>
+      <p class="dial__num" data-parallax="0.15"><span>360</span><sup>°</sup></p>
+    </div>
+  </div>
+</section>

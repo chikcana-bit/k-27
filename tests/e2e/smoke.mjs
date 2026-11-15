@@ -70,10 +70,26 @@ for (const id of sites) {
     const hidden = await page.evaluate(
       () =>
         [...document.querySelectorAll('[data-reveal]')].filter(
-          (node) => getComputedStyle(node).opacity === '0',
+          (node) =>
+            // Elements inside a collapsed <details> are not rendered and reveal when it opens.
+            node.checkVisibility() &&
+            (getComputedStyle(node).opacity === '0' ||
+              /^inset\(.*100%/.test(getComputedStyle(node).clipPath)),
         ).length,
     );
     expect(hidden === 0, `${label}: ${hidden} element(s) never revealed after scrolling`);
+    const closed = page.locator('details:not([open]) > summary');
+    if ((await closed.count()) > 0) {
+      await closed.first().click();
+      await page.waitForTimeout(1500);
+      const stuck = await page.evaluate(
+        () =>
+          [...document.querySelectorAll('details[open] [data-reveal]')].filter(
+            (node) => getComputedStyle(node).opacity === '0',
+          ).length,
+      );
+      expect(stuck === 0, `${label}: ${stuck} row(s) stayed hidden after opening an accordion`);
+    }
     const smallTargets = await page.evaluate(() =>
       [
         ...document.querySelectorAll(
@@ -104,7 +120,7 @@ for (const id of sites) {
 
     if (label === 'desktop') {
       // Keyboard: first Tab lands on the skip link.
-      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.goto(`${origin}/`, { waitUntil: 'load' });
       await page.keyboard.press('Tab');
       expect(
         await page.evaluate(() => document.activeElement?.classList.contains('skip-link')),
@@ -162,7 +178,8 @@ for (const id of sites) {
   await calm.waitForTimeout(300);
   const state = await calm.evaluate(() => ({
     hidden: [...document.querySelectorAll('[data-reveal], [data-split]')].filter(
-      (node) => getComputedStyle(node).opacity === '0' || getComputedStyle(node).clipPath.includes('100%'),
+      (node) =>
+        getComputedStyle(node).opacity === '0' || /^inset\(.*100%/.test(getComputedStyle(node).clipPath),
     ).length,
     moved: [...document.querySelectorAll('[data-parallax]')].filter((node) =>
       node.style.getPropertyValue('--parallax-y'),

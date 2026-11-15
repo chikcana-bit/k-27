@@ -6,6 +6,7 @@
  * PUBLIC_OPERATOR_NAME  - legal name of the personal-data operator (required
  *                         together with PUBLIC_FORM_ENDPOINT).
  * PUBLIC_OPERATOR_CONTACT - contact for personal-data requests.
+ * PUBLIC_PREVIEW=1       - demo/preview deployment: noindex + robots Disallow.
  */
 export interface FormSettings {
   endpoint: string | null;

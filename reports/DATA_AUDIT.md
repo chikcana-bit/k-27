@@ -163,3 +163,36 @@ Project-level decisions:
 
 - Normalise the price format (D2) and the empty-value representation (D4, D7) in the build step rather than by guessing content.
 - Align the manifest naming (D1, D6) and handle both manifest schemas (D9).
+
+## Addendum — how the gaps were handled in the build (integration owner)
+
+| Gap | Decision in the websites |
+| --- | --- |
+| No approved local photos for any business | No photographs anywhere. Heroes are CSS/SVG compositions. `services/<id>/photos/` folders were created empty; a gallery section appears automatically once files are added there and listed under `approved_photos` in `profile.json`. Nothing was downloaded from the 2GIS URLs. |
+| Phone numbers masked | No phone number, no `tel:` link. The contact button opens the business's 2GIS listing. |
+| Messenger handles unknown | Messenger names are shown as plain labels, never as links. |
+| Weekly schedule missing (all except service_05) | "Уточняйте у сервиса" with a pointer to the 2GIS listing. The single observed opening time is not shown. |
+| service_04: no service list, no prices | No services section; "cost on request" panel; the lead form has no service selector. |
+| service_05: 16 of 31 price items | All 16 shown, with a note that the full list has 31 items and a link to it. |
+| service_06: security-system installation has no price and is "per listing description" | Listed as a service with the qualifier "по описанию в карточке компании"; no price. |
+| service_03: rating count "145–146" | Shown as the recorded range. |
+| service_02 name ("360" vs "360 Detailing Studio") | "360", as in `profile.json` / `data/services.json`. |
+| Price-list update date absent (service_01, service_04) | No update date shown; the general check date (15 November 2026) appears in the footer. |
+| No Russian spelling of addresses in the data | Addresses were translated back into Russian from the English records (see below). **Owner must confirm.** |
+| No map coordinates | No embedded map and no map pin; a text address card links to the 2GIS listing. |
+| No operator details for the privacy policy | Forms run in demo mode; the privacy page says nothing is sent or stored. A live form cannot be built without operator name and contact. |
+
+### Russian address strings used (translated from the English source — confirm before launch)
+
+| Site | Source (English) | Used on the website |
+| --- | --- | --- |
+| service_01 | 5V Basic Street, Central District | ул. Базовая, 5В · Центральный округ |
+| service_02 | 22/1 Kotovsky Street, Railway Station District, Central District | ул. Котовского, 22/1 · Центральный округ ("Railway Station District" omitted: Russian name not verifiable locally) |
+| service_03 | 29A Komsomolskaya Street, Quarter 4, Central District | ул. Комсомольская, 29А · Центральный округ ("Quarter 4" omitted for the same reason) |
+| service_04 | 32/1 Vokzalnaya Street, Central District | ул. Вокзальная, 32/1 · Центральный округ |
+| service_05 | 90 Puteiskaya Street, Molodyozhny Settlement, Central District | ул. Путейская, 90 · пос. Молодёжный, Центральный округ |
+| service_06 | 8/3G Alleya Truda Street, Central District | Аллея Труда, 8/3Г · Центральный округ |
+
+Service and price names were likewise translated from English into Russian trade terminology; the
+amounts themselves are taken programmatically from `profile.json`. The businesses should proof-read
+the Russian wording of their own services.
