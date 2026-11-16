@@ -1,0 +1,52 @@
+---
+/**
+ * Shade hero (car wash family).
+ * A CSS composition (no photography): a light source seen through three
+ * layered window silhouettes, each dimming it further. Layers drift at
+ * different parallax depths and a highlight sweeps across once on load.
+ */
+import Icon from '../../components/Icon.astro';
+import PhoneBadge from '../../components/PhoneBadge.astro';
+import type { SiteModel } from '../../lib/types';
+interface Props {
+  site: SiteModel;
+  mirror?: boolean;
+}
+const { site, mirror = false } = Astro.props;
+---
+
+<section class:list={['hero', { 'hero--mirror': mirror }]} aria-labelledby="hero-title">
+  <div class="hero__scene" aria-hidden="true">
+    <div class="hero__sun" data-parallax="-0.06"></div>
+    <div class="hero__pane hero__pane--back" data-parallax="0.05"><i></i></div>
+    <div class="hero__pane hero__pane--mid" data-parallax="0.11"><i></i></div>
+    <div class="hero__pane hero__pane--front" data-parallax="0.18"><i></i></div>
+    <div class="hero__horizon"></div>
+  </div>
+  <div class="container hero__inner">
+    <p class="eyebrow hero__eyebrow" data-reveal="fade">
+      {site.content.categoryRu}
+      <span class="hero__dot"></span>
+      {site.city}
+    </p>
+    <h1 id="hero-title" class="hero__title" data-split>{site.content.heroTitle}</h1>
+    <p class="lead hero__lead" data-reveal="up" style="--reveal-delay: 350ms">{site.content.heroLead}</p>
+    <div class="cluster hero__actions" data-reveal="up" style="--reveal-delay: 480ms">
+      <a class="btn btn--primary" href="#request">
+        Оставить заявку
+        <Icon name="arrow" />
+      </a>
+      <a class="btn" href="#services">Услуги</a>
+    </div>
+    <div class="hero__meta" data-reveal="up" style="--reveal-delay: 620ms">
+      <PhoneBadge site={site} />
+      <p class="hero__address">
+        <Icon name="pin" />
+        {site.addressLine}
+      </p>
+    </div>
+  </div>
+  <a class="hero__scroll" href="#services" aria-label="К услугам">
+    <span></span>
+  </a>
+</section>

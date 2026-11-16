@@ -1,32 +1,20 @@
 import type { SiteContent } from '@autoservice/shared/lib/types';
 
 /**
- * Russian customer-facing copy for ZigZag.
- * Every fact mirrors services/service_06/profile.json; amounts and rating are
- * derived from the profile at build time and are not retyped here.
+ * Russian customer-facing copy for Art Master (service_06).
+ * Name, address, phone and services are read from the profile at build time;
+ * this file holds wording only and must not add facts.
  */
 export const content: SiteContent = {
-  categoryRu: 'Автосервис',
+  categoryRu: 'Кузовной ремонт и покраска',
   descriptionRu:
-    'ZigZag — автосервис в Комсомольске-на-Амуре: диагностика подвески, комплексная и компьютерная диагностика. Адрес, цены на диагностику и заявка.',
-  addressRu: {
-    street: 'Аллея Труда, 8/3Г',
-    district: 'Центральный округ',
-    city: 'Комсомольск-на-Амуре',
-    region: 'Хабаровский край',
-    postalCode: '681000',
-  },
-  serviceLabelsRu: [
-    'Диагностика подвески',
-    'Комплексная диагностика подвески, двигателя и технических жидкостей',
-    'Компьютерная диагностика электронных систем',
-    'Установка охранных систем Pandora и StarLine (по описанию в карточке компании)',
-  ],
-  priceLabelsRu: [
-    'Диагностика подвески',
-    'Комплексная диагностика (подвеска / двигатель / технические жидкости)',
-    'Компьютерная диагностика (экспресс)',
-    'Компьютерная диагностика (полная)',
-  ],
-  priceUpdated: '2026-03-09',
+    'Art Master — кузовной ремонт и покраска в Артёме, мкр. Орбита, 38/2. Кузовной ремонт, покраска. Адрес, телефон и заявка.',
+  pageTitle: 'кузовной ремонт и покраска в Артёме',
+  heroTitle: 'Кузовной|ремонт|и покраска',
+  heroLead: 'Art Master — кузовной ремонт и покраска автомобилей в Артёме. Стоимость и сроки — по телефону.',
+  aboutTitle: 'Кузов и покраска',
+  aboutText:
+    'Art Master — мастерская кузовного ремонта и покраски в Артёме, мкр. Орбита, 38/2. Объём работ, стоимость и сроки уточняйте по телефону.',
+  requestTitle: 'Расскажите о повреждении',
+  requestLead: 'Укажите автомобиль и что нужно сделать. Стоимость и сроки сообщит мастерская.',
 };

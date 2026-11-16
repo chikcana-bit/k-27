@@ -1,93 +1,55 @@
 {
   "id": "service_05",
-  "name": "ProSTO",
-  "category": "Auto repair workshop",
-  "address": "90 Puteiskaya Street, Molodyozhny Settlement, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-  "rating": "4.8/5 (221 ratings; value shown on the 2GIS listing when checked)",
-  "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
-  "messengers": [
-    "WhatsApp"
+  "business_name": "СТО Стандарт",
+  "business_name_transliteration": "STO Standart",
+  "city": "Артём",
+  "region": "Приморский край",
+  "country": "Россия",
+  "address": "ул. Фрунзе, 45, стр. 8",
+  "phone": "+7 423 377-57-77 / +7 902 077-57-77",
+  "services_ru": [
+    "Ремонт",
+    "кузовные работы",
+    "покраска",
+    "полировка",
+    "шиномонтаж"
   ],
-  "email": null,
-  "hours": "Daily, 10:00–19:00 (according to the 2GIS listing)",
-  "services": [
-    "Engine and drivetrain repair and replacement",
-    "Automatic/manual/CVT transmission removal and installation",
-    "Engine removal and installation",
-    "Suspension and undercarriage repairs",
-    "Driveshaft services",
-    "Hydropneumatic suspension and KDSS repair / bleeding"
+  "services_en": [
+    "Repairs",
+    "bodywork",
+    "painting",
+    "polishing",
+    "tire service"
   ],
-  "prices": [
-    {
-      "service": "Automatic/manual/CVT transmission removal and installation",
-      "price": "from RUB 15,000"
-    },
-    {
-      "service": "Engine removal and installation",
-      "price": "from RUB 20,000"
-    },
-    {
-      "service": "Engine subframe removal and installation",
-      "price": "from RUB 6,000"
-    },
-    {
-      "service": "Rear axle beam removal and installation",
-      "price": "from RUB 10,000"
-    },
-    {
-      "service": "Driveshaft universal joint replacement",
-      "price": "from RUB 3,000"
-    },
-    {
-      "service": "Driveshaft replacement",
-      "price": "from RUB 3,000"
-    },
-    {
-      "service": "Pressing in a control arm bushing / ball joint (per unit)",
-      "price": "from RUB 2,500"
-    },
-    {
-      "service": "CV boot / CV joint replacement",
-      "price": "from RUB 2,000"
-    },
-    {
-      "service": "Drive axle replacement",
-      "price": "from RUB 2,000"
-    },
-    {
-      "service": "Shock absorber replacement",
-      "price": "from RUB 2,500"
-    },
-    {
-      "service": "Stabilizer link replacement",
-      "price": "from RUB 800"
-    },
-    {
-      "service": "Wheel hub bearing replacement",
-      "price": "from RUB 2,500"
-    },
-    {
-      "service": "Ball joint replacement",
-      "price": "from RUB 2,500"
-    },
-    {
-      "service": "Drum brake shoe replacement",
-      "price": "from RUB 1,600"
-    },
-    {
-      "service": "Disc brake pad replacement",
-      "price": "from RUB 1,000"
-    },
-    {
-      "service": "Timing chain replacement",
-      "price": "from RUB 18,000"
-    }
-  ],
-  "price_count": 31,
-  "photo_count": 36,
-  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571",
-  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571/tab/prices",
-  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229853186795571",
-  "verified_notes": "The 2GIS price list was updated on 14 November 2026. The listing explicitly states that prices are starting prices and do not constitute a public offer. The full list contains 31 items; this file includes a selection of the main visible items."
+  "website_url": null,
+  "website_status": "Website reported by owner; exact URL not supplied.",
+  "data_source": "Owner-provided information in this conversation",
+  "verification_status": "owner_supplied_unverified",
+  "public_research": {
+    "research_status": "Official business page found",
+    "public_website_url": "https://stostandart.iprim.ru/",
+    "public_services": [
+      "Technical fluid replacement",
+      "Engine oil and automatic transmission oil replacement",
+      "Brake fluid replacement",
+      "Bodywork",
+      "Painting",
+      "Polishing",
+      "Suspension repair",
+      "Engine repair",
+      "Wheel alignment",
+      "Tire service",
+      "Argon welding",
+      "Diagnostics"
+    ],
+    "price_status": "No itemized price list found on reviewed official page",
+    "price_items": [],
+    "source_urls": [
+      "https://stostandart.iprim.ru/",
+      "https://iprim.ru/store/стенд-развал-схождение-в-Артеме/"
+    ],
+    "notes": [
+      "Official page confirms address and both supplied phone numbers, plus email cto_ctandart@inbox.ru. Official page lists daily hours 09:00–21:00. A third-party directory reports slightly different address formatting; retain owner-supplied address until confirmed."
+    ]
+  }
 }

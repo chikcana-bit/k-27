@@ -1,0 +1,17 @@
+/*
+ * service_18 - Мой Сам - template "shade", variant "Shade · coral".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #0c0a0b;
+  --c-bg-alt: #131012;
+  --c-surface: #1b1719;
+  --c-surface-2: #252023;
+  --c-accent: #ff9b85;
+  --c-accent-strong: #ffbcae;
+  --c-on-accent: #2b0a03;
+  --sun-1: #fff3f0;
+  --sun-2: #ffb3a1;
+  --sun-3: #ff6f61;
+  --c-lead: #ddcdc9;
+}

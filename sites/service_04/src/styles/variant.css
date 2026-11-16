@@ -1,0 +1,28 @@
+/*
+ * service_04 - АвтоДиз - template "atelier", variant "Atelier · forest".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #f1f0e8;
+  --c-bg-alt: #e6e6da;
+  --c-surface: #fafaf4;
+  --c-surface-2: #ebebdf;
+  --c-text: #18221a;
+  --c-muted: #4f5a50;
+  --c-accent: #2e5e3e;
+  --c-accent-strong: #244c32;
+  --c-on-accent: #eef6ef;
+  --mat-a: #42704e;
+  --mat-b: #2f5b3b;
+  --mat-c: #1c3a25;
+  --mat-dark-a: #2f3a31;
+  --mat-dark-b: #18201a;
+  --mat-pale-a: #dfe3cf;
+  --mat-pale-b: #c3cbaa;
+  --mat-ring-a: #1e2a21;
+  --mat-ring-b: #34443a;
+  --thread-light: #e4efd9;
+  --thread-mid: #a9c48f;
+  --thread-dark: #2f4a33;
+  --c-on-mat: #f1f7ec;
+}

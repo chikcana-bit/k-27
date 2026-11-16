@@ -1,23 +1,42 @@
 {
   "id": "service_04",
-  "name": "Avtomaks Mobile Center",
-  "category": "Auto repair shop",
-  "address": "32/1 Vokzalnaya Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-  "rating": "5.0/5 (239 ratings; value shown on the 2GIS listing when checked)",
-  "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
-  "messengers": [
-    "WhatsApp"
+  "business_name": "АвтоДиз",
+  "business_name_transliteration": "AvtoDiz",
+  "city": "Артём",
+  "region": "Приморский край",
+  "country": "Россия",
+  "address": "ул. Дежнёва, 60А",
+  "phone": "+7 914 725-79-07",
+  "services_ru": [
+    "Кузовной ремонт",
+    "ходовая",
+    "шиномонтаж"
   ],
-  "email": null,
-  "hours": "The listing showed the business as closed and opening tomorrow at 09:00; the full weekly schedule was not retrieved",
-  "services": [
-    "Category: vehicle service and repair shop; a detailed service list was not available in the accessible listing text"
+  "services_en": [
+    "Bodywork",
+    "suspension",
+    "tire service"
   ],
-  "prices": [],
-  "price_count": null,
-  "photo_count": 12,
-  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228",
-  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228/tab/menu",
-  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229852186380228",
-  "verified_notes": "The listing shows a “Prices” section, but the opened page leads to a menu with no extractable prices. Do not add prices without confirmation."
+  "website_url": null,
+  "website_status": "No website URL supplied.",
+  "data_source": "Owner-provided information in this conversation",
+  "verification_status": "owner_supplied_unverified",
+  "public_research": {
+    "research_status": "Matched in local directories",
+    "public_website_url": null,
+    "public_services": [
+      "Bodywork",
+      "Suspension repair",
+      "Tire service"
+    ],
+    "price_status": "No reliable business-specific public price list found",
+    "price_items": [],
+    "source_urls": [
+      "https://artem.spravker.ru/tekhnicheskoe-obsluzhivanie-avtomobilia/",
+      "https://artem.spravker.ru/avtoservisy-gaz/"
+    ],
+    "notes": [
+      "Directory matches Dezhneva Street 60A and the supplied phone. Listed hours vary by directory; do not publish without confirmation."
+    ]
+  }
 }

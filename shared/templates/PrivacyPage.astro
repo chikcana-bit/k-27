@@ -1,0 +1,31 @@
+---
+/** Privacy page shared by all templates; each template wraps it to load its own theme and mark. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import PrivacyContent from '../components/PrivacyContent.astro';
+import type { TemplateProps } from './types';
+
+type Props = TemplateProps;
+const { site, nav, themeColor } = Astro.props;
+---
+
+<BaseLayout
+  site={site}
+  title="Политика конфиденциальности"
+  description={`Как сайт «${site.name}» обращается с данными из формы заявки.`}
+  themeColor={themeColor}
+>
+  <slot name="head" slot="head" />
+  <SiteHeader slot="header" site={site} nav={nav} home={false}>
+    <slot name="mark" slot="mark" />
+  </SiteHeader>
+  <section class="section page-top">
+    <div class="container container--narrow stack" style="--stack-gap: 2rem">
+      <p class="eyebrow">{site.name}</p>
+      <h1 class="page-title">Политика конфиденциальности</h1>
+      <PrivacyContent site={site} />
+    </div>
+  </section>
+  <SiteFooter slot="footer" site={site} nav={nav} home={false} />
+</BaseLayout>

@@ -1,43 +1,38 @@
 {
   "id": "service_06",
-  "name": "ZigZag",
-  "category": "Auto service center",
-  "address": "8/3G Alleya Truda Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-  "rating": "4.9/5 (194 ratings; value shown on the 2GIS price page when checked)",
-  "phone": "Partially displayed: +7‒962‒286…; 2GIS masks the full number in its text view",
-  "messengers": [
-    "Telegram"
+  "business_name": "Art Master",
+  "business_name_transliteration": "Art Master",
+  "city": "Артём",
+  "region": "Приморский край",
+  "country": "Россия",
+  "address": "мкр. Орбита, 38/2",
+  "phone": "+7 423 257-50-27",
+  "services_ru": [
+    "Кузовной ремонт",
+    "покраска"
   ],
-  "email": "zigzag27kms@gmail.com",
-  "hours": "The listing showed the business as closed and opening tomorrow at 09:00; the full weekly schedule was not retrieved",
-  "services": [
-    "Suspension diagnostics",
-    "Comprehensive diagnostics of suspension, engine, and technical fluids",
-    "Computer diagnostics of electronic systems",
-    "Installation of Pandora and StarLine security systems (according to the listing description)"
+  "services_en": [
+    "Bodywork",
+    "painting"
   ],
-  "prices": [
-    {
-      "service": "Suspension diagnostics",
-      "price": "RUB 800–1,500"
-    },
-    {
-      "service": "Comprehensive diagnostics (suspension / engine / fluids)",
-      "price": "RUB 1,800–2,800"
-    },
-    {
-      "service": "Computer diagnostics (quick scan)",
-      "price": "RUB 1,700"
-    },
-    {
-      "service": "Computer diagnostics (full scan)",
-      "price": "RUB 2,500"
-    }
-  ],
-  "price_count": 4,
-  "photo_count": 63,
-  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001036317662",
-  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001036317662/tab/prices",
-  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001036317662",
-  "verified_notes": "The 2GIS price list was updated on 9 March 2026; the information is not a public offer."
+  "website_url": null,
+  "website_status": "No website URL supplied.",
+  "data_source": "Owner-provided information in this conversation",
+  "verification_status": "owner_supplied_unverified",
+  "public_research": {
+    "research_status": "Partially matched in local directory; address mismatch",
+    "public_website_url": null,
+    "public_services": [
+      "Auto repair",
+      "Bodywork (not independently confirmed on reviewed listing)"
+    ],
+    "price_status": "No reliable business-specific public price list found",
+    "price_items": [],
+    "source_urls": [
+      "https://artyom.spravmer.ru/avtomobili/avtoservis-uslugi/avtoservis-avtotehcentr/"
+    ],
+    "notes": [
+      "Directory lists Art Master at Frunze Street 45 with the supplied phone, not the owner-provided Orbita 38/2 address. Must verify whether this is the same business before changing the address."
+    ]
+  }
 }

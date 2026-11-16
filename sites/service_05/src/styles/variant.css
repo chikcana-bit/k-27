@@ -1,0 +1,17 @@
+/*
+ * service_05 - СТО Стандарт - template "orbit", variant "Orbit · blue".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #090c14;
+  --c-bg-alt: #0d111c;
+  --c-surface: #141a2a;
+  --c-surface-2: #1c2438;
+  --c-text: #eef2fb;
+  --c-muted: #a6b0c8;
+  --c-accent: #7fb0ff;
+  --c-accent-strong: #a9caff;
+  --c-on-accent: #061430;
+  --c-accent-2: #6ff0ff;
+  --c-tint: #c3d6ff;
+}

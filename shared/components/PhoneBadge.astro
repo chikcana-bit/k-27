@@ -1,0 +1,23 @@
+---
+/** Primary phone as a call link, styled like the family's compact badge. */
+import type { SiteModel } from '../lib/types';
+import Icon from './Icon.astro';
+interface Props {
+  site: SiteModel;
+  label?: string;
+}
+const { site, label = 'Позвонить' } = Astro.props;
+const phone = site.phones[0];
+---
+
+{
+  phone && (
+    <a class="rating phone-badge" href={`tel:${phone.href}`}>
+      <Icon name="phone" class="rating__star" />
+      <span class="rating__meta">
+        <strong>{label}</strong>
+        <span class="rating__value">{phone.display}</span>
+      </span>
+    </a>
+  )
+}

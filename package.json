@@ -1,10 +1,13 @@
 {
-  "name": "autoservice-six",
+  "name": "artem-autoservice-24",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Six automotive service websites (Komsomolsk-on-Amur) built on one shared design system.",
-  "workspaces": ["shared", "sites/*"],
+  "description": "Twenty-four automotive service websites (Artem, Primorsky Krai) built from six shared templates.",
+  "workspaces": [
+    "shared",
+    "sites/*"
+  ],
   "scripts": {
     "dev": "node scripts/run.mjs dev",
     "build": "node scripts/run.mjs build",
@@ -27,5 +30,7 @@
     "typescript": "^5.6.0",
     "typescript-eslint": "^8.0.0"
   },
-  "engines": { "node": ">=22.18" }
+  "engines": {
+    "node": ">=22.18"
+  }
 }

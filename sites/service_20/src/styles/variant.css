@@ -1,0 +1,17 @@
+/*
+ * service_20 - Авторитет-Авто+ - template "orbit", variant "Orbit · amber".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #100c09;
+  --c-bg-alt: #16110d;
+  --c-surface: #201913;
+  --c-surface-2: #2b221a;
+  --c-text: #fbf4ee;
+  --c-muted: #c1b2a4;
+  --c-accent: #ffb067;
+  --c-accent-strong: #ffcb98;
+  --c-on-accent: #2a1400;
+  --c-accent-2: #ff7a7a;
+  --c-tint: #ffe0c2;
+}

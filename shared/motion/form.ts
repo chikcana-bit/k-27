@@ -3,7 +3,7 @@
  *
  * Demo mode (no data-endpoint): nothing is sent anywhere. The visitor is told
  * so explicitly and gets the composed request text to copy and deliver through
- * a verified channel (2GIS listing or e-mail), so the input is never silently
+ * the business's phone (or its e-mail when the business's own website states one), so the input is never silently
  * discarded.
  */
 export interface LeadValues {
@@ -84,7 +84,8 @@ export function initLeadForm(form: HTMLFormElement): void {
   const endpoint = form.dataset.endpoint || '';
   const business = form.dataset.business ?? '';
   const email = form.dataset.email || '';
-  const listing = form.dataset.listing || '';
+  const phone = form.dataset.phone || '';
+  const phoneLabel = form.dataset.phoneLabel || '';
   const idleLabel = submitLabel?.textContent ?? '';
   let touched = false;
 
@@ -139,13 +140,11 @@ export function initLeadForm(form: HTMLFormElement): void {
         mail.href = `mailto:${email}?subject=${encodeURIComponent(`Заявка с сайта: ${business}`)}&body=${encodeURIComponent(text)}`;
         actions.append(mail);
       }
-      if (listing) {
-        const link = el('a', 'Контакты в 2ГИС');
-        link.className = 'btn btn--small';
-        link.href = listing;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        actions.append(link);
+      if (phone) {
+        const call = el('a', `Позвонить: ${phoneLabel}`);
+        call.className = 'btn btn--small';
+        call.href = `tel:${phone}`;
+        actions.append(call);
       }
       setStatus('demo', 'Демо-режим: заявка никуда не отправлена', [
         el(

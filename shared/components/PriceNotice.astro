@@ -1,0 +1,30 @@
+---
+/**
+ * Neutral price statement. No business in the data pack has a confirmed
+ * price list, so no amounts are published (see reports/PUBLIC_DATA_ENRICHMENT_REPORT_EN.md).
+ */
+import type { SiteModel } from '../lib/types';
+import Icon from './Icon.astro';
+interface Props {
+  site: SiteModel;
+}
+const { site } = Astro.props;
+const phone = site.phones[0];
+---
+
+<div class="price-note" data-reveal="up">
+  <p>
+    <strong>Стоимость уточняйте по телефону.</strong> Цены зависят от автомобиля и объёма работ. Мы не
+    публикуем расценки, пока их не подтвердит сам сервис.
+  </p>
+  {
+    phone && (
+      <p>
+        <a class="text-link" href={`tel:${phone.href}`}>
+          <Icon name="phone" />
+          {phone.display}
+        </a>
+      </p>
+    )
+  }
+</div>

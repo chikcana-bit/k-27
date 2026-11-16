@@ -23,8 +23,7 @@ interface Props {
 const { site, title, description = site.content.descriptionRu, themeColor, noindex = false } = Astro.props;
 const fullTitle = `${site.name} — ${title}`;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
-const a = site.content.addressRu;
-// Structured data limited to verified facts (no phone, hours or rating markup).
+// Structured data limited to owner-provided facts (no hours, rating or price markup).
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AutomotiveBusiness',
@@ -32,15 +31,14 @@ const jsonLd = {
   description: site.content.descriptionRu,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: a.street,
-    addressLocality: a.city,
-    addressRegion: a.region,
-    postalCode: a.postalCode,
+    streetAddress: site.street,
+    addressLocality: site.city,
+    addressRegion: site.region,
     addressCountry: 'RU',
   },
-  ...(site.email ? { email: site.email } : {}),
+  telephone: site.phones.map((phone) => phone.display),
   ...(canonical ? { url: canonical } : {}),
-  sameAs: [site.links.profile],
+  ...(site.website ? { sameAs: [site.website] } : {}),
 };
 ---
 

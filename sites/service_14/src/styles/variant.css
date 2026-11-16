@@ -1,0 +1,28 @@
+/*
+ * service_14 - Кракен - template "atelier", variant "Atelier · sea teal".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #eef2f0;
+  --c-bg-alt: #e2e9e7;
+  --c-surface: #f8faf9;
+  --c-surface-2: #e6ecea;
+  --c-text: #10211f;
+  --c-muted: #4a5c5a;
+  --c-accent: #1d5d66;
+  --c-accent-strong: #154a52;
+  --c-on-accent: #eaf6f7;
+  --mat-a: #287079;
+  --mat-b: #1d5d66;
+  --mat-c: #0f3a40;
+  --mat-dark-a: #23343a;
+  --mat-dark-b: #121d21;
+  --mat-pale-a: #d6e3df;
+  --mat-pale-b: #b5cbc5;
+  --mat-ring-a: #18272b;
+  --mat-ring-b: #2b3f44;
+  --thread-light: #dff2f0;
+  --thread-mid: #8cc6c2;
+  --thread-dark: #1f4248;
+  --c-on-mat: #eef8f7;
+}

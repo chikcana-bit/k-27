@@ -1,0 +1,14 @@
+---
+import type { ImageMetadata } from 'astro';
+import Home from '@autoservice/shared/templates/shade/Home.astro';
+import '../styles/variant.css';
+import { site, nav, THEME_COLOR, MIRROR } from '../site';
+
+// Approved first-party photos only (see shared/components/Gallery.astro).
+const photoFiles = import.meta.glob<{ default: ImageMetadata }>(
+  '../../../../services/service_15/photos/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true },
+);
+---
+
+<Home site={site} nav={nav} themeColor={THEME_COLOR} mirror={MIRROR} photoFiles={photoFiles} />

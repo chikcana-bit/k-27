@@ -1,28 +1,7 @@
 ---
-import BaseLayout from '@autoservice/shared/layouts/BaseLayout.astro';
-import SiteHeader from '@autoservice/shared/components/SiteHeader.astro';
-import SiteFooter from '@autoservice/shared/components/SiteFooter.astro';
-import PrivacyContent from '@autoservice/shared/components/PrivacyContent.astro';
-import BrandMark from '../components/BrandMark.astro';
-import '../styles/theme.css';
+import Privacy from '@autoservice/shared/templates/signal/Privacy.astro';
+import '../styles/variant.css';
 import { site, nav, THEME_COLOR } from '../site';
 ---
 
-<BaseLayout
-  site={site}
-  title="Политика конфиденциальности"
-  description={`Как сайт «${site.name}» обращается с данными из формы заявки.`}
-  themeColor={THEME_COLOR}
->
-  <SiteHeader slot="header" site={site} nav={nav} home={false}>
-    <BrandMark slot="mark" />
-  </SiteHeader>
-  <section class="section page-top">
-    <div class="container container--narrow stack" style="--stack-gap: 2rem">
-      <p class="eyebrow">{site.name}</p>
-      <h1 class="page-title">Политика конфиденциальности</h1>
-      <PrivacyContent site={site} />
-    </div>
-  </section>
-  <SiteFooter slot="footer" site={site} nav={nav} home={false} />
-</BaseLayout>
+<Privacy site={site} nav={nav} themeColor={THEME_COLOR} />

@@ -1,0 +1,13 @@
+/*
+ * service_11 - Сатурн - template "signal", variant "Signal · orange".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #f4f1ec;
+  --c-bg-alt: #e9e4dc;
+  --c-accent: #b84300;
+  --c-accent-strong: #933500;
+  --c-on-accent: #ffffff;
+  --c-accent-on-dark: #ffa766;
+  --c-danger: #a81709;
+}

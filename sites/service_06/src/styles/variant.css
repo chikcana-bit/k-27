@@ -1,0 +1,28 @@
+/*
+ * service_06 - Art Master - template "atelier", variant "Atelier · ink blue".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #f3f1ec;
+  --c-bg-alt: #e9e6df;
+  --c-surface: #faf9f6;
+  --c-surface-2: #ece9e2;
+  --c-text: #161b2a;
+  --c-muted: #4f5566;
+  --c-accent: #2c4a8a;
+  --c-accent-strong: #233c72;
+  --c-on-accent: #eef2fb;
+  --mat-a: #3f63a8;
+  --mat-b: #2a4a86;
+  --mat-c: #18305e;
+  --mat-dark-a: #2a2f3d;
+  --mat-dark-b: #151924;
+  --mat-pale-a: #e2dccd;
+  --mat-pale-b: #c9bea4;
+  --mat-ring-a: #1c2230;
+  --mat-ring-b: #303849;
+  --thread-light: #e3eaf7;
+  --thread-mid: #9fb3dc;
+  --thread-dark: #2b3550;
+  --c-on-mat: #f1f4fb;
+}

@@ -6,12 +6,16 @@ import { content } from './content';
 
 export const site = buildSite(profile as RawProfile, content);
 
+/** Template and layout variant (see reports/DESIGN_VARIATIONS.md). */
+export const TEMPLATE = 'atelier';
+export const MIRROR = false;
+
 export const nav: NavItem[] = [
-  { href: '#about', label: 'Ателье' },
+  { href: '#about', label: 'О мастерской' },
   { href: '#services', label: 'Услуги' },
-  { href: '#prices', label: 'Цены' },
+  { href: '#prices', label: 'Стоимость' },
   { href: '#contacts', label: 'Контакты' },
   { href: '#request', label: 'Заявка' },
 ];
 
-export const THEME_COLOR = '#f6f0e4';
+export const THEME_COLOR = '#f6efe9';

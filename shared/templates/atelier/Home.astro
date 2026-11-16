@@ -1,0 +1,147 @@
+---
+/** Atelier home page: hero → statement → services index → cost ledger → contacts → request. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import PriceNotice from '../../components/PriceNotice.astro';
+import PhoneBadge from '../../components/PhoneBadge.astro';
+import ContactPanel from '../../components/ContactPanel.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Gallery from '../../components/Gallery.astro';
+import Icon from '../../components/Icon.astro';
+import Mark from './Mark.astro';
+import Hero from './Hero.astro';
+import './theme.css';
+import type { TemplateProps } from '../types';
+
+type Props = TemplateProps;
+const { site, nav, themeColor, mirror, photoFiles = {} } = Astro.props;
+const c = site.content;
+const num = (index: number) => String(index + 1).padStart(2, '0');
+---
+
+<BaseLayout site={site} title={c.pageTitle} themeColor={themeColor}>
+  <link slot="head" rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+  <SiteHeader slot="header" site={site} nav={nav}>
+    <Mark slot="mark" />
+  </SiteHeader>
+
+  <Hero site={site} mirror={mirror} />
+
+  <section class="section statement" id="about" aria-labelledby="about-title">
+    <div class="container statement__grid">
+      <p class="eyebrow statement__eyebrow" data-reveal="fade"><span class="section-head__index">I</span> О мастерской</p>
+      <div class="statement__body">
+        <h2 id="about-title" class="statement__title" data-split>{c.aboutTitle}</h2>
+        <p class="statement__text" data-reveal="up">{c.aboutText}</p>
+      </div>
+      <aside class="statement__aside" data-reveal="left">
+        <PhoneBadge site={site} />
+        <p class="muted">{site.addressLine}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <SectionHead
+        id="services-title"
+        index="II"
+        eyebrow="Услуги"
+        title="Чем занимается мастерская"
+        lead="Направления работ по данным владельца."
+      />
+      <ol class="index" data-stagger>
+        {
+          site.services.map((item, index) => (
+            <li class="index__item" data-reveal="up">
+              <span class="index__num" aria-hidden="true">
+                {num(index)}
+              </span>
+              <h3 class="index__title">{item}</h3>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section ledger" id="prices" aria-labelledby="prices-title">
+    <div class="container split" style="--split: 0.8fr 1.6fr">
+      <div class="ledger__intro">
+        <SectionHead
+          id="prices-title"
+          index="III"
+          eyebrow="Стоимость"
+          title="Расчёт по запросу"
+          lead="Итог зависит от автомобиля, повреждений и материалов — его назовёт мастерская."
+        />
+        <a class="btn" href="#request" data-reveal="up">
+          Запросить расчёт
+          <Icon name="arrow" />
+        </a>
+      </div>
+      <div>
+        <div class="prices prices--leaders">
+          <ul class="price-list" data-stagger>
+            {
+              site.services.map((item) => (
+                <li class="price-row" data-reveal="up">
+                  <span class="price-row__label">{item}</span>
+                  <span class="price-row__leader" aria-hidden="true" />
+                  <span class="price-row__value">по запросу</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <PriceNotice site={site} />
+      </div>
+    </div>
+  </section>
+
+  {
+    site.photos.length > 0 && (
+      <section class="section section--alt" id="gallery" aria-labelledby="gallery-title">
+        <div class="container">
+          <SectionHead id="gallery-title" eyebrow="Фото" title="Работы мастерской" />
+          <Gallery photos={site.photos} files={photoFiles} />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section section--alt" id="contacts" aria-labelledby="contacts-title">
+    <div class="container split" style="--split: 1.1fr 1fr">
+      <div>
+        <SectionHead id="contacts-title" index="IV" eyebrow="Контакты" title="Адрес и связь" />
+        <ContactPanel site={site} />
+      </div>
+      <div class="tag" data-reveal="scale">
+        <span class="tag__hole" aria-hidden="true"></span>
+        <p class="eyebrow"><Icon name="pin" /> Как найти</p>
+        <p class="tag__street">{site.street}</p>
+        <p class="muted">{site.city}, {site.region}</p>
+        <a class="text-link" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+          Открыть на карте
+          <Icon name="external" />
+          <span class="sr-only">(откроется в новой вкладке)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section request" id="request" aria-labelledby="request-title">
+    <div class="container split" style="--split: 1fr 1.15fr">
+      <div class="request__intro">
+        <SectionHead id="request-title" index="V" eyebrow="Заявка" title={c.requestTitle} lead={c.requestLead} />
+      </div>
+      <div data-reveal="up">
+        <LeadForm site={site} />
+      </div>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" site={site} nav={nav} />
+</BaseLayout>

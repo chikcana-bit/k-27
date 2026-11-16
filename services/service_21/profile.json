@@ -1,0 +1,44 @@
+{
+  "id": "service_21",
+  "business_name": "Гиперавто",
+  "business_name_transliteration": "Hyperauto",
+  "city": "Артём",
+  "region": "Приморский край",
+  "country": "Россия",
+  "address": "ул. Фрунзе, 12/1",
+  "phone": "8 800 555-23-88",
+  "services_ru": [
+    "Автосервис",
+    "запчасти",
+    "диагностика"
+  ],
+  "services_en": [
+    "Auto repair",
+    "spare parts",
+    "diagnostics"
+  ],
+  "website_url": null,
+  "website_status": "Website reported by owner; exact URL not supplied.",
+  "data_source": "Owner-provided information in this conversation",
+  "verification_status": "owner_supplied_unverified",
+  "public_research": {
+    "research_status": "Official website and branch page found",
+    "public_website_url": "https://hyperauto.ru/artem/address-map/g-artem-ul-frunze-12-1/",
+    "public_services": [
+      "Auto parts store",
+      "Auto repair",
+      "Auto electrician/diagnostics",
+      "Tire service"
+    ],
+    "price_status": "No branch-specific labor price list found in reviewed official sources",
+    "price_items": [],
+    "source_urls": [
+      "https://hyperauto.ru/",
+      "https://hyperauto.ru/artem/address-map/g-artem-ul-frunze-12-1/",
+      "https://artem.esbd.ru/autoservice"
+    ],
+    "notes": [
+      "Official branch page confirms Frunze Street 12/1 and gives separate numbers: store +7 (42337) 4-20-20; service +7 (423) 202-89-02. Owner-supplied 8 800 555-23-88 is a general hotline, not the branch service number."
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+/*
+ * service_16 - Автомойка / CarShine - template "shade", variant "Shade · sky".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #0a0c12;
+  --c-bg-alt: #0e1219;
+  --c-surface: #141a24;
+  --c-surface-2: #1c2431;
+  --c-accent: #8db8ff;
+  --c-accent-strong: #b3d0ff;
+  --c-on-accent: #071530;
+  --sun-1: #f4fbff;
+  --sun-2: #b9dcff;
+  --sun-3: #5e9cff;
+  --c-lead: #c8d3e3;
+}

@@ -1,0 +1,122 @@
+{
+  "service_01": {
+    "direction": "signal",
+    "variant": "Signal · red",
+    "mirror": false
+  },
+  "service_02": {
+    "direction": "pulse",
+    "variant": "Pulse · yellow",
+    "mirror": false
+  },
+  "service_03": {
+    "direction": "atelier",
+    "variant": "Atelier · oxblood",
+    "mirror": false
+  },
+  "service_04": {
+    "direction": "atelier",
+    "variant": "Atelier · forest",
+    "mirror": true
+  },
+  "service_05": {
+    "direction": "orbit",
+    "variant": "Orbit · blue",
+    "mirror": false
+  },
+  "service_06": {
+    "direction": "atelier",
+    "variant": "Atelier · ink blue",
+    "mirror": false
+  },
+  "service_07": {
+    "direction": "pulse",
+    "variant": "Pulse · electric blue",
+    "mirror": true
+  },
+  "service_08": {
+    "direction": "pulse",
+    "variant": "Pulse · green",
+    "mirror": false
+  },
+  "service_09": {
+    "direction": "blueprint",
+    "variant": "Blueprint · orange",
+    "mirror": false
+  },
+  "service_10": {
+    "direction": "signal",
+    "variant": "Signal · cobalt",
+    "mirror": true
+  },
+  "service_11": {
+    "direction": "signal",
+    "variant": "Signal · orange",
+    "mirror": false
+  },
+  "service_12": {
+    "direction": "blueprint",
+    "variant": "Blueprint · cyan",
+    "mirror": true
+  },
+  "service_13": {
+    "direction": "signal",
+    "variant": "Signal · green",
+    "mirror": true
+  },
+  "service_14": {
+    "direction": "atelier",
+    "variant": "Atelier · sea teal",
+    "mirror": true
+  },
+  "service_15": {
+    "direction": "shade",
+    "variant": "Shade · mint",
+    "mirror": false
+  },
+  "service_16": {
+    "direction": "shade",
+    "variant": "Shade · sky",
+    "mirror": true
+  },
+  "service_17": {
+    "direction": "shade",
+    "variant": "Shade · amber",
+    "mirror": false
+  },
+  "service_18": {
+    "direction": "shade",
+    "variant": "Shade · coral",
+    "mirror": true
+  },
+  "service_19": {
+    "direction": "orbit",
+    "variant": "Orbit · sea green",
+    "mirror": true
+  },
+  "service_20": {
+    "direction": "orbit",
+    "variant": "Orbit · amber",
+    "mirror": false
+  },
+  "service_21": {
+    "direction": "orbit",
+    "variant": "Orbit · violet",
+    "mirror": true
+  },
+  "service_22": {
+    "direction": "blueprint",
+    "variant": "Blueprint · green sheet",
+    "mirror": false
+  },
+  "service_23": {
+    "direction": "blueprint",
+    "variant": "Blueprint · graphite",
+    "mirror": true
+  },
+  "service_24": {
+    "direction": "pulse",
+    "variant": "Pulse · orange",
+    "mirror": true
+  }
+}

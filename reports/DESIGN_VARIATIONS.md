@@ -1,75 +1,49 @@
 # Design Variations
 
-Design intelligence source: the **UI UX Pro Max** skill was loaded and queried
-(`--design-system` for "automotive service detailing repair premium", plus `typography` and `ux`
-domain searches). Its output set the family-level direction — premium dark-plus-warm-accent
-foundation, scroll-triggered storytelling with a complete reading order without motion, staggered
-list entrances, and the pre-delivery checklist (no emoji icons, 4.5:1 contrast, visible focus,
-reduced motion, 375/768/1024/1440). Its "Liquid Glass" style suggestion is Apple-platform specific
-and was used only as the translucency idea behind `service_01`.
+The six designs of the Komsomolsk set were converted into templates. The concept of each — page
+composition, hero motif, typeface, geometry, motion language — is unchanged. What varies per site:
 
-## Shared concept: "Verified, well-made, in motion"
+1. **Colour variant** — accent, background and surface tones (and, per template, the light source,
+   material swatches, ink or trace colour). Set in `sites/<id>/src/styles/variant.css`.
+2. **Layout variant** — on 12 sites the hero composition is mirrored (art/drawing/readout on the
+   other side; the Signal poster aligned right). `MIRROR` in `sites/<id>/src/site.ts`.
+3. **Content** — headline, lead, section titles and the services list per business.
 
-Every site is a single-page experience plus a privacy page. They share:
+Template choice follows each business's owner-provided services. All text/background pairs used
+for text meet WCAG AA (4.5:1); checked with a script over every variant.
 
-- **Foundation** — one token set (`shared/tokens/tokens.css`): fluid type scale, 4px spacing scale,
-  radii, motion durations/easings, semantic colour roles, component knobs.
-- **Typography system** — Manrope (Cyrillic, variable) for body and UI on all six sites; each site
-  adds one display face for headings, numerals and brand. Same scale, same roles.
-- **Components** — header with animated mobile menu and scroll-spy, section heading, service list,
-  price list, quote panel, rating badge, contact panel, lead form, gallery, CTA band, footer.
-- **Motion language** — word-by-word masked heading reveals, upward fade-in of content, staggered
-  lists, slow parallax layers, fill-from-below button hover, a thin scroll-progress line, and
-  cross-document view transitions between home and privacy. Everything is transform/opacity,
-  one-shot, and collapses under `prefers-reduced-motion`.
-- **Honesty rules** — the same treatment of facts everywhere: rating with its check date, prices
-  with the "not a public offer" note, contacts routed to the business's own 2GIS listing, a demo
-  label on the form.
-- **No photography** — no approved first-party photos exist yet, so every hero is a designed
-  typographic/graphic composition in CSS and inline SVG. A gallery section appears automatically
-  once approved photos are added.
+| Template | Typeface | Hero motif | Used for |
+| --- | --- | --- | --- |
+| Shade | Unbounded | Light through three tinted panes | Car washes |
+| Orbit | Tektur | 360° dial | Multi-service centres with an official site |
+| Atelier | Cormorant Garamond (light theme) | Stitched material swatches | Body, paint, detailing |
+| Signal | Oswald (light theme) | Typographic poster, hazard stripes | General repair, little data |
+| Blueprint | JetBrains Mono | Self-drawing technical drawing | Mechanical repair |
+| Pulse | Russo One | Diagnostic trace | Electrics and diagnostics |
 
-## Six directions
-
-Distinctions are drawn from verified context only (business category, the services and prices in
-each listing, the name). Where the data gives little to work with, the variation is purely visual
-and no positioning is implied.
-
-| | `service_01` DetailTeamServis | `service_02` 360 | `service_03` Luxury Styling & Detailing | `service_04` Avtomaks Mobile Center | `service_05` ProSTO | `service_06` ZigZag |
+| Site | Business | Template | Variant | Accent | Background | Mirrored |
 | --- | --- | --- | --- | --- | --- | --- |
-| Direction | **Shade** | **Orbit** | **Atelier** | **Signal** | **Blueprint** | **Pulse** |
-| Derived from | Listing shows window tinting only | The name; a studio working around the whole body (film, wrap, polish) | Interior reupholstery and trim work lead the price list | Category only (least data) | Mechanical repair price list; full opening hours | The name; diagnostics-led price list |
-| Mode | Dark graphite | Dark, cool | **Light**, warm cream | **Light**, concrete grey | Dark blueprint navy | Dark asphalt |
-| Accent | Ice cyan | Electric violet | Cognac leather | Signal red | Safety orange | Signal yellow |
-| Display face | Unbounded | Tektur | Cormorant Garamond (serif) | Oswald (condensed caps) | JetBrains Mono | Russo One |
-| Hero | Warm light source dimmed through three layered window silhouettes; highlight sweep | Giant "360" numerals inside concentric dial rings; arc draws itself | Asymmetric editorial heading beside stitched pattern-piece swatches | Typographic poster with hazard-stripe band and road-marking dashes | Self-drawing technical schematic with dimension lines | Self-drawing waveform / zigzag trace over a measurement grid |
-| Geometry | Trapezoid panes, soft 18px cards | Circles, arcs, pills | Squared 2–6px, hairlines, dashed seams | Sharp 0–2px, strict ruled grid | Sharp, crop marks, call-out numbers | Chamfered corners, zigzag dividers |
-| Section order | Hero → prices → about → contacts → form | Hero → services → grouped prices (accordion) → about → contacts → form | Hero → statement → services index → price ledger → contacts → form | Hero → facts strip → about → cost on request → contacts → form | Hero → title block/hours → services → spec table → about → contacts → form | Hero → price menu → services → about → contacts → form |
-| Price treatment | Three "shade" cards, each one step lighter | Grouped accordions | Editorial ledger with leaders | None verified → quote panel | Grouped specification table with leaders | Four large cards |
-| Signature motion | Parallax panes, light sweep on hover | Rings at different depths, arc sweep | Seam "sewing" itself on reveal | Line-by-line poster reveal, sliding stripe | Stroke drawing, extending dimension lines | Trace drawing, travelling scan marker |
-
-### Notes per site
-
-- **service_01 — Shade.** The only verified service is window tinting, so the whole identity is
-  about light passing through glass. The three price items map to three pane shapes (windshield,
-  quarter light, side glass).
-- **service_02 — Orbit.** "360" is treated as a full turn around the car. Five verified service
-  areas and fifteen prices are organised into groups so the long list stays scannable.
-- **service_03 — Atelier.** The listing is led by reupholstery, so the site borrows from tailoring:
-  serif type, paper tones, stitched seams. "Luxury" appears only inside the official name; no
-  luxury claims are made in copy.
-- **service_04 — Signal.** No service list and no prices are verified. The design carries the page
-  through scale, rules and stripes instead of content, and says only what is known: category,
-  address, rating, where to find contact details.
-- **service_05 — Blueprint.** Mechanical work (engine, transmission, suspension, driveshaft) is
-  presented like an engineering sheet. It is the only site that shows opening hours, because it is
-  the only listing with a full schedule on record.
-- **service_06 — Pulse.** The zigzag doubles as a diagnostic trace, matching a price list made
-  entirely of diagnostics. The security-system installation is shown with its source qualifier.
-
-## Why these are not one template in six colours
-
-Each site has its own `Hero.astro`, its own `index.astro` composition and section order, its own
-display typeface, corner geometry, divider language and price presentation, while importing the
-same components and tokens. Two of the six are light themes. The shared layer guarantees that
-navigation, forms, focus states, spacing rhythm and motion timing feel like one family.
+| service_01 | Автоцентр Хадо | Signal | Signal · red | template default | #f3f1ec | no |
+| service_02 | Автохит | Pulse | Pulse · yellow | template default | template default | no |
+| service_03 | АвтоЛига | Atelier | Atelier · oxblood | #8e2626 | #f6efe9 | no |
+| service_04 | АвтоДиз | Atelier | Atelier · forest | #2e5e3e | #f1f0e8 | yes |
+| service_05 | СТО Стандарт | Orbit | Orbit · blue | #7fb0ff | #090c14 | no |
+| service_06 | Art Master | Atelier | Atelier · ink blue | #2c4a8a | #f3f1ec | no |
+| service_07 | АвтоЛют | Pulse | Pulse · electric blue | #3fb0ff | #0e1014 | yes |
+| service_08 | Автодом | Pulse | Pulse · green | #3ee08a | #0f1110 | no |
+| service_09 | Mobil-Артем | Blueprint | Blueprint · orange | template default | #0b1e3a | no |
+| service_10 | Омега-Сервис | Signal | Signal · cobalt | #1f4fd1 | #eff1f4 | yes |
+| service_11 | Сатурн | Signal | Signal · orange | #b84300 | #f4f1ec | no |
+| service_12 | АвтоМаксимум | Blueprint | Blueprint · cyan | #3fd3e6 | #071a2a | yes |
+| service_13 | СТО VISTA | Signal | Signal · green | #0d7a42 | #eef1ec | yes |
+| service_14 | Кракен | Atelier | Atelier · sea teal | #1d5d66 | #eef2f0 | yes |
+| service_15 | Пилот | Shade | Shade · mint | #6fe3c8 | #090d0c | no |
+| service_16 | Автомойка / CarShine | Shade | Shade · sky | #8db8ff | #0a0c12 | yes |
+| service_17 | Автомойка | Shade | Shade · amber | #ffc46b | #0d0b09 | no |
+| service_18 | Мой Сам | Shade | Shade · coral | #ff9b85 | #0c0a0b | yes |
+| service_19 | АвтоМир Приморье | Orbit | Orbit · sea green | #5fe0b0 | #070f0d | yes |
+| service_20 | Авторитет-Авто+ | Orbit | Orbit · amber | #ffb067 | #100c09 | no |
+| service_21 | Гиперавто | Orbit | Orbit · violet | template default | #0c0b13 | yes |
+| service_22 | Автосервис | Blueprint | Blueprint · green sheet | #ffc247 | #0b2420 | no |
+| service_23 | Totachi | Blueprint | Blueprint · graphite | #ff6a57 | #14171c | yes |
+| service_24 | Автосервис | Pulse | Pulse · orange | #ff8a2a | #121110 | yes |

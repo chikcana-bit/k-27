@@ -1,0 +1,8 @@
+/*
+ * service_21 - Гиперавто - template "orbit", variant "Orbit · violet".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #0c0b13;
+  --c-bg-alt: #11101b;
+}

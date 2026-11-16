@@ -8,101 +8,108 @@ export interface ApprovedPhoto {
   usage?: 'hero' | 'gallery' | 'services' | 'workshop';
 }
 
-export interface RawPrice {
-  service: string;
+export interface PublicPriceItem {
+  item: string;
   price: string;
+  price_type: string;
+  confidence?: string;
+}
+
+/** Evidence layer added by public research. Never overrides owner-provided fields. */
+export interface PublicResearch {
+  research_status: string;
+  /** Direct business page, when one was found. Directory and map links are not websites. */
+  public_website_url: string | null;
+  public_services: string[];
+  price_status: string;
+  price_items: PublicPriceItem[];
+  source_urls: string[];
+  notes: string[];
 }
 
 export interface RawProfile {
   id: string;
-  name: string;
-  category: string;
+  /** Owner-provided name, kept exactly. */
+  business_name: string;
+  business_name_transliteration: string;
+  city: string;
+  region: string;
+  country: string;
+  /** Owner-provided street address, kept exactly. */
   address: string;
-  rating: string;
+  /** Owner-provided phone(s), kept exactly; several numbers are separated by " / ". */
   phone: string;
-  messengers: string[];
-  email: string | null;
-  hours: string;
-  services: string[];
-  prices: RawPrice[];
-  price_count: number | null;
-  photo_count: number;
-  '2gis': string;
-  price_url: string;
-  gallery_url: string;
-  verified_notes: string;
+  services_ru: string[];
+  services_en: string[];
+  /** Exact website URL supplied by the owner (none so far). */
+  website_url: string | null;
+  website_status: string;
+  data_source: string;
+  verification_status: string;
+  public_research: PublicResearch;
   /** Added by the project owner once photo permission is obtained. */
   approved_photos?: ApprovedPhoto[];
 }
 
 /** Russian customer-facing copy for one site. Facts must mirror the profile. */
 export interface SiteContent {
-  /** Russian category label (translation of `profile.category`). */
+  /**
+   * Name shown in the header and titles. Defaults to the owner-provided name;
+   * set only when that name is a placeholder such as "Автосервис (без указанного бренда)".
+   */
+  displayName?: string;
+  /** Russian category label, derived from the owner-provided service list. */
   categoryRu: string;
-  /** Short neutral description used for meta description and intro. */
+  /** Short neutral description used for meta description. */
   descriptionRu: string;
-  /** Russian address parts (translation of `profile.address`). */
-  addressRu: {
-    street: string;
-    district: string;
-    city: string;
-    region: string;
-    postalCode: string;
-  };
+  /** Page-title suffix, e.g. "автомойка в Артёме". */
+  pageTitle: string;
+  heroTitle: string;
+  heroLead: string;
+  aboutTitle: string;
+  aboutText: string;
+  requestTitle: string;
+  requestLead: string;
   /**
-   * Russian service names, index-aligned with `profile.services`.
-   * Leave empty when the profile has no verified service list.
+   * Services listed on the business's own website (public_research), translated.
+   * Shown separately from the owner list and labelled with their source.
    */
-  serviceLabelsRu: string[];
-  /** Russian price-item names, index-aligned with `profile.prices`. */
-  priceLabelsRu: string[];
-  /** Optional grouping of price rows (indexes into `profile.prices`). */
-  priceGroups?: { titleRu: string; items: number[] }[];
-  /**
-   * Date the source price list was last updated, as recorded in the local
-   * source notes (ISO date). Omit when the source does not state it.
-   */
-  priceUpdated?: string;
-  /** Number of price items in the full source list when only a selection is stored. */
-  priceListTotal?: number;
+  officialServicesRu?: string[];
+  /** Opening hours stated on the business's own website. */
+  officialHoursRu?: string;
+  /** E-mail stated on the business's own website. */
+  officialEmail?: string;
+  /** Short words for decorative labels (Pulse trace ticks, Atelier tag, etc.). */
+  tags?: string[];
 }
 
-export type PriceKind = 'from' | 'range' | 'fixed';
-
-export interface PriceRow {
-  labelRu: string;
-  kind: PriceKind;
-  min: number;
-  max: number | null;
-  /** Formatted Russian price string, e.g. "от 3 000 ₽". */
+export interface Phone {
+  /** Exactly as supplied by the owner. */
   display: string;
-}
-
-export interface Rating {
-  /** e.g. "5,0" */
-  value: string;
-  /** e.g. "52" or "145–146" */
-  count: string;
-  /** Numeric lower bound of the count, used for pluralisation. */
-  countNumber: number;
+  /** Value for a tel: link (digits only, with + for +7 numbers). */
+  href: string;
 }
 
 export interface SiteModel {
   id: string;
-  /** Official business name exactly as in the source listing. */
+  /** Name shown to visitors (owner-provided name unless it is a placeholder). */
   name: string;
+  /** Owner-provided name exactly as supplied. */
+  ownerName: string;
   content: SiteContent;
+  city: string;
+  region: string;
+  /** Owner-provided street address exactly as supplied. */
+  street: string;
   addressLine: string;
+  phones: Phone[];
+  /** Owner-provided services, first letter capitalised for display. */
   services: string[];
-  prices: PriceRow[];
-  priceGroups: { titleRu: string; rows: PriceRow[] }[];
-  rating: Rating | null;
-  /** Russian opening hours, or null when the full schedule is not verified. */
-  hoursRu: string | null;
-  messengers: string[];
-  email: string | null;
-  links: { profile: string; prices: string; gallery: string };
-  /** ISO date when the source listing was checked. */
+  /** Direct business website (owner-supplied, else verified public page), or null. */
+  website: string | null;
+  /** Map search for the address (not a business website, no coordinates). */
+  mapUrl: string;
+  /** ISO date of the data pack / public research pass. */
   checkedOn: string;
   photos: ApprovedPhoto[];
 }

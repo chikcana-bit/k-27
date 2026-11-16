@@ -1,4 +1,4 @@
-// Builds all six sites into one folder for a single static host
+// Builds all sites into one folder for a single static host
 // (e.g. a GitHub Pages project site): dist-pages/<site>/ plus an index page.
 //
 //   PAGES_ORIGIN  origin of the host, e.g. https://<owner>.github.io
@@ -35,6 +35,7 @@ for (const id of sites) {
   if (result.status !== 0) process.exit(result.status ?? 1);
   cpSync(`${root}/sites/${id}/dist`, `${out}/${id}`, { recursive: true });
   const profile = JSON.parse(readFileSync(`${root}/services/${id}/profile.json`, 'utf8'));
+  profile.name = profile.business_name;
   items.push(`<li><a href="./${id}/">${profile.name.replace(/&/g, '&amp;')}</a> <small>${id}</small></li>`);
 }
 
@@ -47,7 +48,7 @@ writeFileSync(
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Six automotive service websites - preview index</title>
+<title>Artem automotive service websites - preview index</title>
 <style>
 body{font:16px/1.6 system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1.25rem;background:#0e1013;color:#f2f4f7}
 a{color:#ecc068;font-weight:600;font-size:1.25rem}li{margin:.75rem 0}small{color:#a3acb9;margin-left:.5rem}
@@ -56,7 +57,7 @@ p{color:#a3acb9}
 </head>
 <body>
 <h1>Preview index</h1>
-<p>Internal preview of six websites built from one shared design system. Forms run in demo mode; business data is subject to owner confirmation before launch.</p>
+<p>Internal preview of 24 websites built from six shared templates. Forms run in demo mode; business data is subject to owner confirmation before launch.</p>
 <ol>
 ${items.join('\n')}
 </ol>

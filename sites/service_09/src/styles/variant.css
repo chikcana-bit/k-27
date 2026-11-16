@@ -1,0 +1,8 @@
+/*
+ * service_09 - Mobil-Артем - template "blueprint", variant "Blueprint · orange".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #0b1e3a;
+  --c-bg-alt: #0d2445;
+}

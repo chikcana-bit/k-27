@@ -1,9 +1,10 @@
-// Checks every built site against the data-source and photography rules:
-// only verified facts, no fabricated contact actions, no foreign images.
+// Checks every built site against the data rules: owner-provided facts only,
+// phone links only to the owner's numbers, external links only to the address
+// map search and a verified business website, no prices, no foreign images.
 // Usage: node scripts/validate-dist.mjs [site ...]
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { formatNumberRu, parsePrice } from '../shared/lib/model.ts';
+import { mapSearchUrl, parsePhones } from '../shared/lib/model.ts';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const only = process.argv.slice(2);
@@ -12,7 +13,13 @@ const sites = readdirSync(`${root}/sites`)
   .sort();
 const targets = only.length > 0 ? only : sites;
 const problems = [];
-const norm = (text) => text.replace(/&nbsp;|&#160;| /g, ' ').replace(/\s+/g, ' ');
+const decode = (text) =>
+  text
+    .replace(/&nbsp;|&#160;| /g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&#39;|&#x27;/g, "'")
+    .replace(/&quot;/g, '"');
+const norm = (text) => decode(text).replace(/\s+/g, ' ');
 const stripTags = (html) =>
   norm(html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' '));
 
@@ -29,6 +36,10 @@ for (const id of targets) {
     ? readFileSync(`${dist}/privacy/index.html`, 'utf8')
     : '';
   const text = stripTags(html);
+  const phones = parsePhones(profile.phone);
+  const website = profile.website_url ?? profile.public_research.public_website_url;
+  const allowedLinks = new Set([mapSearchUrl('Артём', profile.address), ...(website ? [website] : [])]);
+  const allowedTel = new Set(phones.map((phone) => `tel:${phone.href}`));
 
   for (const [name, page] of [
     ['index', html],
@@ -41,74 +52,71 @@ for (const id of targets) {
     if (!/name="viewport"/.test(page)) fail(`${name}: viewport meta missing`);
     if (!/class="skip-link"/.test(page)) fail(`${name}: skip link missing`);
 
-    // Contact actions: no phone links, no guessed messenger links.
-    if (/href="tel:/i.test(page)) fail(`${name}: tel: link present but no full phone number is verified`);
-    if (/wa\.me|api\.whatsapp|t\.me\/|telegram\.me|max\.ru|viber:|vk\.com/i.test(page)) {
-      fail(`${name}: messenger/social link present but no handle is verified`);
-    }
-    if (/\+7[\s (‒-]*\d{3}[\s )‒-]*\d{3}/.test(stripTags(page).replace(/\+7 900 000-00-00/g, ''))) {
-      fail(`${name}: something that looks like a phone number is displayed`);
-    }
-
-    // Links: only the business's own 2GIS URLs and its verified e-mail.
-    const allowed = new Set([profile['2gis'], profile.price_url, profile.gallery_url]);
     for (const [, href] of page.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)) {
-      if (/^https?:/.test(href) && !allowed.has(href)) fail(`${name}: external link not in profile: ${href}`);
-      if (href.startsWith('mailto:') && href !== `mailto:${profile.email}`)
-        fail(`${name}: unverified e-mail ${href}`);
+      const url = decode(href);
+      if (/^https?:/.test(url) && !allowedLinks.has(url)) fail(`${name}: external link not allowed: ${url}`);
+      if (url.startsWith('tel:') && !allowedTel.has(url)) fail(`${name}: tel: link not in profile: ${url}`);
+      if (url.startsWith('mailto:')) {
+        const email = url.slice(7);
+        const official = (profile.public_research.notes ?? []).join(' ');
+        if (!website || !official.includes(email))
+          fail(`${name}: e-mail not stated on the business website: ${email}`);
+      }
     }
+    if (/wa\.me|api\.whatsapp|t\.me\/|telegram\.me|max\.ru|viber:|vk\.com/i.test(page))
+      fail(`${name}: messenger/social link present but none is supplied`);
     if (/<a\b[^>]*target="_blank"(?![^>]*rel="noopener noreferrer")/.test(page))
       fail(`${name}: target=_blank without rel`);
 
-    // Photography: local, approved images only; nothing hot-linked.
     for (const [, src] of page.matchAll(/<(?:img|source|video|iframe)\b[^>]*\bsrc(?:set)?="([^"]+)"/g)) {
       if (/^(https?:)?\/\//.test(src)) fail(`${name}: hot-linked media ${src}`);
     }
-    if (/photo\.2gis\.com|unsplash|pexels|pinterest|googleusercontent|fonts\.googleapis/i.test(page)) {
+    if (/unsplash|pexels|pinterest|googleusercontent|fonts\.googleapis/i.test(page))
       fail(`${name}: external media/CDN reference found`);
-    }
     if (/<img\b(?![^>]*\balt=)/.test(page)) fail(`${name}: <img> without alt`);
-    if (/<(?:img)\b/.test(page) && (profile.approved_photos ?? []).length === 0) {
+    if (/<img\b/.test(page) && (profile.approved_photos ?? []).length === 0)
       fail(`${name}: <img> rendered although no approved photos exist`);
-    }
   }
 
-  // Facts: name and every verified price are shown; no other rouble amounts appear.
-  if (!text.includes(profile.name.replace('&', '&amp;')) && !text.includes(profile.name))
-    fail('business name not displayed');
-  const rows = profile.prices.map((item) => parsePrice(item.price, ''));
-  const allowedAmounts = new Set(rows.flatMap((row) => [row.min, row.max]).filter((value) => value !== null));
-  for (const row of rows) {
-    if (!text.includes(norm(row.display))) fail(`price not displayed: ${row.display}`);
+  // Owner-provided facts appear exactly as supplied.
+  if (!text.includes(profile.address)) fail(`address not displayed exactly: ${profile.address}`);
+  for (const phone of phones) {
+    if (!text.includes(phone.display)) fail(`phone not displayed exactly: ${phone.display}`);
   }
-  for (const [, amount] of text.matchAll(/(\d[\d ]*\d|\d) ?(?:₽|руб)/g)) {
-    const value = Number(amount.replace(/ /g, ''));
-    if (!allowedAmounts.has(value)) fail(`rouble amount not in profile: ${formatNumberRu(value)} ₽`);
+  if (!/без указанного бренда/.test(profile.business_name) && !text.includes(profile.business_name))
+    fail(`business name not displayed: ${profile.business_name}`);
+  for (const service of profile.services_ru) {
+    if (!text.toLowerCase().includes(service.toLowerCase())) fail(`service not displayed: ${service}`);
   }
-  if (profile.prices.length > 0 && !/не являются публичной офертой/.test(text))
-    fail('price disclaimer missing');
-  if (profile.prices.length === 0 && /₽|руб\./.test(text)) fail('prices shown although none are verified');
+  // Any other phone-like number is a fabricated or unconfirmed contact.
+  const shown = text.replace(/\+7 900 000-00-00/g, '');
+  const stripped = phones.reduce((acc, phone) => acc.split(phone.display).join(''), shown);
+  if (/(\+7|\b8)[\s(]*\d{3,5}[\s)]*\d{1,3}[\s-]?\d{2}[\s-]?\d{2}/.test(stripped))
+    fail('a phone number not supplied by the owner is displayed');
 
-  // Hours: a schedule may be shown only when the profile states the full one.
-  const fullHours = /^Daily, /.test(profile.hours);
-  if (!fullHours && /\b\d{1,2}:\d{2}\b/.test(text))
-    fail('clock time displayed although the weekly schedule is not verified');
+  // No prices: none is confirmed by a business.
+  if (/\d[\d ]*\s?(₽|руб)/.test(text)) fail('a rouble amount is displayed although no price is confirmed');
+  if (!/Стоимость уточняйте по телефону|Цены — по телефону/.test(text))
+    fail('neutral price statement missing');
 
-  // Unverifiable marketing claims.
+  // Hours only when the business website states them.
+  if (/\b\d{1,2}:\d{2}\b/.test(text) && !/09:00–21:00/.test((profile.public_research.notes ?? []).join(' ')))
+    fail('clock time displayed although no schedule is verified');
+
   const claims =
-    /лучш|№\s?1|официальн\w* дилер|гаранти|круглосуточно|24\/7|с \d{4} года|лет опыта|сертифи|более \d+ клиент/i;
+    /лучш|№\s?1|официальн\w* дилер|гаранти|круглосуточно|24\/7|с \d{4} года|лет опыта|сертифи|более \d+ клиент|отзыв|рейтинг/i;
   const claim = claims.exec(text);
   if (claim)
     fail(`unverified claim in copy: "${text.slice(Math.max(0, claim.index - 30), claim.index + 40)}"`);
 
-  // Form honesty.
   if (!/data-lead-form/.test(html)) fail('lead form missing');
   if (/data-endpoint=""/.test(html) && !/демо-режиме/.test(text)) fail('demo form is not labelled as a demo');
   if (!/name="consent"/.test(html)) fail('consent checkbox missing');
+  if (!/Демонстрационный концепт сайта/.test(text)) fail('demo-concept notice missing in footer');
 }
 
 if (problems.length > 0) {
   console.error(`validate-dist: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
   process.exit(1);
 }
-console.log(`validate-dist: OK (${targets.join(', ')})`);
+console.log(`validate-dist: OK (${targets.length} sites)`);

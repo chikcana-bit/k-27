@@ -1,0 +1,13 @@
+/*
+ * service_24 - Автосервис (без указанного бренда) - template "pulse", variant "Pulse · orange".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #121110;
+  --c-bg-alt: #191715;
+  --c-surface: #201e1b;
+  --c-surface-2: #2a2723;
+  --c-accent: #ff8a2a;
+  --c-accent-strong: #ffab66;
+  --c-on-accent: #2a1000;
+}

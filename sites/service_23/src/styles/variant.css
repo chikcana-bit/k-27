@@ -1,0 +1,17 @@
+/*
+ * service_23 - Totachi - template "blueprint", variant "Blueprint · graphite".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #14171c;
+  --c-bg-alt: #191d23;
+  --c-surface: #1f242c;
+  --c-surface-2: #272d37;
+  --c-text: #eef1f5;
+  --c-muted: #aab3c0;
+  --c-accent: #ff6a57;
+  --c-accent-strong: #ff8f80;
+  --c-on-accent: #2a0700;
+  --ink: #d4dbe6;
+  --c-glow: #5a6b85;
+}

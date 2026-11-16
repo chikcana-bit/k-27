@@ -1,0 +1,13 @@
+/*
+ * service_08 - Автодом - template "pulse", variant "Pulse · green".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #0f1110;
+  --c-bg-alt: #151816;
+  --c-surface: #1c201d;
+  --c-surface-2: #262b27;
+  --c-accent: #3ee08a;
+  --c-accent-strong: #79eeaf;
+  --c-on-accent: #00210f;
+}

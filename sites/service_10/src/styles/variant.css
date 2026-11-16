@@ -1,0 +1,17 @@
+/*
+ * service_10 - Омега-Сервис - template "signal", variant "Signal · cobalt".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #eff1f4;
+  --c-bg-alt: #e3e6ec;
+  --c-surface: #ffffff;
+  --c-surface-2: #f6f7f9;
+  --c-text: #111521;
+  --c-muted: #4f5563;
+  --c-accent: #1f4fd1;
+  --c-accent-strong: #173da3;
+  --c-on-accent: #ffffff;
+  --c-accent-on-dark: #9db8ff;
+  --c-danger: #b3261e;
+}

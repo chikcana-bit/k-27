@@ -1,0 +1,13 @@
+/*
+ * service_07 - АвтоЛют - template "pulse", variant "Pulse · electric blue".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #0e1014;
+  --c-bg-alt: #14171d;
+  --c-surface: #1b1f26;
+  --c-surface-2: #252a33;
+  --c-accent: #3fb0ff;
+  --c-accent-strong: #7cc9ff;
+  --c-on-accent: #001a2e;
+}

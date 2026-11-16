@@ -1,0 +1,17 @@
+/*
+ * service_19 - АвтоМир Приморье - template "orbit", variant "Orbit · sea green".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #070f0d;
+  --c-bg-alt: #0b1613;
+  --c-surface: #11201c;
+  --c-surface-2: #182b26;
+  --c-text: #effaf6;
+  --c-muted: #a3beb5;
+  --c-accent: #5fe0b0;
+  --c-accent-strong: #93edcb;
+  --c-on-accent: #04241a;
+  --c-accent-2: #7fd0ff;
+  --c-tint: #c2f0e0;
+}

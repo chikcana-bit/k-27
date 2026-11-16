@@ -1,0 +1,7 @@
+/*
+ * service_02 - Автохит - template "pulse", variant "Pulse · yellow".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --variant: default;
+}

@@ -1,9 +1,8 @@
 ---
 /**
- * Contact details limited to what is verified in the local data:
- * address, e-mail (if any), messenger names (no handles are known, so they are
- * not links), opening hours only when the full schedule is known, and a link
- * to the 2GIS listing where the phone number can be revealed.
+ * Contact details limited to the owner-provided record: address and phone(s).
+ * Opening hours and e-mail appear only when the business's own website states
+ * them (content.officialHoursRu / officialEmail); otherwise a neutral fallback.
  */
 import type { SiteModel } from '../lib/types';
 import Icon from './Icon.astro';
@@ -11,7 +10,8 @@ interface Props {
   site: SiteModel;
 }
 const { site } = Astro.props;
-const a = site.content.addressRu;
+const { officialHoursRu, officialEmail } = site.content;
+const primary = site.phones[0];
 ---
 
 <div class="contact">
@@ -20,10 +20,23 @@ const a = site.content.addressRu;
       <span class="contact-item__icon"><Icon name="pin" /></span>
       <div>
         <dt class="contact-item__label">Адрес</dt>
-        <dd class="contact-item__value">{a.street}</dd>
-        <dd class="contact-item__hint">
-          {a.district}, {a.city}, {a.region}, {a.postalCode}
-        </dd>
+        <dd class="contact-item__value">{site.street}</dd>
+        <dd class="contact-item__hint">{site.city}, {site.region}</dd>
+      </div>
+    </div>
+    <div class="contact-item" data-reveal="up">
+      <span class="contact-item__icon"><Icon name="phone" /></span>
+      <div>
+        <dt class="contact-item__label">{site.phones.length > 1 ? 'Телефоны' : 'Телефон'}</dt>
+        {
+          site.phones.map((phone) => (
+            <dd class="contact-item__value">
+              <a class="text-link" href={`tel:${phone.href}`}>
+                {phone.display}
+              </a>
+            </dd>
+          ))
+        }
       </div>
     </div>
     <div class="contact-item" data-reveal="up">
@@ -31,40 +44,22 @@ const a = site.content.addressRu;
       <div>
         <dt class="contact-item__label">Режим работы</dt>
         {
-          site.hoursRu ? (
+          officialHoursRu ? (
             <>
-              <dd class="contact-item__value">{site.hoursRu}</dd>
-              <dd class="contact-item__hint">По данным карточки в 2ГИС. Перед визитом уточните.</dd>
+              <dd class="contact-item__value">{officialHoursRu}</dd>
+              <dd class="contact-item__hint">По данным сайта компании. Перед визитом уточните.</dd>
             </>
           ) : (
             <>
-              <dd class="contact-item__value">Уточняйте у сервиса</dd>
-              <dd class="contact-item__hint">Актуальный график — в карточке компании в 2ГИС.</dd>
+              <dd class="contact-item__value">Уточняйте по телефону</dd>
+              <dd class="contact-item__hint">График работы на сайте пока не указан.</dd>
             </>
-          )
-        }
-      </div>
-    </div>
-    <div class="contact-item" data-reveal="up">
-      <span class="contact-item__icon"><Icon name="chat" /></span>
-      <div>
-        <dt class="contact-item__label">Телефон и мессенджеры</dt>
-        <dd class="contact-item__value">В карточке компании в 2ГИС</dd>
-        {
-          site.messengers.length > 0 && (
-            <dd>
-              <ul class="chips" aria-label="Мессенджеры, указанные в карточке">
-                {site.messengers.map((name) => (
-                  <li class="chip">{name}</li>
-                ))}
-              </ul>
-            </dd>
           )
         }
       </div>
     </div>
     {
-      site.email && (
+      officialEmail && (
         <div class="contact-item" data-reveal="up">
           <span class="contact-item__icon">
             <Icon name="mail" />
@@ -72,8 +67,27 @@ const a = site.content.addressRu;
           <div>
             <dt class="contact-item__label">Эл. почта</dt>
             <dd class="contact-item__value">
-              <a class="text-link" href={`mailto:${site.email}`}>
-                {site.email}
+              <a class="text-link" href={`mailto:${officialEmail}`}>
+                {officialEmail}
+              </a>
+            </dd>
+            <dd class="contact-item__hint">Указана на сайте компании.</dd>
+          </div>
+        </div>
+      )
+    }
+    {
+      site.website && (
+        <div class="contact-item" data-reveal="up">
+          <span class="contact-item__icon">
+            <Icon name="globe" />
+          </span>
+          <div>
+            <dt class="contact-item__label">Сайт компании</dt>
+            <dd class="contact-item__value">
+              <a class="text-link" href={site.website} target="_blank" rel="noopener noreferrer">
+                {new URL(site.website).hostname}
+                <span class="sr-only">(откроется в новой вкладке)</span>
               </a>
             </dd>
           </div>
@@ -82,8 +96,16 @@ const a = site.content.addressRu;
     }
   </dl>
   <div class="cluster contact-actions" data-reveal="up">
-    <a class="btn btn--primary" href={site.links.profile} target="_blank" rel="noopener noreferrer">
-      Открыть контакты в 2ГИС
+    {
+      primary && (
+        <a class="btn btn--primary" href={`tel:${primary.href}`}>
+          <Icon name="phone" />
+          Позвонить
+        </a>
+      )
+    }
+    <a class="btn" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+      Адрес на карте
       <Icon name="external" />
       <span class="sr-only">(откроется в новой вкладке)</span>
     </a>

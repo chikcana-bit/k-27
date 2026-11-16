@@ -639,6 +639,11 @@
     font-weight: 650;
   }
 
+  .phone-badge .rating__value {
+    font-size: var(--step-1);
+    white-space: nowrap;
+  }
+
   a.rating:hover .rating__meta strong,
   a.rating:focus-visible .rating__meta strong {
     color: var(--c-accent-strong);

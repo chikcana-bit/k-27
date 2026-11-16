@@ -1,0 +1,28 @@
+/*
+ * service_03 - АвтоЛига - template "atelier", variant "Atelier · oxblood".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #f6efe9;
+  --c-bg-alt: #efe3db;
+  --c-surface: #fcf8f5;
+  --c-surface-2: #f1e5dd;
+  --c-text: #2a1513;
+  --c-muted: #6b5450;
+  --c-accent: #8e2626;
+  --c-accent-strong: #781d1d;
+  --c-on-accent: #fdf1ed;
+  --mat-a: #a83a32;
+  --mat-b: #7a231e;
+  --mat-c: #4f1410;
+  --mat-dark-a: #3b2a28;
+  --mat-dark-b: #201413;
+  --mat-pale-a: #ead6cf;
+  --mat-pale-b: #d4b5aa;
+  --mat-ring-a: #2b1a18;
+  --mat-ring-b: #45302d;
+  --thread-light: #f6dcd3;
+  --thread-mid: #d99a8c;
+  --thread-dark: #5a2e28;
+  --c-on-mat: #fdf1ed;
+}

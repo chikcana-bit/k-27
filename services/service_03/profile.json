@@ -1,113 +1,37 @@
 {
   "id": "service_03",
-  "name": "Luxury Styling & Detailing",
-  "category": "Interior customization and car detailing workshop",
-  "address": "29A Komsomolskaya Street, Quarter 4, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-  "rating": "4.9/5 (145–146 ratings; count varies on the listing)",
-  "phone": "Partially displayed: +7‒924‒110…; 2GIS masks the full number in its text view",
-  "messengers": [
-    "Telegram",
-    "WhatsApp",
-    "Max"
+  "business_name": "АвтоЛига",
+  "business_name_transliteration": "AvtoLiga",
+  "city": "Артём",
+  "region": "Приморский край",
+  "country": "Россия",
+  "address": "ул. Дежнёва, 60А, стр. 8",
+  "phone": "+7 902 555-07-97",
+  "services_ru": [
+    "Кузовной ремонт"
   ],
-  "email": "luxurystylinginbox@gmail.com",
-  "hours": "The listing showed the business as closed and opening at 10:00; the full weekly schedule was not retrieved",
-  "services": [
-    "Interior and trim reupholstery",
-    "Steering wheel and seat reupholstery",
-    "Seat side-bolster foam repair",
-    "Headliner, armrest, and door-card reupholstery",
-    "Exterior paint polishing",
-    "Ceramic coating application",
-    "Window tinting",
-    "Interior deep cleaning",
-    "Soundproofing",
-    "Dashboard reupholstery",
-    "Chrome delete",
-    "Body and headlight protection with PPF"
+  "services_en": [
+    "Bodywork",
+    "collision repair"
   ],
-  "prices": [
-    {
-      "service": "Steering wheel reupholstery",
-      "price": "from RUB 8,000"
-    },
-    {
-      "service": "Front seat and rear bench reupholstery",
-      "price": "from RUB 95,000"
-    },
-    {
-      "service": "Seat side-bolster foam repair",
-      "price": "from RUB 7,000"
-    },
-    {
-      "service": "Seat upholstery panel re-stitching",
-      "price": "from RUB 8,000"
-    },
-    {
-      "service": "Headliner reupholstery",
-      "price": "from RUB 40,000"
-    },
-    {
-      "service": "Armrest reupholstery",
-      "price": "from RUB 3,000"
-    },
-    {
-      "service": "Door-card reupholstery",
-      "price": "from RUB 4,000"
-    },
-    {
-      "service": "Exterior paint polishing",
-      "price": "from RUB 22,000"
-    },
-    {
-      "service": "Ceramic coating application",
-      "price": "from RUB 15,000"
-    },
-    {
-      "service": "Window tinting",
-      "price": "from RUB 500"
-    },
-    {
-      "service": "Interior deep cleaning",
-      "price": "from 12 000 ₽"
-    },
-    {
-      "service": "Interior soundproofing",
-      "price": "from RUB 8,500"
-    },
-    {
-      "service": "Dashboard reupholstery",
-      "price": "from RUB 30,000"
-    },
-    {
-      "service": "Chrome delete",
-      "price": "from RUB 1,500"
-    },
-    {
-      "service": "Front-end PPF installation",
-      "price": "from RUB 90,000"
-    },
-    {
-      "service": "Full-body gloss PPF installation",
-      "price": "from RUB 200,000"
-    },
-    {
-      "service": "Full-body matte PPF installation",
-      "price": "from RUB 240,000"
-    },
-    {
-      "service": "Headlight PPF installation",
-      "price": "from RUB 6,000"
-    },
-    {
-      "service": "Windshield protection film installation",
-      "price": "from RUB 25,000"
-    }
-  ],
-  "price_count": 19,
-  "photo_count": 187,
-  "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001023298311",
-  "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001023298311/tab/prices",
-  "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001023298311",
-  "verified_notes": "The 2GIS price list was updated on 13 May 2026; the information is not a public offer. The page lists estimated completion times for some services."
+  "website_url": null,
+  "website_status": "Duplicate source entry merged; use the more specific address.",
+  "data_source": "Owner-provided information in this conversation",
+  "verification_status": "owner_supplied_unverified",
+  "public_research": {
+    "research_status": "Matched in public business listing",
+    "public_website_url": null,
+    "public_services": [
+      "Bodywork",
+      "Collision repair"
+    ],
+    "price_status": "No reliable business-specific public price list found",
+    "price_items": [],
+    "source_urls": [
+      "https://www.google.com/maps/search/?api=1&query=Центр+кузовного+ремонта+АвтоЛига+Артём"
+    ],
+    "notes": [
+      "Public listing confirms the specific address as Dezhneva Street 60A, building 8 and supplied phone."
+    ]
+  }
 }

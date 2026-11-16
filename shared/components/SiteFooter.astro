@@ -1,6 +1,5 @@
 ---
 import type { SiteModel } from '../lib/types';
-import { formatDateRu } from '../lib/model';
 import { withBase } from '../lib/env';
 import type { NavItem } from './SiteHeader.astro';
 interface Props {
@@ -10,7 +9,6 @@ interface Props {
 }
 const { site, nav, home = true } = Astro.props;
 const resolve = (href: string) => (href.startsWith('#') && !home ? withBase('/') + href : href);
-const a = site.content.addressRu;
 ---
 
 <footer class="site-footer">
@@ -19,7 +17,14 @@ const a = site.content.addressRu;
       <div class="stack">
         <p class="site-footer__name">{site.name}</p>
         <p>{site.content.categoryRu}</p>
-        <p>{a.street}, {a.city}</p>
+        <p>{site.addressLine}</p>
+        {
+          site.phones.map((phone) => (
+            <p>
+              <a href={`tel:${phone.href}`}>{phone.display}</a>
+            </p>
+          ))
+        }
       </div>
       <nav aria-label="Навигация в подвале">
         <p class="site-footer__title">Разделы</p>
@@ -36,9 +41,18 @@ const a = site.content.addressRu;
       <div>
         <p class="site-footer__title">Информация</p>
         <ul class="site-footer__links">
+          {
+            site.website && (
+              <li>
+                <a href={site.website} target="_blank" rel="noopener noreferrer">
+                  Сайт компании<span class="sr-only"> (откроется в новой вкладке)</span>
+                </a>
+              </li>
+            )
+          }
           <li>
-            <a href={site.links.profile} target="_blank" rel="noopener noreferrer">
-              Карточка в 2ГИС<span class="sr-only"> (откроется в новой вкладке)</span>
+            <a href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+              Адрес на карте<span class="sr-only"> (откроется в новой вкладке)</span>
             </a>
           </li>
           <li><a href={withBase('/privacy/')}>Политика конфиденциальности</a></li>
@@ -47,8 +61,8 @@ const a = site.content.addressRu;
     </div>
     <div class="site-footer__bottom">
       <p>
-        Сведения о компании и цены приведены по данным 2ГИС на {formatDateRu(site.checkedOn)} и не
-        являются публичной офертой.
+        Демонстрационный концепт сайта. Сведения о компании предоставлены владельцем данных и ожидают
+        подтверждения; информация на сайте не является публичной офертой.
       </p>
     </div>
   </div>

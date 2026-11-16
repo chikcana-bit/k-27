@@ -1,0 +1,41 @@
+{
+  "id": "service_13",
+  "business_name": "СТО VISTA",
+  "business_name_transliteration": "STO VISTA",
+  "city": "Артём",
+  "region": "Приморский край",
+  "country": "Россия",
+  "address": "ул. Севастопольская, 30",
+  "phone": "+7 908 993-61-18",
+  "services_ru": [
+    "Автосервис",
+    "шиномонтаж",
+    "уход за авто"
+  ],
+  "services_en": [
+    "Auto repair",
+    "tire service",
+    "car care"
+  ],
+  "website_url": null,
+  "website_status": "No website URL supplied.",
+  "data_source": "Owner-provided information in this conversation",
+  "verification_status": "owner_supplied_unverified",
+  "public_research": {
+    "research_status": "Possible match in local directory; address differs slightly",
+    "public_website_url": null,
+    "public_services": [
+      "Auto repair",
+      "Tire service",
+      "Car care (owner-supplied)"
+    ],
+    "price_status": "No reliable business-specific public price list found",
+    "price_items": [],
+    "source_urls": [
+      "https://artem.spravker.ru/avtomoiki/"
+    ],
+    "notes": [
+      "A directory lists Vista at Sevastopolskaya Street 30A, while the supplied address is 30. Verify the exact building suffix."
+    ]
+  }
+}

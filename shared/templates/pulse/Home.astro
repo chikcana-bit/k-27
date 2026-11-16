@@ -1,0 +1,154 @@
+---
+/** Pulse home page: trace hero → service menu → about readout → contacts plate → request → CTA band. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import PriceNotice from '../../components/PriceNotice.astro';
+import ContactPanel from '../../components/ContactPanel.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Gallery from '../../components/Gallery.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Icon from '../../components/Icon.astro';
+import { pluralRu } from '../../lib/model';
+import Mark from './Mark.astro';
+import Hero from './Hero.astro';
+import './theme.css';
+import type { TemplateProps } from '../types';
+
+type Props = TemplateProps;
+const { site, nav, themeColor, mirror, photoFiles = {} } = Astro.props;
+const c = site.content;
+const num = (index: number) => `/${String(index + 1).padStart(2, '0')}`;
+const count = site.services.length;
+const phone = site.phones[0];
+---
+
+<BaseLayout site={site} title={c.pageTitle} themeColor={themeColor}>
+  <link slot="head" rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+  <SiteHeader slot="header" site={site} nav={nav}>
+    <Mark slot="mark" />
+  </SiteHeader>
+
+  <Hero site={site} mirror={mirror} />
+
+  <section class="section menu" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <SectionHead
+        id="services-title"
+        index="/01"
+        eyebrow="Услуги"
+        title="Что делает сервис"
+        lead="Направления работ по данным владельца."
+      />
+      <div class="prices prices--cards">
+        <ul class="price-list" data-stagger>
+          {
+            site.services.map((item, index) => (
+              <li class="price-row" data-reveal="up">
+                <span class="price-row__label">{item}</span>
+                <span class="price-row__value" aria-hidden="true">
+                  {num(index)}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <PriceNotice site={site} />
+    </div>
+  </section>
+
+  <div class="zig" aria-hidden="true"></div>
+
+  <section class="section section--alt about" id="about" aria-labelledby="about-title">
+    <div class="container split" style="--split: 1.3fr 1fr">
+      <div>
+        <SectionHead id="about-title" index="/02" eyebrow="О сервисе" title={c.aboutTitle} />
+        <p class="about__text" data-reveal="up">{c.aboutText}</p>
+      </div>
+      <dl class="readout" data-stagger>
+        <div class="readout__row" data-reveal="left">
+          <dt>Направлений работ</dt>
+          <dd>
+            <strong>{count}</strong>
+            <span>{pluralRu(count, ['направление', 'направления', 'направлений'])} по данным владельца</span>
+          </dd>
+        </div>
+        {
+          phone && (
+            <div class="readout__row" data-reveal="left">
+              <dt>Телефон</dt>
+              <dd>
+                <a class="text-link" href={`tel:${phone.href}`}>
+                  {phone.display}
+                </a>
+              </dd>
+            </div>
+          )
+        }
+        <div class="readout__row" data-reveal="left">
+          <dt>Адрес</dt>
+          <dd>
+            <span>{site.addressLine}</span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="zig zig--flip" aria-hidden="true"></div>
+
+  {
+    site.photos.length > 0 && (
+      <section class="section section--alt" id="gallery" aria-labelledby="gallery-title">
+        <div class="container">
+          <SectionHead id="gallery-title" eyebrow="Фото" title="Фотографии сервиса" />
+          <Gallery photos={site.photos} files={photoFiles} />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section" id="contacts" aria-labelledby="contacts-title">
+    <div class="container split" style="--split: 1.1fr 1fr">
+      <div>
+        <SectionHead id="contacts-title" index="/03" eyebrow="Контакты" title="Адрес и связь" />
+        <ContactPanel site={site} />
+      </div>
+      <div class="plate" data-reveal="scale">
+        <svg class="plate__zig" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path d="M0 90 50 30l50 60 50-60 50 60 50-60 50 60 50-60 50 60"></path>
+        </svg>
+        <p class="eyebrow"><Icon name="pin" /> Как найти</p>
+        <p class="plate__street">{site.street}</p>
+        <p class="plate__area">{site.city}, {site.region}</p>
+        <a class="text-link" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+          Открыть на карте
+          <Icon name="external" />
+          <span class="sr-only">(откроется в новой вкладке)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt request" id="request" aria-labelledby="request-title">
+    <div class="container split" style="--split: 1fr 1.15fr">
+      <div class="request__intro">
+        <SectionHead id="request-title" index="/04" eyebrow="Заявка" title={c.requestTitle} lead={c.requestLead} />
+      </div>
+      <div data-reveal="up">
+        <LeadForm site={site} />
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Проще позвонить?"
+    text={phone ? `Телефон сервиса: ${phone.display}.` : undefined}
+    href={phone ? `tel:${phone.href}` : '#request'}
+    label={phone ? 'Позвонить' : 'Оставить заявку'}
+  />
+
+  <SiteFooter slot="footer" site={site} nav={nav} />
+</BaseLayout>

@@ -1,7 +1,7 @@
 ---
 /** Inline SVG icon set (stroke icons, decorative by default). */
 interface Props {
-  name: 'arrow' | 'external' | 'pin' | 'clock' | 'mail' | 'chat' | 'star' | 'info' | 'check';
+  name: 'arrow' | 'external' | 'pin' | 'clock' | 'mail' | 'chat' | 'star' | 'info' | 'check' | 'phone' | 'globe';
   class?: string;
 }
 const { name, class: className = '' } = Astro.props;
@@ -15,6 +15,9 @@ const paths: Record<Props['name'], string> = {
   star: 'm12 3 2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9 6.6 19.8l1.1-6.1L3.2 9.4l6.1-.8z',
   info: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-10v6m0-9v.5',
   check: 'm5 12.5 4.5 4.5L19 7.5',
+  phone:
+    'M6.6 3.5h2.8l1.4 4.2-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4.2 1.4v2.8a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z',
+  globe: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM3 12h18M12 3c2.5 2.5 3.6 5.6 3.6 9s-1.1 6.5-3.6 9c-2.5-2.5-3.6-5.6-3.6-9S9.5 5.5 12 3Z',
 };
 ---
 

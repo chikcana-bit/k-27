@@ -1,0 +1,17 @@
+/*
+ * service_12 - АвтоМаксимум - template "blueprint", variant "Blueprint · cyan".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #071a2a;
+  --c-bg-alt: #09203a;
+  --c-surface: #0c2a45;
+  --c-surface-2: #113457;
+  --c-text: #e8f7ff;
+  --c-muted: #a6c3d6;
+  --c-accent: #3fd3e6;
+  --c-accent-strong: #7fe5f2;
+  --c-on-accent: #021b20;
+  --ink: #bfefff;
+  --c-glow: #1f8fb0;
+}

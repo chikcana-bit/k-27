@@ -1,0 +1,17 @@
+/*
+ * service_13 - СТО VISTA - template "signal", variant "Signal · green".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #eef1ec;
+  --c-bg-alt: #e2e7df;
+  --c-surface: #ffffff;
+  --c-surface-2: #f5f7f3;
+  --c-text: #121812;
+  --c-muted: #4d554c;
+  --c-accent: #0d7a42;
+  --c-accent-strong: #0a5f33;
+  --c-on-accent: #ffffff;
+  --c-accent-on-dark: #6fe0a2;
+  --c-danger: #a81709;
+}

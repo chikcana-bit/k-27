@@ -1,0 +1,8 @@
+/*
+ * service_01 - Автоцентр Хадо - template "signal", variant "Signal · red".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #f3f1ec;
+  --c-bg-alt: #e8e5de;
+}

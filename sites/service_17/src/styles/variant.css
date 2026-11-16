@@ -1,0 +1,14 @@
+/*
+ * service_17 - Автомойка - template "shade", variant "Shade · amber".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #0d0b09;
+  --c-bg-alt: #13100d;
+  --c-surface: #1b1713;
+  --c-surface-2: #251f19;
+  --c-accent: #ffc46b;
+  --c-accent-strong: #ffd798;
+  --c-on-accent: #2a1800;
+  --c-lead: #dccfc0;
+}

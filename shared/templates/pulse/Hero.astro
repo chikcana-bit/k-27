@@ -1,0 +1,85 @@
+---
+/**
+ * Pulse hero (auto electrics and diagnostics).
+ * An inline-SVG zigzag reads as a diagnostic trace: it draws itself across a
+ * faint measurement grid while a scan marker rides the drawing head once.
+ * A dimmer sawtooth trace sits behind the copy at another parallax depth.
+ * No photography. Tick labels come from `content.tags`.
+ */
+import Icon from '../../components/Icon.astro';
+import PhoneBadge from '../../components/PhoneBadge.astro';
+import type { SiteModel } from '../../lib/types';
+interface Props {
+  site: SiteModel;
+  mirror?: boolean;
+}
+const { site, mirror = false } = Astro.props;
+
+/* Front trace: 1920 x 280 user units, baseline at y = 140. */
+const trace =
+  'M-10 140H520l20-24 24 48 20-24H700L740 60 790 220 840 30 890 250 940 50 990 215 1030 100 1060 140H1210l20-24 24 48 20-24H1380l16-40 20 80 16-40H1930';
+
+/* Back trace: a slow sawtooth across a 1600 x 900 field. */
+const sawtooth =
+  'M-120 470' + Array.from({ length: 17 }, (_, i) => `L${i * 110 - 30} 330 ${i * 110 - 10} 470`).join('');
+
+const ticks = (site.content.tags ?? site.services).slice(0, 3);
+---
+
+<section class:list={['hero', { 'hero--mirror': mirror }]} aria-labelledby="hero-title">
+  <div class="hero__field" aria-hidden="true">
+    <div class="hero__grid" data-parallax="-0.04"></div>
+    <div class="hero__back" data-parallax="0.14">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <path class="hero__saw" d={sawtooth} pathLength="1"></path>
+      </svg>
+    </div>
+    <div class="hero__scanlines"></div>
+  </div>
+
+  <div class="hero__scope" aria-hidden="true">
+    <div class="hero__scope-inner" data-parallax="-0.07">
+      <svg viewBox="0 0 1920 280" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <path class="hero__baseline" d="M-10 140H1930"></path>
+        <path class="hero__trace hero__trace--glow" d={trace} pathLength="1"></path>
+        <path class="hero__trace" d={trace} pathLength="1"></path>
+        <g class="hero__marker" style={`offset-path: path('${trace}')`}>
+          <circle r="16" class="hero__marker-ring"></circle>
+          <circle r="6" class="hero__marker-dot"></circle>
+        </g>
+      </svg>
+    </div>
+    <ul class="hero__ticks container">
+      {ticks.map((tick) => <li>{tick}</li>)}
+    </ul>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow hero__eyebrow" data-reveal="fade">
+        <span class="hero__chev"></span>
+        {site.content.categoryRu} · {site.city}
+      </p>
+      <h1 id="hero-title" class="hero__title" data-split>{site.content.heroTitle}</h1>
+      <p class="lead hero__lead" data-reveal="up" style="--reveal-delay: 350ms">{site.content.heroLead}</p>
+      <div class="cluster hero__actions" data-reveal="up" style="--reveal-delay: 480ms">
+        <a class="btn btn--primary" href="#request">
+          Оставить заявку
+          <Icon name="arrow" />
+        </a>
+        <a class="btn" href="#services">Услуги</a>
+      </div>
+    </div>
+    <aside class="hero__readout" data-reveal="up" style="--reveal-delay: 620ms" aria-label="Коротко о сервисе">
+      <PhoneBadge site={site} />
+      <p class="hero__fact">
+        <Icon name="pin" />
+        <span>{site.addressLine}</span>
+      </p>
+      <p class="hero__fact hero__fact--price">
+        <span>Стоимость</span>
+        <strong>по телефону</strong>
+      </p>
+    </aside>
+  </div>
+</section>

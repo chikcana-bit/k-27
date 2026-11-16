@@ -1,0 +1,161 @@
+---
+/** Orbit home page: hero → services (dial cards) → website services → about → contacts → request. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import PriceNotice from '../../components/PriceNotice.astro';
+import PhoneBadge from '../../components/PhoneBadge.astro';
+import ContactPanel from '../../components/ContactPanel.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Gallery from '../../components/Gallery.astro';
+import Icon from '../../components/Icon.astro';
+import { pluralRu } from '../../lib/model';
+import Mark from './Mark.astro';
+import Hero from './Hero.astro';
+import './theme.css';
+import type { TemplateProps } from '../types';
+
+type Props = TemplateProps;
+const { site, nav, themeColor, mirror, photoFiles = {} } = Astro.props;
+const c = site.content;
+const step = 360 / site.services.length;
+const official = c.officialServicesRu ?? [];
+---
+
+<BaseLayout site={site} title={c.pageTitle} themeColor={themeColor}>
+  <link slot="head" rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+  <SiteHeader slot="header" site={site} nav={nav}>
+    <Mark slot="mark" />
+  </SiteHeader>
+
+  <Hero site={site} mirror={mirror} />
+
+  <section class="section" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <SectionHead
+        id="services-title"
+        index="0°"
+        eyebrow="Услуги"
+        title="Основные направления"
+        lead="Направления работ по данным владельца."
+      />
+      <ol class="orbit" data-stagger>
+        {
+          site.services.map((item, index) => (
+            <li class="orbit__item" data-reveal="up">
+              <span class="orbit__deg" aria-hidden="true" style={`--turn: ${Math.round(step * (index + 1))}deg`}>
+                <i />
+                <b>{Math.round(step * (index + 1))}°</b>
+              </span>
+              <h3 class="orbit__title">{item}</h3>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="prices" aria-labelledby="prices-title">
+    <div class="container split" style="--split: 0.8fr 1.6fr">
+      <div class="prices__intro">
+        <SectionHead
+          id="prices-title"
+          index="90°"
+          eyebrow="Стоимость"
+          title={official.length > 0 ? 'Работы и стоимость' : 'Стоимость работ'}
+          lead="Итог зависит от автомобиля и объёма работ — его назовёт сервис."
+        />
+      </div>
+      <div class="groups">
+        {
+          official.length > 0 && site.website && (
+            <details class="group" open data-reveal="up">
+              <summary class="group__summary">
+                <span class="group__title">Работы на сайте компании</span>
+                <span class="group__count">
+                  {official.length} {pluralRu(official.length, ['позиция', 'позиции', 'позиций'])}
+                </span>
+                <span class="group__icon" aria-hidden="true" />
+              </summary>
+              <div class="group__body">
+                <ul>
+                  {official.map((item) => (
+                    <li class="group__row">{item}</li>
+                  ))}
+                </ul>
+                <p class="group__source">
+                  Перечень приведён по данным{' '}
+                  <a class="text-link" href={site.website} target="_blank" rel="noopener noreferrer">
+                    сайта компании
+                    <span class="sr-only">(откроется в новой вкладке)</span>
+                  </a>. Наличие услуги уточняйте по телефону.
+                </p>
+              </div>
+            </details>
+          )
+        }
+        <div class="groups__note">
+          <PriceNotice site={site} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container split" style="--split: 1.3fr 1fr">
+      <div>
+        <SectionHead id="about-title" index="180°" eyebrow="О сервисе" title={c.aboutTitle} />
+        <p class="about__text" data-reveal="up">{c.aboutText}</p>
+      </div>
+      <div class="capsule" data-reveal="left">
+        <PhoneBadge site={site} />
+        <p class="muted">{site.addressLine}</p>
+      </div>
+    </div>
+  </section>
+
+  {
+    site.photos.length > 0 && (
+      <section class="section section--alt" id="gallery" aria-labelledby="gallery-title">
+        <div class="container">
+          <SectionHead id="gallery-title" eyebrow="Фото" title="Фотографии сервиса" />
+          <Gallery photos={site.photos} files={photoFiles} />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section section--alt" id="contacts" aria-labelledby="contacts-title">
+    <div class="container split" style="--split: 1fr 1.1fr">
+      <div class="pin" data-reveal="scale">
+        <span class="pin__rings" aria-hidden="true"></span>
+        <p class="eyebrow"><Icon name="pin" /> Как найти</p>
+        <p class="pin__street">{site.street}</p>
+        <p class="muted">{site.city}, {site.region}</p>
+        <a class="text-link" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+          Открыть на карте
+          <Icon name="external" />
+          <span class="sr-only">(откроется в новой вкладке)</span>
+        </a>
+      </div>
+      <div>
+        <SectionHead id="contacts-title" index="270°" eyebrow="Контакты" title="Адрес и связь" />
+        <ContactPanel site={site} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section request" id="request" aria-labelledby="request-title">
+    <div class="container split" style="--split: 1fr 1.15fr">
+      <div class="request__intro">
+        <SectionHead id="request-title" index="360°" eyebrow="Заявка" title={c.requestTitle} lead={c.requestLead} />
+      </div>
+      <div data-reveal="up">
+        <LeadForm site={site} />
+      </div>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" site={site} nav={nav} />
+</BaseLayout>

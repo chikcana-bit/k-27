@@ -23,8 +23,9 @@ const demo = !settings.endpoint;
   data-lead-form
   data-endpoint={settings.endpoint ?? ''}
   data-business={site.name}
-  data-email={site.email ?? ''}
-  data-listing={site.links.profile}
+  data-email={site.content.officialEmail ?? ''}
+  data-phone={site.phones[0]?.href ?? ''}
+  data-phone-label={site.phones[0]?.display ?? ''}
   aria-label="Заявка в сервис"
 >
   {

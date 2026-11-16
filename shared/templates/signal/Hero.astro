@@ -1,0 +1,79 @@
+---
+/**
+ * Signal hero (general repair shops).
+ * A typographic poster (no photography): the name stacked in huge condensed
+ * capitals with a masked line-by-line reveal, a hazard-striped band sliding in
+ * behind the phone block and a drifting row of road-marking dashes.
+ * `content.heroTitle` is split into poster lines on "|"; line two takes the accent.
+ */
+import Icon from '../../components/Icon.astro';
+import type { SiteModel } from '../../lib/types';
+interface Props {
+  site: SiteModel;
+  mirror?: boolean;
+}
+const { site, mirror = false } = Astro.props;
+const nameLines = site.content.heroTitle.split('|').map((line) => line.trim());
+const phone = site.phones[0];
+---
+
+<section class:list={['hero', { 'hero--mirror': mirror }]} aria-labelledby="hero-title">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <p class="hero__top" data-reveal="fade">
+      <span>{site.content.categoryRu}</span>
+      <span>{site.city}</span>
+      <span>{site.street}</span>
+    </p>
+
+    <div class="hero__title-wrap">
+      <h1 id="hero-title" class="hero__title">
+        {
+          nameLines.map((word, index) => (
+            <>
+              <span class="hero__line" style={`--l:${index}`}>
+                <span>{word}</span>
+              </span>{' '}
+            </>
+          ))
+        }
+        <span class="hero__sub" style={`--l:${nameLines.length}`}>
+          <span>— {site.content.categoryRu.toLowerCase()} в&nbsp;Артёме</span>
+        </span>
+      </h1>
+    </div>
+
+    <div class="hero__signal-cell">
+      <div class="hero__band-wrap" aria-hidden="true" data-parallax="-0.05">
+        <div class="hero__band"></div>
+      </div>
+      {
+        phone && (
+          <a class="signal" href={`tel:${phone.href}`}>
+            <span class="signal__label">Телефон</span>
+            <span class="signal__value signal__value--phone">
+              <Icon name="phone" />
+              {phone.display}
+            </span>
+            <span class="signal__count">Позвонить</span>
+            <span class="signal__date">запись и стоимость — по телефону</span>
+          </a>
+        )
+      }
+    </div>
+
+    <div class="hero__foot">
+      <p class="hero__lead" data-reveal="up" style="--reveal-delay: 700ms">{site.content.heroLead}</p>
+      <div class="cluster hero__actions" data-reveal="up" style="--reveal-delay: 820ms">
+        <a class="btn btn--primary" href="#request">
+          Оставить заявку
+          <Icon name="arrow" />
+        </a>
+        <a class="btn" href="#contacts">Как найти</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__road" aria-hidden="true">
+    <div data-parallax="0.05"><i class="hero__dashes"></i></div>
+  </div>
+</section>

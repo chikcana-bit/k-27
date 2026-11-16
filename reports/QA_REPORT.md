@@ -1,73 +1,57 @@
-# QA Report
+# QA Report — 24 Artem Sites
 
-Date: 15 November 2026 · Command: `npm run qa` (exit code 0)
+Date: 16 November 2026. Environment: Linux, Node 22, Chromium (Playwright).
 
 ## Results
 
-| Step | Scope | Result |
+| Check | Command | Result |
 | --- | --- | --- |
-| `validate:data` | 6 profiles vs `data/services.json`, photo approvals | Pass |
-| `lint` | ESLint (TypeScript, scripts, tests) + Prettier | Pass |
-| `check` | `astro check` on all six sites (TypeScript strict + templates) | Pass, 0 errors / 0 warnings |
-| `test` | 11 unit tests (price / rating / hours parsing, copy-to-data alignment, form validation) | 11 passed, 0 failed |
-| `build` | Production build of six sites (2 pages + robots.txt + sitemap.xml each) | Pass |
-| `validate:dist` | Fact and media rules on the built HTML of six sites | Pass |
-| `test:e2e` | Playwright/Chromium against the builds | 201 checks passed across 6 sites |
-| `build:pages` | Combined build under a sub-path (`/demo/<id>/`) | Pass (links, assets, `noindex`, robots verified) |
+| Data integrity (24 records, profile = master JSON, 6 templates × 4 sites, photos) | `npm run validate:data` | Pass |
+| ESLint + Prettier | `npm run lint` | Pass |
+| `astro check` (TypeScript + templates), 24 sites | `npm run check` | Pass — 0 errors, 0 warnings, 0 hints |
+| Unit tests (phone parsing, model, form validation) | `npm test` | Pass |
+| Production build, 24 sites | `npm run build` | Pass |
+| Built-HTML rules, 24 sites | `npm run validate:dist` | Pass |
+| Browser smoke tests at 375 / 768 / 1440 px | `npm run test:e2e` | Pass — 792 checks |
+| Colour contrast of every variant (text, muted, accent, button, tag) | script, see below | Pass — all ≥ 4.5:1 |
+| Visual review | screenshots of all six templates, including mirrored variants, desktop and mobile | Reviewed |
 
-## What the automated checks cover
+`validate:dist` fails a build if: a phone, address, name or service from the profile is missing or
+altered; any other phone number appears; a `tel:` link points elsewhere; an external link is not
+the map search or a verified business website; any rouble amount or clock time appears without a
+source; marketing claims (best, guarantee, 24/7, years, ratings, reviews) appear; the demo form or
+demo-concept notice is missing; images are hot-linked or unapproved.
 
-**Facts (`validate:dist`)** — every price from the profile is on the page and no other rouble amount
-is; no `tel:` links, no messenger/social links, nothing that looks like a phone number; external
-links limited to the business's own three 2GIS URLs and its verified e-mail; no clock times unless
-the full schedule is on record; a list of unverifiable claims (best, official, guarantee, 24/7,
-"since…", certified) is absent; price disclaimer and demo-form label present.
+The smoke tests check, per viewport: console errors, external requests at load, horizontal
+overflow, content revealed after scrolling, touch target sizes, mobile menu, form states,
+reduced motion and no-JS rendering.
 
-**Media** — no `<img>` at all while no photos are approved; no hot-linked media; no external
-requests of any kind at runtime (fonts are self-hosted).
+Contrast was checked by computing WCAG ratios for each site's resolved tokens (template defaults +
+variant overrides). Two Atelier variants (04, 14) were initially 4.3–4.4:1 on the address tag;
+their swatch colour was darkened to 5.3:1.
 
-**Browser (`test:e2e`), at 375, 768 and 1440 px** — no console or page errors; no horizontal
-overflow; every scroll-reveal element ends visible; accordions reveal their rows; interactive
-targets are at least 44 px high; mobile menu opens and closes with Escape; skip link is first in tab
-order; form shows inline errors, sets `aria-invalid`, moves focus to the first invalid field,
-rejects a malformed contact, and on a valid submit shows the "demo — nothing was sent" state with
-the entered data preserved; privacy page loads and links back.
+## Not tested
 
-**Motion and resilience** — with `prefers-reduced-motion: reduce` nothing is hidden and parallax is
-off; with JavaScript disabled all content is visible.
+- Firefox and Safari (`color-mix()` needs Safari 16.2+ / Firefox 113+).
+- Live GitHub Pages URLs: the build environment cannot reach `github.io`.
+- Screen-reader walkthrough and Lighthouse.
 
-## Manual review
+## Owner decisions
 
-Each site was reviewed from desktop (1440) and mobile (390) screenshots of the hero and the full
-page; desktop captures are in `reports/screenshots/`. Issues found and fixed during review:
-
-- Shared: elements using the `clip`/`mask` reveal never appeared, because a fully clipped element
-  reports no intersection. The runtime now observes the parent; the browser test was extended to
-  catch this class of bug.
-- service_03: missing space between a number and its noun in the hero facts; oversized address card.
-- service_04: city name broke mid-word in the facts strip.
-- service_05: mobile menu links were 43 px high.
-
-## Size
-
-Per site: about 37–40 kB CSS and 8.4 kB JavaScript (uncompressed), plus self-hosted font files
-loaded per Unicode range. No framework runtime, no animation library.
-
-## Not covered / known limits
-
-- Contrast was designed to meet 4.5:1 and checked by eye on screenshots; no automated contrast or
-  axe-core audit was run, and no screen-reader pass was done.
-- Tested in Chromium only. Firefox and Safari were not run. Cross-document view transitions and
-  `offset-path` degrade to no animation where unsupported.
-- No Lighthouse/performance run.
-- The live form path (`PUBLIC_FORM_ENDPOINT`) is covered by code review and unit tests of
-  validation only; it was not exercised against a real endpoint because none exists.
-- Russian copy was written and proof-read by the implementer, not by the businesses.
-
-## Photo usage
-
-No photographs are used on any site (none are approved locally).
-
-| Site | Photo files used |
-| --- | --- |
-| service_01 – service_06 | none |
+1. **Conflicting phones** — owner value shown; public sources differ: АвтоМир Приморье
+   (+7 423 279-00-70 on its site), Авторитет-Авто+ (+7 423 279-09-79 on its site), Гиперавто
+   (branch: store +7 (42337) 4-20-20, service +7 (423) 202-89-02; owner gave the 8 800 hotline),
+   Мой Сам (directory number masked). Extra directory numbers not added: Автохит
+   +7 908 977-33-44, Totachi +7 902 556-74-70.
+2. **Conflicting addresses** — owner value shown: Art Master (directory: Фрунзе, 45), АвтоЛют
+   (directory: «стр. 2»), VISTA (directory: 30А).
+3. **Names** — confirm public names for «Автомойка / CarShine» (16) and «Автомойка» (17); brand
+   names for the two unbranded services (22, 24, shown as «Автосервис»); whether Totachi (23) is the
+   business name; whether АвтоМаксимум (12) is the «Auto-Maks» listing.
+4. **Saturn phone** `+7 42337 4-30-37` — shown exactly as supplied; a directory uses the same format.
+5. **Not supplied for anyone** — website URLs (except four found pages), hours (except СТО Стандарт),
+   prices, e-mails (except СТО Стандарт), photos, social links. Pilot and АвтоЛют third-party price
+   estimates were not published.
+6. **Permission** — these are demo concepts (footer notice). Each business should confirm before
+   anything is promoted; the repository is public.
+7. **Lead forms** — demo mode. A real endpoint plus operator details are needed to receive requests.

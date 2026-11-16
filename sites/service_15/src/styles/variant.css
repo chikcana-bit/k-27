@@ -1,0 +1,14 @@
+/*
+ * service_15 - Пилот - template "shade", variant "Shade · mint".
+ * Overrides template tokens only; doubled :root wins over the template theme.
+ */
+:root:root {
+  --c-bg: #090d0c;
+  --c-bg-alt: #0d1412;
+  --c-surface: #121b19;
+  --c-surface-2: #1a2624;
+  --c-accent: #6fe3c8;
+  --c-accent-strong: #9cf0dc;
+  --c-on-accent: #03211a;
+  --c-lead: #c6d8d3;
+}

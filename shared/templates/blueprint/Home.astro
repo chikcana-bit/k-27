@@ -1,0 +1,171 @@
+---
+/** Blueprint home page: drawing hero → title block → parts (services) → spec → about → contacts → request. */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import PriceNotice from '../../components/PriceNotice.astro';
+import PhoneBadge from '../../components/PhoneBadge.astro';
+import ContactPanel from '../../components/ContactPanel.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import Gallery from '../../components/Gallery.astro';
+import Icon from '../../components/Icon.astro';
+import Mark from './Mark.astro';
+import Hero from './Hero.astro';
+import './theme.css';
+import type { TemplateProps } from '../types';
+
+type Props = TemplateProps;
+const { site, nav, themeColor, mirror, photoFiles = {} } = Astro.props;
+const c = site.content;
+const num = (index: number) => String(index + 1).padStart(2, '0');
+const phone = site.phones[0];
+---
+
+<BaseLayout site={site} title={c.pageTitle} themeColor={themeColor}>
+  <link slot="head" rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+  <SiteHeader slot="header" site={site} nav={nav}>
+    <Mark slot="mark" />
+  </SiteHeader>
+
+  <Hero site={site} mirror={mirror} />
+
+  <section class="titleblock" aria-label="Коротко о сервисе">
+    <div class="container">
+      <dl class="titleblock__grid" data-stagger>
+        <div class="titleblock__cell titleblock__cell--name" data-reveal="up">
+          <dt>Наименование</dt>
+          <dd>{site.name}</dd>
+        </div>
+        <div class="titleblock__cell" data-reveal="up">
+          <dt>Профиль</dt>
+          <dd>{c.categoryRu}</dd>
+        </div>
+        <div class="titleblock__cell" data-reveal="up">
+          <dt>Адрес</dt>
+          <dd>{site.street}</dd>
+        </div>
+        {
+          phone && (
+            <div class="titleblock__cell titleblock__cell--accent" data-reveal="up">
+              <dt>Телефон</dt>
+              <dd>
+                <a href={`tel:${phone.href}`}>{phone.display}</a>
+              </dd>
+            </div>
+          )
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <SectionHead
+        id="services-title"
+        index="A"
+        eyebrow="Услуги"
+        title="Узлы и работы"
+        lead="Направления работ по данным владельца."
+      />
+      <ol class="parts" data-stagger>
+        {
+          site.services.map((item, index) => (
+            <li class="part" data-reveal="up" data-spotlight>
+              <span class="part__num" aria-hidden="true">
+                {num(index)}
+              </span>
+              <h3 class="part__title">{item}</h3>
+              <span class="part__leader" aria-hidden="true" />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--alt spec" id="prices" aria-labelledby="prices-title">
+    <div class="container">
+      <SectionHead
+        id="prices-title"
+        index="B"
+        eyebrow="Стоимость"
+        title="Спецификация работ"
+        lead="Стоимость каждой позиции сервис называет после осмотра или по телефону."
+      />
+      <div class="prices prices--leaders">
+        <div class="price-group">
+          <ul class="price-list" data-stagger>
+            {
+              site.services.map((item) => (
+                <li class="price-row" data-reveal="up">
+                  <span class="price-row__label">{item}</span>
+                  <span class="price-row__leader" aria-hidden="true" />
+                  <span class="price-row__value">по запросу</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <PriceNotice site={site} />
+    </div>
+  </section>
+
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container split" style="--split: 1.3fr 1fr">
+      <div>
+        <SectionHead id="about-title" index="C" eyebrow="О сервисе" title={c.aboutTitle} />
+        <p class="about__text" data-reveal="up">{c.aboutText}</p>
+      </div>
+      <div class="stamp" data-reveal="left">
+        <PhoneBadge site={site} />
+        <p class="muted">{site.addressLine}</p>
+      </div>
+    </div>
+  </section>
+
+  {
+    site.photos.length > 0 && (
+      <section class="section section--alt" id="gallery" aria-labelledby="gallery-title">
+        <div class="container">
+          <SectionHead id="gallery-title" eyebrow="Фото" title="Фотографии сервиса" />
+          <Gallery photos={site.photos} files={photoFiles} />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section section--alt" id="contacts" aria-labelledby="contacts-title">
+    <div class="container split" style="--split: 1fr 1.1fr">
+      <div class="plan" data-reveal="scale">
+        <span class="plan__dim" aria-hidden="true"></span>
+        <p class="eyebrow"><Icon name="pin" /> Как найти</p>
+        <p class="plan__street">{site.street}</p>
+        <p class="muted">{site.city}, {site.region}</p>
+        <a class="text-link" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
+          Открыть на карте
+          <Icon name="external" />
+          <span class="sr-only">(откроется в новой вкладке)</span>
+        </a>
+      </div>
+      <div>
+        <SectionHead id="contacts-title" index="D" eyebrow="Контакты" title="Адрес и связь" />
+        <ContactPanel site={site} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section request" id="request" aria-labelledby="request-title">
+    <div class="container split" style="--split: 1fr 1.15fr">
+      <div class="request__intro">
+        <SectionHead id="request-title" index="E" eyebrow="Заявка" title={c.requestTitle} lead={c.requestLead} />
+      </div>
+      <div data-reveal="up">
+        <LeadForm site={site} />
+      </div>
+    </div>
+  </section>
+
+  <SiteFooter slot="footer" site={site} nav={nav} />
+</BaseLayout>

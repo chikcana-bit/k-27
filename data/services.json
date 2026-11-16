@@ -1,408 +1,1006 @@
 {
-  "project": "Six Automotive Service Websites",
-  "city": "Komsomolsk-on-Amur",
+  "project": "Artem Automotive Services",
+  "city": "Artem",
+  "region": "Primorsky Krai",
   "country": "Russia",
-  "source": "Verified 2GIS business listings and price pages; checked on 15 November 2026",
-  "important": "Prices may change and are not a public offer. Phone numbers are partially masked by 2GIS. Do not invent missing details. Owner-uploaded photo URLs are source references only and do not grant permission to republish.",
-  "services": [
+  "total_unique_businesses": 24,
+  "customer_facing_language": "Russian",
+  "records": [
     {
       "id": "service_01",
-      "name": "DetailTeamServis",
-      "category": "Car detailing",
-      "address": "5V Basic Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-      "rating": "5.0/5 (52 ratings; value shown on the 2GIS listing when checked)",
-      "phone": "Partially displayed: +7‒994‒134…; 2GIS masks the full number in its text view",
-      "messengers": [
-        "WhatsApp",
-        "Telegram",
-        "Max"
+      "business_name": "Автоцентр Хадо",
+      "business_name_transliteration": "Auto Center Khado",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Дзержинского, 11А",
+      "phone": "+7 902 485-84-55",
+      "services_ru": [
+        "Автосервис",
+        "запчасти"
       ],
-      "email": null,
-      "hours": "The listing showed the business as closed and opening tomorrow at 10:00; the full weekly schedule was not retrieved",
-      "services": [
-        "Automotive window tinting"
+      "services_en": [
+        "Auto repair",
+        "spare parts"
       ],
-      "prices": [
-        {
-          "service": "Windshield / rear window tinting",
-          "price": "from RUB 3,000"
-        },
-        {
-          "service": "Quarter window tinting",
-          "price": "from RUB 500"
-        },
-        {
-          "service": "Side window tinting",
-          "price": "from RUB 2,500"
-        }
-      ],
-      "price_count": 3,
-      "photo_count": 49,
-      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001103288091",
-      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001103288091/tab/prices",
-      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001103288091",
-      "verified_notes": "2GIS listing verified: business name, address, category, rating, messenger contacts, masked phone number, 3 price items, and 49 photos."
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Partially matched in public business listing",
+        "public_website_url": null,
+        "public_services": [
+          "Auto repair",
+          "Auto parts",
+          "Auto spring shop"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://www.google.com/maps/search/?api=1&query=Автоцентр+Хадо+Артём+ул.+Дзержинского+11А"
+        ],
+        "notes": [
+          "Public listing matches the supplied address and phone. No verified public price list or official website URL found."
+        ]
+      }
     },
     {
       "id": "service_02",
-      "name": "360",
-      "category": "Detailing studio",
-      "address": "22/1 Kotovsky Street, Railway Station District, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681013, Russia",
-      "rating": "5.0/5 (42 ratings; value shown on the 2GIS listing when checked)",
-      "phone": "Partially displayed: +7‒914‒185…; 2GIS masks the full number in its text view",
-      "messengers": [
-        "Telegram",
-        "Max"
+      "business_name": "Автохит",
+      "business_name_transliteration": "Avtohit",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Кирова, 120",
+      "phone": "+7 924 120-33-44",
+      "services_ru": [
+        "Ремонт",
+        "ТО",
+        "диагностика",
+        "автоэлектрика"
       ],
-      "email": "wraplab27@gmail.com",
-      "hours": "The listing showed the business as closed and opening tomorrow at 10:00; the full weekly schedule was not retrieved",
-      "services": [
-        "Paint protection film (PPF) installation",
-        "Vinyl wrapping and color change",
-        "Automotive glass film installation",
-        "Car care and polishing",
-        "Soundproofing"
+      "services_en": [
+        "Repairs",
+        "maintenance",
+        "diagnostics",
+        "auto electrical work"
       ],
-      "prices": [
-        {
-          "service": "PPF installation on the front end and high-impact areas",
-          "price": "from RUB 70,000"
-        },
-        {
-          "service": "Full-body gloss PPF installation",
-          "price": "from RUB 220,000"
-        },
-        {
-          "service": "Headlight film installation",
-          "price": "from RUB 7,000"
-        },
-        {
-          "service": "Full-body matte PPF installation",
-          "price": "from RUB 240,000"
-        },
-        {
-          "service": "Partial body panel wrapping",
-          "price": "from RUB 1,500"
-        },
-        {
-          "service": "Vinyl wrap / custom design project",
-          "price": "from RUB 120,000"
-        },
-        {
-          "service": "Black PPF roof wrap",
-          "price": "RUB 20,000–30,000"
-        },
-        {
-          "service": "Chrome delete",
-          "price": "from RUB 10,000"
-        },
-        {
-          "service": "Colored PPF installation",
-          "price": "from RUB 280,000"
-        },
-        {
-          "service": "Windshield protection film",
-          "price": "RUB 23,000–27,000"
-        },
-        {
-          "service": "Hydrophobic glass coating (rain repellent)",
-          "price": "RUB 2,000–6,000"
-        },
-        {
-          "service": "Heavy paint correction",
-          "price": "from RUB 20,000"
-        },
-        {
-          "service": "Single-stage paint polishing",
-          "price": "from RUB 15,000"
-        },
-        {
-          "service": "Two-component ceramic coating",
-          "price": "from RUB 18,000"
-        },
-        {
-          "service": "Full vehicle soundproofing",
-          "price": "from RUB 95,000"
-        }
-      ],
-      "price_count": 15,
-      "photo_count": 33,
-      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001102508139",
-      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001102508139/tab/prices",
-      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001102508139",
-      "verified_notes": "The 2GIS price list was marked as updated on 16 September 2026; it is not a public offer. The listing includes Telegram, Max, and an email address."
+      "website_url": null,
+      "website_status": "Website reported by owner; exact URL not supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directories; official URL not confirmed",
+        "public_website_url": null,
+        "public_services": [
+          "Engine diagnostics",
+          "Scheduled maintenance",
+          "Auto repair"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://rting.ru/artem/avtoservisy",
+          "https://artem.spravker.ru/diagnostika-dvigatelia/"
+        ],
+        "notes": [
+          "Local listings match Kirova Street 120 and the supplied mobile number. A directory also lists +7 908 977-33-44; verify before adding it to the website."
+        ]
+      }
     },
     {
       "id": "service_03",
-      "name": "Luxury Styling & Detailing",
-      "category": "Interior customization and car detailing workshop",
-      "address": "29A Komsomolskaya Street, Quarter 4, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-      "rating": "4.9/5 (145–146 ratings; count varies on the listing)",
-      "phone": "Partially displayed: +7‒924‒110…; 2GIS masks the full number in its text view",
-      "messengers": [
-        "Telegram",
-        "WhatsApp",
-        "Max"
+      "business_name": "АвтоЛига",
+      "business_name_transliteration": "AvtoLiga",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Дежнёва, 60А, стр. 8",
+      "phone": "+7 902 555-07-97",
+      "services_ru": [
+        "Кузовной ремонт"
       ],
-      "email": "luxurystylinginbox@gmail.com",
-      "hours": "The listing showed the business as closed and opening at 10:00; the full weekly schedule was not retrieved",
-      "services": [
-        "Interior and trim reupholstery",
-        "Steering wheel and seat reupholstery",
-        "Seat side-bolster foam repair",
-        "Headliner, armrest, and door-card reupholstery",
-        "Exterior paint polishing",
-        "Ceramic coating application",
-        "Window tinting",
-        "Interior deep cleaning",
-        "Soundproofing",
-        "Dashboard reupholstery",
-        "Chrome delete",
-        "Body and headlight protection with PPF"
+      "services_en": [
+        "Bodywork",
+        "collision repair"
       ],
-      "prices": [
-        {
-          "service": "Steering wheel reupholstery",
-          "price": "from RUB 8,000"
-        },
-        {
-          "service": "Front seat and rear bench reupholstery",
-          "price": "from RUB 95,000"
-        },
-        {
-          "service": "Seat side-bolster foam repair",
-          "price": "from RUB 7,000"
-        },
-        {
-          "service": "Seat upholstery panel re-stitching",
-          "price": "from RUB 8,000"
-        },
-        {
-          "service": "Headliner reupholstery",
-          "price": "from RUB 40,000"
-        },
-        {
-          "service": "Armrest reupholstery",
-          "price": "from RUB 3,000"
-        },
-        {
-          "service": "Door-card reupholstery",
-          "price": "from RUB 4,000"
-        },
-        {
-          "service": "Exterior paint polishing",
-          "price": "from RUB 22,000"
-        },
-        {
-          "service": "Ceramic coating application",
-          "price": "from RUB 15,000"
-        },
-        {
-          "service": "Window tinting",
-          "price": "from RUB 500"
-        },
-        {
-          "service": "Interior deep cleaning",
-          "price": "from 12 000 ₽"
-        },
-        {
-          "service": "Interior soundproofing",
-          "price": "from RUB 8,500"
-        },
-        {
-          "service": "Dashboard reupholstery",
-          "price": "from RUB 30,000"
-        },
-        {
-          "service": "Chrome delete",
-          "price": "from RUB 1,500"
-        },
-        {
-          "service": "Front-end PPF installation",
-          "price": "from RUB 90,000"
-        },
-        {
-          "service": "Full-body gloss PPF installation",
-          "price": "from RUB 200,000"
-        },
-        {
-          "service": "Full-body matte PPF installation",
-          "price": "from RUB 240,000"
-        },
-        {
-          "service": "Headlight PPF installation",
-          "price": "from RUB 6,000"
-        },
-        {
-          "service": "Windshield protection film installation",
-          "price": "from RUB 25,000"
-        }
-      ],
-      "price_count": 19,
-      "photo_count": 187,
-      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001023298311",
-      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001023298311/tab/prices",
-      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001023298311",
-      "verified_notes": "The 2GIS price list was updated on 13 May 2026; the information is not a public offer. The page lists estimated completion times for some services."
+      "website_url": null,
+      "website_status": "Duplicate source entry merged; use the more specific address.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in public business listing",
+        "public_website_url": null,
+        "public_services": [
+          "Bodywork",
+          "Collision repair"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://www.google.com/maps/search/?api=1&query=Центр+кузовного+ремонта+АвтоЛига+Артём"
+        ],
+        "notes": [
+          "Public listing confirms the specific address as Dezhneva Street 60A, building 8 and supplied phone."
+        ]
+      }
     },
     {
       "id": "service_04",
-      "name": "Avtomaks Mobile Center",
-      "category": "Auto repair shop",
-      "address": "32/1 Vokzalnaya Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-      "rating": "5.0/5 (239 ratings; value shown on the 2GIS listing when checked)",
-      "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
-      "messengers": [
-        "WhatsApp"
+      "business_name": "АвтоДиз",
+      "business_name_transliteration": "AvtoDiz",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Дежнёва, 60А",
+      "phone": "+7 914 725-79-07",
+      "services_ru": [
+        "Кузовной ремонт",
+        "ходовая",
+        "шиномонтаж"
       ],
-      "email": null,
-      "hours": "The listing showed the business as closed and opening tomorrow at 09:00; the full weekly schedule was not retrieved",
-      "services": [
-        "Category: vehicle service and repair shop; a detailed service list was not available in the accessible listing text"
+      "services_en": [
+        "Bodywork",
+        "suspension",
+        "tire service"
       ],
-      "prices": [],
-      "price_count": null,
-      "photo_count": 12,
-      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228",
-      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229852186380228/tab/menu",
-      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229852186380228",
-      "verified_notes": "The listing shows a “Prices” section, but the opened page leads to a menu with no extractable prices. Do not add prices without confirmation."
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directories",
+        "public_website_url": null,
+        "public_services": [
+          "Bodywork",
+          "Suspension repair",
+          "Tire service"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artem.spravker.ru/tekhnicheskoe-obsluzhivanie-avtomobilia/",
+          "https://artem.spravker.ru/avtoservisy-gaz/"
+        ],
+        "notes": [
+          "Directory matches Dezhneva Street 60A and the supplied phone. Listed hours vary by directory; do not publish without confirmation."
+        ]
+      }
     },
     {
       "id": "service_05",
-      "name": "ProSTO",
-      "category": "Auto repair workshop",
-      "address": "90 Puteiskaya Street, Molodyozhny Settlement, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-      "rating": "4.8/5 (221 ratings; value shown on the 2GIS listing when checked)",
-      "phone": "Partially displayed: +7 (4217…; 2GIS masks the full number in its text view",
-      "messengers": [
-        "WhatsApp"
+      "business_name": "СТО Стандарт",
+      "business_name_transliteration": "STO Standart",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Фрунзе, 45, стр. 8",
+      "phone": "+7 423 377-57-77 / +7 902 077-57-77",
+      "services_ru": [
+        "Ремонт",
+        "кузовные работы",
+        "покраска",
+        "полировка",
+        "шиномонтаж"
       ],
-      "email": null,
-      "hours": "Daily, 10:00–19:00 (according to the 2GIS listing)",
-      "services": [
-        "Engine and drivetrain repair and replacement",
-        "Automatic/manual/CVT transmission removal and installation",
-        "Engine removal and installation",
-        "Suspension and undercarriage repairs",
-        "Driveshaft services",
-        "Hydropneumatic suspension and KDSS repair / bleeding"
+      "services_en": [
+        "Repairs",
+        "bodywork",
+        "painting",
+        "polishing",
+        "tire service"
       ],
-      "prices": [
-        {
-          "service": "Automatic/manual/CVT transmission removal and installation",
-          "price": "from RUB 15,000"
-        },
-        {
-          "service": "Engine removal and installation",
-          "price": "from RUB 20,000"
-        },
-        {
-          "service": "Engine subframe removal and installation",
-          "price": "from RUB 6,000"
-        },
-        {
-          "service": "Rear axle beam removal and installation",
-          "price": "from RUB 10,000"
-        },
-        {
-          "service": "Driveshaft universal joint replacement",
-          "price": "from RUB 3,000"
-        },
-        {
-          "service": "Driveshaft replacement",
-          "price": "from RUB 3,000"
-        },
-        {
-          "service": "Pressing in a control arm bushing / ball joint (per unit)",
-          "price": "from RUB 2,500"
-        },
-        {
-          "service": "CV boot / CV joint replacement",
-          "price": "from RUB 2,000"
-        },
-        {
-          "service": "Drive axle replacement",
-          "price": "from RUB 2,000"
-        },
-        {
-          "service": "Shock absorber replacement",
-          "price": "from RUB 2,500"
-        },
-        {
-          "service": "Stabilizer link replacement",
-          "price": "from RUB 800"
-        },
-        {
-          "service": "Wheel hub bearing replacement",
-          "price": "from RUB 2,500"
-        },
-        {
-          "service": "Ball joint replacement",
-          "price": "from RUB 2,500"
-        },
-        {
-          "service": "Drum brake shoe replacement",
-          "price": "from RUB 1,600"
-        },
-        {
-          "service": "Disc brake pad replacement",
-          "price": "from RUB 1,000"
-        },
-        {
-          "service": "Timing chain replacement",
-          "price": "from RUB 18,000"
-        }
-      ],
-      "price_count": 31,
-      "photo_count": 36,
-      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571",
-      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/13229853186795571/tab/prices",
-      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/13229853186795571",
-      "verified_notes": "The 2GIS price list was updated on 14 November 2026. The listing explicitly states that prices are starting prices and do not constitute a public offer. The full list contains 31 items; this file includes a selection of the main visible items."
+      "website_url": null,
+      "website_status": "Website reported by owner; exact URL not supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Official business page found",
+        "public_website_url": "https://stostandart.iprim.ru/",
+        "public_services": [
+          "Technical fluid replacement",
+          "Engine oil and automatic transmission oil replacement",
+          "Brake fluid replacement",
+          "Bodywork",
+          "Painting",
+          "Polishing",
+          "Suspension repair",
+          "Engine repair",
+          "Wheel alignment",
+          "Tire service",
+          "Argon welding",
+          "Diagnostics"
+        ],
+        "price_status": "No itemized price list found on reviewed official page",
+        "price_items": [],
+        "source_urls": [
+          "https://stostandart.iprim.ru/",
+          "https://iprim.ru/store/стенд-развал-схождение-в-Артеме/"
+        ],
+        "notes": [
+          "Official page confirms address and both supplied phone numbers, plus email cto_ctandart@inbox.ru. Official page lists daily hours 09:00–21:00. A third-party directory reports slightly different address formatting; retain owner-supplied address until confirmed."
+        ]
+      }
     },
     {
       "id": "service_06",
-      "name": "ZigZag",
-      "category": "Auto service center",
-      "address": "8/3G Alleya Truda Street, Central District, Komsomolsk-on-Amur, Khabarovsk Krai, 681000, Russia",
-      "rating": "4.9/5 (194 ratings; value shown on the 2GIS price page when checked)",
-      "phone": "Partially displayed: +7‒962‒286…; 2GIS masks the full number in its text view",
-      "messengers": [
-        "Telegram"
+      "business_name": "Art Master",
+      "business_name_transliteration": "Art Master",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "мкр. Орбита, 38/2",
+      "phone": "+7 423 257-50-27",
+      "services_ru": [
+        "Кузовной ремонт",
+        "покраска"
       ],
-      "email": "zigzag27kms@gmail.com",
-      "hours": "The listing showed the business as closed and opening tomorrow at 09:00; the full weekly schedule was not retrieved",
-      "services": [
-        "Suspension diagnostics",
-        "Comprehensive diagnostics of suspension, engine, and technical fluids",
-        "Computer diagnostics of electronic systems",
-        "Installation of Pandora and StarLine security systems (according to the listing description)"
+      "services_en": [
+        "Bodywork",
+        "painting"
       ],
-      "prices": [
-        {
-          "service": "Suspension diagnostics",
-          "price": "RUB 800–1,500"
-        },
-        {
-          "service": "Comprehensive diagnostics (suspension / engine / fluids)",
-          "price": "RUB 1,800–2,800"
-        },
-        {
-          "service": "Computer diagnostics (quick scan)",
-          "price": "RUB 1,700"
-        },
-        {
-          "service": "Computer diagnostics (full scan)",
-          "price": "RUB 2,500"
-        }
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Partially matched in local directory; address mismatch",
+        "public_website_url": null,
+        "public_services": [
+          "Auto repair",
+          "Bodywork (not independently confirmed on reviewed listing)"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artyom.spravmer.ru/avtomobili/avtoservis-uslugi/avtoservis-avtotehcentr/"
+        ],
+        "notes": [
+          "Directory lists Art Master at Frunze Street 45 with the supplied phone, not the owner-provided Orbita 38/2 address. Must verify whether this is the same business before changing the address."
+        ]
+      }
+    },
+    {
+      "id": "service_07",
+      "business_name": "АвтоЛют",
+      "business_name_transliteration": "AvtoLyut",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Ворошилова, 23",
+      "phone": "+7 902 556-98-72",
+      "services_ru": [
+        "Автоэлектрика",
+        "диагностика"
       ],
-      "price_count": 4,
-      "photo_count": 63,
-      "2gis": "https://2gis.ru/komsomolsk-on-amur/firm/70000001036317662",
-      "price_url": "https://2gis.ru/komsomolsk-on-amur/firm/70000001036317662/tab/prices",
-      "gallery_url": "https://2gis.ru/komsomolsk-on-amur/gallery/firm/70000001036317662",
-      "verified_notes": "The 2GIS price list was updated on 9 March 2026; the information is not a public offer."
+      "services_en": [
+        "Auto electrical work",
+        "diagnostics"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directories; address detail differs",
+        "public_website_url": null,
+        "public_services": [
+          "Auto electrical work",
+          "Computer diagnostics",
+          "Alarm installation",
+          "Additional equipment installation"
+        ],
+        "price_status": "Indicative labor-hour range found in a secondary listing; not an official price list",
+        "price_items": [
+          {
+            "item": "Labor hour",
+            "price": "1,000–2,000 RUB (directory estimate)",
+            "price_type": "third_party_estimate",
+            "confidence": "low"
+          }
+        ],
+        "source_urls": [
+          "https://artem.spravker.ru/zamena-amortizatorov/",
+          "https://artem.spravker.ru/avtoservis-koreiskikh-avtomobilei/"
+        ],
+        "notes": [
+          "Listings identify the location as Voroshilova Street 23, building 2, while the supplied address omits building 2. The supplied phone matches. Treat the price range as an unverified third-party estimate, not a published tariff."
+        ]
+      }
+    },
+    {
+      "id": "service_08",
+      "business_name": "Автодом",
+      "business_name_transliteration": "Avtodom",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Западная, 5",
+      "phone": "+7 423 202-52-00",
+      "services_ru": [
+        "Автосервис",
+        "мойка",
+        "диагностика"
+      ],
+      "services_en": [
+        "Auto repair",
+        "car wash",
+        "diagnostics"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "No reliable exact-entity match found",
+        "public_website_url": null,
+        "public_services": [
+          "Owner-supplied: auto repair, car wash, diagnostics"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artyom.spravmer.ru/avtomobili/avtoservis-uslugi/avtoservis-avtotehcentr/"
+        ],
+        "notes": [
+          "A directory contains an Avtodom listing in Artem but the reviewed excerpt did not establish the supplied Zapadnaya Street 5 address and phone as the same entity."
+        ]
+      }
+    },
+    {
+      "id": "service_09",
+      "business_name": "Mobil-Артем",
+      "business_name_transliteration": "Mobil-Artem",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Интернациональная, 65",
+      "phone": "+7 423 299-99-58",
+      "services_ru": [
+        "Автосервис",
+        "техосмотр"
+      ],
+      "services_en": [
+        "Auto repair",
+        "vehicle inspection"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directory",
+        "public_website_url": null,
+        "public_services": [
+          "Auto repair",
+          "Bodywork",
+          "Wheel alignment",
+          "Tire service",
+          "Basic maintenance"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artem.esbd.ru/autoservice"
+        ],
+        "notes": [
+          "Directory matches International Street 65 and supplied phone. Public listing expands service categories beyond the owner-provided inspection description; confirm before publishing the expanded list."
+        ]
+      }
+    },
+    {
+      "id": "service_10",
+      "business_name": "Омега-Сервис",
+      "business_name_transliteration": "Omega-Service",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Фрунзе, 45, корп. 2",
+      "phone": "+7 423 250-63-33",
+      "services_ru": [
+        "Автосервис"
+      ],
+      "services_en": [
+        "Auto repair"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directory",
+        "public_website_url": null,
+        "public_services": [
+          "Auto repair"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artyom.spravmer.ru/avtomobili/"
+        ],
+        "notes": [
+          "Directory matches Frunze Street 45, building 2 and supplied phone."
+        ]
+      }
+    },
+    {
+      "id": "service_11",
+      "business_name": "Сатурн",
+      "business_name_transliteration": "Saturn",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Кирова, 152А",
+      "phone": "+7 42337 4-30-37",
+      "services_ru": [
+        "Автосервис"
+      ],
+      "services_en": [
+        "Auto repair"
+      ],
+      "website_url": null,
+      "website_status": "Phone formatting needs owner verification; preserved exactly.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directory; phone format confirmed",
+        "public_website_url": null,
+        "public_services": [
+          "Auto repair"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artyom.spravmer.ru/avtomobili/"
+        ],
+        "notes": [
+          "Directory lists phone as +7 (42337) 4-30-37, which supports the supplied number format. It also lists the address as Kirova Street 152A. Normalize formatting only after owner approval."
+        ]
+      }
+    },
+    {
+      "id": "service_12",
+      "business_name": "АвтоМаксимум",
+      "business_name_transliteration": "AutoMaximum",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Фрунзе, 54А",
+      "phone": "+7 924 322-08-06",
+      "services_ru": [
+        "ТО",
+        "ремонт"
+      ],
+      "services_en": [
+        "Maintenance",
+        "repairs"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Possible name mismatch; exact entity not confirmed",
+        "public_website_url": null,
+        "public_services": [
+          "Owner-supplied: scheduled maintenance, repairs"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://driff.ru/service/sto/artem/ulica-frunze-st/"
+        ],
+        "notes": [
+          "A directory lists Auto-Maks at Frunze Street 54A. Confirm whether this is the same business as АвтоМаксимум before using the alternate public name."
+        ]
+      }
+    },
+    {
+      "id": "service_13",
+      "business_name": "СТО VISTA",
+      "business_name_transliteration": "STO VISTA",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Севастопольская, 30",
+      "phone": "+7 908 993-61-18",
+      "services_ru": [
+        "Автосервис",
+        "шиномонтаж",
+        "уход за авто"
+      ],
+      "services_en": [
+        "Auto repair",
+        "tire service",
+        "car care"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Possible match in local directory; address differs slightly",
+        "public_website_url": null,
+        "public_services": [
+          "Auto repair",
+          "Tire service",
+          "Car care (owner-supplied)"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artem.spravker.ru/avtomoiki/"
+        ],
+        "notes": [
+          "A directory lists Vista at Sevastopolskaya Street 30A, while the supplied address is 30. Verify the exact building suffix."
+        ]
+      }
+    },
+    {
+      "id": "service_14",
+      "business_name": "Кракен",
+      "business_name_transliteration": "Kraken",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Фрунзе, 41, стр. 1",
+      "phone": "+7 914 668-10-41",
+      "services_ru": [
+        "Автомойка",
+        "детейлинг"
+      ],
+      "services_en": [
+        "Car wash",
+        "detailing"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directories; category/address discrepancy",
+        "public_website_url": null,
+        "public_services": [
+          "Car wash (owner-supplied)",
+          "Detailing (owner-supplied)",
+          "Tire service is separately associated with nearby Frunze 41, building 2"
+        ],
+        "price_status": "No reliable price list for the exact Kraken listing found",
+        "price_items": [],
+        "source_urls": [
+          "https://artem.spravker.ru/ruchnye-avtomoiki/",
+          "https://driff.ru/service/sto/artem/ulica-frunze-st/"
+        ],
+        "notes": [
+          "Directory lists Kraken at Frunze Street 41, building 1. A separate nearby tire service appears at Frunze 41, building 2; do not merge them."
+        ]
+      }
+    },
+    {
+      "id": "service_15",
+      "business_name": "Пилот",
+      "business_name_transliteration": "Pilot",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Фрунзе, 21А, стр. 2",
+      "phone": "+7 984 192-05-52",
+      "services_ru": [
+        "Автомойка",
+        "автосервисный бокс"
+      ],
+      "services_en": [
+        "Car wash",
+        "auto service bay"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directory; price items found",
+        "public_website_url": null,
+        "public_services": [
+          "Complex car wash",
+          "Contactless wash",
+          "Hand wash",
+          "Interior dry cleaning",
+          "Engine wash",
+          "Undercarriage wash",
+          "Body polishing",
+          "Dent repair/straightening",
+          "Tire replacement"
+        ],
+        "price_status": "Third-party published starting prices; verify with business before display",
+        "price_items": [
+          {
+            "item": "Complex wash",
+            "price": "from 350 RUB",
+            "price_type": "third_party_listing"
+          },
+          {
+            "item": "Tire replacement, R14",
+            "price": "from 800 RUB",
+            "price_type": "third_party_listing"
+          }
+        ],
+        "source_urls": [
+          "https://primorskiy.spravochnika.ru/c-artem/avtomoyki"
+        ],
+        "notes": [
+          "Directory matches Frunze Street 21A, building 2. These prices are from a third-party directory and may be outdated; display only with a source/date caveat or confirm directly."
+        ]
+      }
+    },
+    {
+      "id": "service_16",
+      "business_name": "Автомойка / CarShine",
+      "business_name_transliteration": "CarShine Car Wash",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Лазо, 38/2",
+      "phone": "+7 423 373-70-50",
+      "services_ru": [
+        "Мойка"
+      ],
+      "services_en": [
+        "Car wash"
+      ],
+      "website_url": null,
+      "website_status": "Confirm preferred public-facing business name.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in public business listing",
+        "public_website_url": null,
+        "public_services": [
+          "Car wash"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://www.google.com/maps/search/?api=1&query=CarShine+Артём+ул.+Лазо+38%2F2"
+        ],
+        "notes": [
+          "Public business listing matches Lazo Street 38/2 and supplied phone. Listing description associates the location with CarShine; no official price page found."
+        ]
+      }
+    },
+    {
+      "id": "service_17",
+      "business_name": "Автомойка",
+      "business_name_transliteration": "Car Wash (Kirova 165)",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Кирова, 165",
+      "phone": "+7 902 520-38-38",
+      "services_ru": [
+        "Мойка"
+      ],
+      "services_en": [
+        "Car wash"
+      ],
+      "website_url": null,
+      "website_status": "Generic name; do not invent a brand.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "No exact branded match confirmed",
+        "public_website_url": null,
+        "public_services": [
+          "Car wash (owner-supplied)"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artem.spravker.ru/avtomoiki/"
+        ],
+        "notes": [
+          "The supplied listing is generic and no exact matching public listing was confirmed. Keep the neutral business name."
+        ]
+      }
+    },
+    {
+      "id": "service_18",
+      "business_name": "Мой Сам",
+      "business_name_transliteration": "Moy Sam",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Кирова, 57Б",
+      "phone": "+7 914 971-78-50",
+      "services_ru": [
+        "Автомойка самообслуживания"
+      ],
+      "services_en": [
+        "Self-service car wash"
+      ],
+      "website_url": null,
+      "website_status": "No website URL supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directory; phone discrepancy",
+        "public_website_url": null,
+        "public_services": [
+          "Self-service car wash",
+          "Contactless wash",
+          "Contactless drying",
+          "Interior cleaning (directory category)"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artem.spravka.city/company/galleya",
+          "https://urbanplaces.su/ru_primorskij-kraj/artyomovskij-gorodskoj-okrug-artem/address-kirova-57b"
+        ],
+        "notes": [
+          "Directory confirms Moy Sam at Kirova Street 57B and reports 24-hour operation. Directory phone is masked and differs from the owner-supplied number; verify phone before replacing it."
+        ]
+      }
+    },
+    {
+      "id": "service_19",
+      "business_name": "АвтоМир Приморье",
+      "business_name_transliteration": "AvtoMir Primorye",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Махалина, 21",
+      "phone": "+7 423 279-01-09",
+      "services_ru": [
+        "Сервис",
+        "детейлинг"
+      ],
+      "services_en": [
+        "Auto repair",
+        "detailing"
+      ],
+      "website_url": null,
+      "website_status": "Company page reported by owner; exact URL not supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Official-looking company page found; business listing matched",
+        "public_website_url": "https://automir-primore.clients.site/",
+        "public_services": [
+          "Vehicle sales and service",
+          "Scheduled service and warranty support",
+          "Spare parts and accessories",
+          "Wheel alignment",
+          "Tire service",
+          "Vibration diagnostics",
+          "Detailing"
+        ],
+        "price_status": "No itemized price list found on reviewed company page",
+        "price_items": [],
+        "source_urls": [
+          "https://automir-primore.clients.site/",
+          "https://artem.spravker.ru/diagnostika-dvigatelia/"
+        ],
+        "notes": [
+          "Company page confirms Makhлина Street 21 and provides public phone +7 423 279-00-70, which differs from owner-supplied +7 423 279-01-09. Keep both values separated and verify primary service number."
+        ]
+      }
+    },
+    {
+      "id": "service_20",
+      "business_name": "Авторитет-Авто+",
+      "business_name_transliteration": "Avtoritet-Auto+",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Тульская, 22",
+      "phone": "+7 423 279-09-19",
+      "services_ru": [
+        "Автосервис",
+        "кузовной ремонт",
+        "детейлинг"
+      ],
+      "services_en": [
+        "Auto repair",
+        "bodywork",
+        "detailing"
+      ],
+      "website_url": null,
+      "website_status": "Dealer page reported by owner; exact URL not supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Official company contact page found; phone discrepancy",
+        "public_website_url": "https://avtoritet-auto.ru/about/contact/",
+        "public_services": [
+          "Vehicle servicing",
+          "Body repair centre",
+          "Bodywork",
+          "Detailing (business listing)"
+        ],
+        "price_status": "No itemized price list found on reviewed official contact page",
+        "price_items": [],
+        "source_urls": [
+          "https://avtoritet-auto.ru/about/contact/",
+          "https://artem.spravker.ru/diagnostika-dvigatelia/"
+        ],
+        "notes": [
+          "Official contact page confirms Tульская Street 22 but lists +7 423 279-09-79, while owner supplied +7 423 279-09-19. Do not silently replace; mark for owner verification."
+        ]
+      }
+    },
+    {
+      "id": "service_21",
+      "business_name": "Гиперавто",
+      "business_name_transliteration": "Hyperauto",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Фрунзе, 12/1",
+      "phone": "8 800 555-23-88",
+      "services_ru": [
+        "Автосервис",
+        "запчасти",
+        "диагностика"
+      ],
+      "services_en": [
+        "Auto repair",
+        "spare parts",
+        "diagnostics"
+      ],
+      "website_url": null,
+      "website_status": "Website reported by owner; exact URL not supplied.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Official website and branch page found",
+        "public_website_url": "https://hyperauto.ru/artem/address-map/g-artem-ul-frunze-12-1/",
+        "public_services": [
+          "Auto parts store",
+          "Auto repair",
+          "Auto electrician/diagnostics",
+          "Tire service"
+        ],
+        "price_status": "No branch-specific labor price list found in reviewed official sources",
+        "price_items": [],
+        "source_urls": [
+          "https://hyperauto.ru/",
+          "https://hyperauto.ru/artem/address-map/g-artem-ul-frunze-12-1/",
+          "https://artem.esbd.ru/autoservice"
+        ],
+        "notes": [
+          "Official branch page confirms Frunze Street 12/1 and gives separate numbers: store +7 (42337) 4-20-20; service +7 (423) 202-89-02. Owner-supplied 8 800 555-23-88 is a general hotline, not the branch service number."
+        ]
+      }
+    },
+    {
+      "id": "service_22",
+      "business_name": "Автосервис (без указанного бренда)",
+      "business_name_transliteration": "Unbranded Auto Service (2nd Pyatiletki)",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. 2-я Пятилетка, 30А",
+      "phone": "+7 423 274-17-48",
+      "services_ru": [
+        "Шиномонтаж",
+        "кузовной ремонт",
+        "ремонт двигателя"
+      ],
+      "services_en": [
+        "Tire service",
+        "bodywork",
+        "engine repair"
+      ],
+      "website_url": null,
+      "website_status": "No brand name supplied; retain neutral label.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in local directory",
+        "public_website_url": null,
+        "public_services": [
+          "Tire service",
+          "Bodywork",
+          "Engine repair"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://artyom.spravmer.ru/avtomobili/avtoservis-uslugi/avtoservis-avtotehcentr/"
+        ],
+        "notes": [
+          "Directory confirms a generic auto service at 2nd Pyatiletki Street 30A and supplied phone. Keep brand name neutral."
+        ]
+      }
+    },
+    {
+      "id": "service_23",
+      "business_name": "Totachi",
+      "business_name_transliteration": "Totachi",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Кирова, 153",
+      "phone": "+7 423 256-74-70",
+      "services_ru": [
+        "Ремонт",
+        "замена масла",
+        "диагностика",
+        "шиномонтаж"
+      ],
+      "services_en": [
+        "Repairs",
+        "oil changes",
+        "diagnostics",
+        "tire service"
+      ],
+      "website_url": null,
+      "website_status": "Confirm whether this is the business name or an associated product brand.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "Matched in public business listing; expanded services found",
+        "public_website_url": null,
+        "public_services": [
+          "Scheduled maintenance",
+          "Oil and fluid replacement",
+          "Filter replacement",
+          "Engine and transmission repair",
+          "Suspension and steering repair",
+          "Brake service",
+          "Wheel alignment",
+          "Tire service",
+          "Welding"
+        ],
+        "price_status": "No reliable exact price list found",
+        "price_items": [],
+        "source_urls": [
+          "https://www.google.com/maps/search/?api=1&query=Totachi+автосервис+Артём+Кирова+153"
+        ],
+        "notes": [
+          "Public listing matches Kirova Street 153. A directory gives additional phone +7 902 556-74-70 and email lspk@rambler.ru; verify before publication."
+        ]
+      }
+    },
+    {
+      "id": "service_24",
+      "business_name": "Автосервис (без указанного бренда)",
+      "business_name_transliteration": "Unbranded Auto Service (Pervomayskaya)",
+      "city": "Артём",
+      "region": "Приморский край",
+      "country": "Россия",
+      "address": "ул. Первомайская, 15",
+      "phone": "+7 914 330-81-68",
+      "services_ru": [
+        "Ремонт",
+        "ТО",
+        "автоэлектрика"
+      ],
+      "services_en": [
+        "Repairs",
+        "maintenance",
+        "auto electrical work"
+      ],
+      "website_url": null,
+      "website_status": "No brand name supplied; retain neutral label.",
+      "data_source": "Owner-provided information in this conversation",
+      "verification_status": "owner_supplied_unverified",
+      "public_research": {
+        "research_status": "No exact business identity confirmed",
+        "public_website_url": null,
+        "public_services": [
+          "Repairs",
+          "Scheduled maintenance",
+          "Auto electrical work (owner-supplied)"
+        ],
+        "price_status": "No reliable business-specific public price list found",
+        "price_items": [],
+        "source_urls": [],
+        "notes": [
+          "No matching public listing for the exact address and phone was confirmed in the reviewed sources. Keep the generic name and owner-provided data."
+        ]
+      }
     }
   ]
 }
