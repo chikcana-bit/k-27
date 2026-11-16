@@ -13,3 +13,7 @@ Data from public directories (Spravker, 2026-11-12), not confirmed by the busine
 - `hybrid-center/` — Гибрид Центр (Omsk, hybrid and EV repair), «Ателье» template with the «Ион» skin (data and prices from the 2GIS card, 2026-11-13). Source: branch `source/hybrid-center`
 
 Each page is a single self-contained file (no external requests, no forms, no cookies, no analytics). Search indexing is disabled.
+
+## Artem, Primorsky Krai — 24 sites
+
+- `artem/service_01/` … `artem/service_24/` — 24 automotive service businesses in Artem, built from six templates derived from the Komsomolsk sites (data provided by the owner, 2026-11-16, not yet confirmed by the businesses). Source: branch `source/artem-24`.
