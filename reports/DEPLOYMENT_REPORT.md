@@ -7,14 +7,16 @@ Date: 15 November 2026
 | Item | Status |
 | --- | --- |
 | Six sites built and passing QA locally | Done |
-| Local git repository with full history | Done (`main` branch, no remote) |
-| GitHub repository | **Not created** — GitHub authentication is not available in the build environment (`gh` reports an invalid token). No remote was added or changed. |
-| Live hosting | **Not deployed.** Nothing is live. |
-| GitHub Pages workflow | Prepared (`.github/workflows/pages.yml`), manual trigger only, not run |
-| CI workflow | Prepared (`.github/workflows/ci.yml`), runs `npm run qa` |
+| GitHub repository | Pushed to the existing repository `chikcana-bit/k-27`, new branch `source/autoservice-six` (owner's choice). Existing branches `main`, `source/avtovatt`, `source/hybrid-center` were not changed. |
+| Repository URL | https://github.com/chikcana-bit/k-27/tree/source/autoservice-six |
+| Live hosting | **Not deployed.** Nothing from this project is live. |
+| GitHub Pages workflow | Present on the branch (`.github/workflows/pages.yml`) but not runnable: GitHub only offers manually triggered workflows that exist on the default branch. |
+| CI workflow | Present on the branch (`.github/workflows/ci.yml`); runs on pull requests and on pushes to `main`. |
 
-Pushing code to GitHub will not by itself make any site live: Pages must be enabled and the
-deploy workflow started by hand.
+`k-27` is a public repository whose `main` branch holds already-built sites (it has `.nojekyll`,
+`index.html` and site folders), which suggests `main` is what GitHub Pages serves. Publishing these
+six sites there means adding their built output to `main`; that changes a live public site and was
+not done without an explicit go-ahead.
 
 ## Site paths
 
@@ -44,20 +46,21 @@ npm run build:pages
 `npm run build` writes six independent static sites. `npm run build:pages` writes one combined
 folder `dist-pages/` (`/<service_id>/` per site plus an internal index) for a single host.
 
-## Publishing to GitHub (owner steps)
+## Making the sites live (not done)
 
-1. Create an empty repository (decide the name and public/private visibility) and connect it:
-   ```bash
-   git remote add origin https://github.com/<owner>/<repo>.git
-   ```
-   ```bash
-   git push -u origin main
-   ```
-2. For a preview on GitHub Pages: repository Settings → Pages → Source: **GitHub Actions**, then
-   Actions → "Deploy preview to GitHub Pages" → Run workflow. Sites appear at
-   `https://<owner>.github.io/<repo>/service_01/` … `/service_06/`. The preview is built with
-   `PUBLIC_PREVIEW=1`, so pages are `noindex` and `robots.txt` disallows crawling.
-   GitHub Pages on a private repository requires a paid plan.
+Option A — follow the existing `k-27` layout: build with the repository sub-path and copy the
+output into `main` next to the existing sites.
+
+```bash
+PAGES_ORIGIN=https://chikcana-bit.github.io PAGES_BASE=/k-27 npm run build:pages
+```
+
+This writes `dist-pages/service_01/` … `service_06/`, which would become
+`https://chikcana-bit.github.io/k-27/service_01/` … once committed to `main`. The preview is built
+with `PUBLIC_PREVIEW=1` (`noindex`). The `index.html` and `robots.txt` in `dist-pages/` must not
+replace the ones already on `main`.
+
+Option B — host each site separately (any static host) from `sites/<id>/dist`.
 
 ## Before any production launch (per business)
 
