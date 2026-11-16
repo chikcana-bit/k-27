@@ -9,25 +9,22 @@ Date: 15 November 2026
 | Six sites built and passing QA locally | Done |
 | GitHub repository | Pushed to the existing repository `chikcana-bit/k-27`, new branch `source/autoservice-six` (owner's choice). Existing branches `main`, `source/avtovatt`, `source/hybrid-center` were not changed. |
 | Repository URL | https://github.com/chikcana-bit/k-27/tree/source/autoservice-six |
-| Live hosting | **Not deployed.** Nothing from this project is live. |
-| GitHub Pages workflow | Present on the branch (`.github/workflows/pages.yml`) but not runnable: GitHub only offers manually triggered workflows that exist on the default branch. |
-| CI workflow | Present on the branch (`.github/workflows/ci.yml`); runs on pull requests and on pushes to `main`. |
+| Live hosting | Built output merged into `main` of `chikcana-bit/k-27` on 16 November 2026 as `service_01/` … `service_06/` (fast-forward, at the owner's request). Expected at `https://chikcana-bit.github.io/k-27/service_0N/`. **Not verified**: the build environment cannot reach `github.io`, and the Pages source setting could not be read. |
+| GitHub Pages workflow | Present on the source branch (`.github/workflows/pages.yml`) but not used: publishing follows the repository's existing layout (built files committed to `main`). |
+| CI workflow | Present on the source branch (`.github/workflows/ci.yml`); not active because it is not on the default branch. |
 
-`k-27` is a public repository whose `main` branch holds already-built sites (it has `.nojekyll`,
-`index.html` and site folders), which suggests `main` is what GitHub Pages serves. Publishing these
-six sites there means adding their built output to `main`; that changes a live public site and was
-not done without an explicit go-ahead.
+See `HANDOFF.md` for the republishing steps.
 
 ## Site paths
 
 | Site | Source | Build output | URL |
 | --- | --- | --- | --- |
-| DetailTeamServis | `sites/service_01` | `sites/service_01/dist` | none yet |
-| 360 | `sites/service_02` | `sites/service_02/dist` | none yet |
-| Luxury Styling & Detailing | `sites/service_03` | `sites/service_03/dist` | none yet |
-| Avtomaks Mobile Center | `sites/service_04` | `sites/service_04/dist` | none yet |
-| ProSTO | `sites/service_05` | `sites/service_05/dist` | none yet |
-| ZigZag | `sites/service_06` | `sites/service_06/dist` | none yet |
+| DetailTeamServis | `sites/service_01` | `sites/service_01/dist` | see HANDOFF.md |
+| 360 | `sites/service_02` | `sites/service_02/dist` | see HANDOFF.md |
+| Luxury Styling & Detailing | `sites/service_03` | `sites/service_03/dist` | see HANDOFF.md |
+| Avtomaks Mobile Center | `sites/service_04` | `sites/service_04/dist` | see HANDOFF.md |
+| ProSTO | `sites/service_05` | `sites/service_05/dist` | see HANDOFF.md |
+| ZigZag | `sites/service_06` | `sites/service_06/dist` | see HANDOFF.md |
 
 ## Build commands
 
@@ -46,7 +43,7 @@ npm run build:pages
 `npm run build` writes six independent static sites. `npm run build:pages` writes one combined
 folder `dist-pages/` (`/<service_id>/` per site plus an internal index) for a single host.
 
-## Making the sites live (not done)
+## How the sites were published
 
 Option A — follow the existing `k-27` layout: build with the repository sub-path and copy the
 output into `main` next to the existing sites.
